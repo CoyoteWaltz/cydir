@@ -12,13 +12,15 @@ const { jsonStringify } = require('../util/chores.js');
 const log = require('../util/log.js');
 
 function configCmd(command) {
-  log.success(command)
+  log.info(command);
+  
   if (!command) {
-    log.err('No command to set!')
+    log.err('No command to set!');
   }
   const configFn = configFilename();
   if (!fs.existsSync(configFn)) {
     // initialize a config object
+    // todo get an empty config for init
     const config = {
       command: [command],
     };
@@ -27,12 +29,11 @@ function configCmd(command) {
     fs.writeFileSync(configFn, jsonStringify(config));
     return;
   }
-  const data = JSON.parse(fs.readFileSync(configFn));
+  const data = require(configFn);
 
   console.log(data);
   data.command = command;
   fs.writeFileSync(configFn, jsonStringify(data));
-
 }
-configCmd('sdaffs');
+configCmd('eeeee');
 module.exports = configCmd;

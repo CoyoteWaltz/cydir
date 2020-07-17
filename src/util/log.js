@@ -13,13 +13,16 @@ const logger = {
   err(err) {
     let msg = typeof err === 'string' ? err : err.message || err.msg;
 
-    log(chalk.bgRed(msg));
-    process.exit(1);
+    log(chalk.bold.bgRed(' Error '), chalk.red(msg));
+    // process.exit(1);
   },
-  success(msg) {
-    log(chalk.bgGreen('Success!', msg));
+  info(msg) {
+    log(chalk.bold.bgGreen.white(' Info '), chalk.green(msg));
   },
 };
+
+logger.info('yesssss');
+logger.err('noooo');
 
 module.exports = logger;
 

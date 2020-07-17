@@ -6,6 +6,7 @@
  * @Description:
  */
 
+// for beautiful visualization
 function jsonStringify(obj) {
   return JSON.stringify(obj, '', 2);
 }

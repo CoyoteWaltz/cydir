@@ -5,3 +5,8 @@
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 
  */ 
+
+
+module.exports = function(path) {
+  
+}
