@@ -1,4 +1,4 @@
-# Not a name
+# (Work In Progress) Not a name
 
 配置命令行指令`commandX` 以及 目标路径`/path/to/somewhere`
 
