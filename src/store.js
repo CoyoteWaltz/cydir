@@ -1,13 +1,12 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-07-20 23:08:49
+ * @LastEditTime: 2020-07-22 23:19:11
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store history and paths
  */
 
 const fs = require('fs');
-const path = require('path');
 
 // 只遍历文件夹名称
 // 深度？
@@ -41,37 +40,27 @@ async function print(path) {
 }
 // print('./').catch(console.error);
 
-function walk(dirname) {
-  if (!fs.existsSync(dirname)) {
-    return;
-  }
-  const children = [];
-  // console.log(fs.readdirSync(dirname))
-  fs.readdirSync(dirname).map((value, index) => {
-    const stat = fs.statSync(path.join(dirname, value))
-    console.log(stat.isDirectory());
-  })
-
-}
-
-walk('./')
 
 
-const node = {
-  name: '',
-  weight: 0,
-  children: [], // 获得子路径的数量
-  purity: 0, // 文件数量 / 目录数
-  path: 0, // 相对于根结点的距离 root 为 0
-  updateTime: Date.now(), // 每次遍历生成一次即可
-  passTimes: 0,
-};
+const res = probe('/Users/koyote/programming');
 
-const config = {
-  command: 'eeeee',
-  path: {
-    root: './',
-  },
-};
+console.log(JSON.stringify(res, null, 2));
+fs.writeFileSync('./paths.json', JSON.stringify(res, null, 2));
 
-// const readline = require('readline')
+// const node = {
+//   name: '',
+//   weight: 0,
+//   children: [], // 获得子路径的数量
+//   purity: 0, // 文件数量 / 目录数
+//   path: 0, // 相对于根结点的距离 root 为 0
+//   updateTime: Date.now(), // 每次遍历生成一次即可
+//   passTimes: 0,
+// };
+
+// const config = {
+//   command: 'eeeee',
+//   path: {
+//     root: './',
+//   },
+// };
+

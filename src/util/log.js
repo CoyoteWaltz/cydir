@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 01:05:34
- * @LastEditTime: 2020-07-16 22:58:29
+ * @LastEditTime: 2020-07-23 00:29:17
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: log
  */
@@ -17,12 +17,15 @@ const logger = {
     // process.exit(1);
   },
   info(msg) {
-    log(chalk.bold.bgGreen.white(' Info '), chalk.green(msg));
+    log(chalk.bold.bgGreen.white(' Info '), chalk.white(msg));
   },
 };
 
 logger.info('yesssss');
 logger.err('noooo');
+
+// const readline = require('readline')
+
 
 module.exports = logger;
 

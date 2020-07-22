@@ -48,6 +48,33 @@ code /path/to/somewhere/../projectA
 
 或者就每次都给出完整提示 给用户自由配置这个提示也 ok
 
+初次扫描 3 层，匹配时:
+
+如果无 usualList => 
+
+1. serialize 所有节点进行匹配 => 
+
+匹配成功 => fire 并 append 到 usualList
+
+匹配失败 => 
+
+路径不存在 => 
+
+2. traceParent 先对 parent 做 probe 1 再对其余兄弟做 probe 1 如果兄弟路径不存在就不做 => 如traceParent 的路径不存在 => 要记录没有遍历的层号 最后一个不存在的 parent: nextProbe
+
+=> probe 1 逐层匹配 => 再无走 2 => 直到回到 rootPath => 开始从 nextProbe 往下 => 到最深
+
+2. 最后一层的节点 probe 1 => 每个节点 probe 的时候进行匹配 => 直到
+
+如果有 usualList => 匹配 usualList => 匹配失败 => 走 1
+
+
+从 usualList 中提取出父节点
+
+每次匹配成功后更新父节点
+
+2. 
+
 
 ### 模糊匹配
 
