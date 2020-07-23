@@ -1,13 +1,15 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-07-23 00:25:12
+ * @LastEditTime: 2020-07-24 02:29:53
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
 
 const path = require('path');
 const fs = require('fs');
+const { diffArrays } = require('./chores.js');
+const { emptyNode, getChildrenName } = require('./node.js');
 
 const { MAX_PROBE_DEPTH, BLACKLIST } = require('./constants.js');
 
@@ -78,45 +80,112 @@ const traceExistParent = (absPath, rootPath) => {
   return { parentPath: parent, failCount: count };
 };
 
-const rres = traceExistParent(
-  '/sss/vvv/ccc/sdsfa/sdfsdaf/fsds',
-  '/sss/vvv/ccc'
-);
-console.log(rres);
+// const rres = traceExistParent(
+//   '/sss/vvv/ccc/sdsfa/sdfsdaf/fsds',
+//   '/sss/vvv/ccc'
+// );
+// console.log(rres);
 
-// 工厂函数吧 可能之后会单独抽出一个模块来处理 node 相关
-const emptyNode = (filePath, curDepth = 0) => {
-  return { name: filePath, depth: curDepth, children: [] };
-};
-
-function probe(absPath, maxDepth) {
-  maxDepth = maxDepth || MAX_PROBE_DEPTH;
+// 增加 diff 功能
+function probe(absPath, oldTree = null, maxDepth = MAX_PROBE_DEPTH) {
+  // maxDepth = maxDepth || MAX_PROBE_DEPTH;
   // 递归遍历目录 到达一定深度结束 返回 tree 节点结果
   // 接受参数 绝对路径
+  absPath = oldTree ? oldTree.name : absPath;
   if (!fs.existsSync(absPath)) {
     return emptyNode(absPath);
   }
-  function walk(filePath, curDepth = 0) {
+  // let old = oldTree;
+  let diffs = [];
+
+  const walk = (filePath, curDepth = 0, old = null) => {
     const node = emptyNode(filePath, curDepth);
     if (curDepth === maxDepth) {
       return node;
     }
-    fs.readdirSync(filePath)
+    // get sub paths of filePath
+    const subPaths = fs
+      .readdirSync(filePath)
       .filter((value) => {
         return !BLACKLIST.includes(value);
       })
-      .map((value, index) => {
-        const subPath = path.resolve(filePath, value);
-        const stat = fs.statSync(subPath);
-        if (stat.isDirectory(subPath)) {
-          const child = walk(subPath, curDepth + 1);
-          node.children.push(child);
-        }
-      });
+      .map((value) => path.resolve(filePath, value))
+      .filter((value) => fs.statSync(value).isDirectory(value));
+
+    const oldNames = old ? getChildrenName(old) : [];
+    // 找出新增 or 修改过的
+    const differences = diffArrays(oldNames, subPaths);
+    diffs.push(...differences);
+    // }
+
+    subPaths.forEach((value, index) => {
+      // 找一下旧树对应的节点
+      const oldNode = old
+        ? old.children.filter((v) => value === v.name)[0]
+        : old;
+      const child = walk(value, curDepth + 1, oldNode);
+      node.children.push(child);
+    });
+    // old = oldNow;
     return node;
-  }
-  return walk(absPath);
+  };
+  const res = walk(absPath, 0, oldTree);
+  // TODO
+  console.log(diffs);
+  return res;
 }
+
+const oldNode = {
+  name: '/Users/koyote/programming',
+  depth: 0,
+  children: [
+    {
+      name: '/Users/koyote/programming/FrontEnd',
+      depth: 1,
+      children: [
+        {
+          name: '/Users/koyote/programming/FrontEnd/fork_proj',
+          depth: 2,
+          children: [
+            {
+              name:
+                '/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master',
+              depth: 3,
+              children: [],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+const newNode = {
+  name: '/Users/koyote/programming',
+  depth: 0,
+  children: [
+    {
+      name: '/Users/koyote/programming/FrontEnd',
+      depth: 1,
+      children: [
+        {
+          name: '/Users/koyote/programming/FrontEnd/newnew',
+          depth: 2,
+          children: [
+            {
+              name:
+                '/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master',
+              depth: 3,
+              children: [],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+const res = probe('/Users/koyote/programming', data);
+// console.log(res);
 
 // const res = serialize(data);
 // console.log(res[res.length - 1].name, traceParent(res[res.length - 1].name));

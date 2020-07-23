@@ -75,8 +75,44 @@ code /path/to/somewhere/../projectA
 
 2. 
 
+其实就两种 miss 的情况
+
+1. usualList 中 Match 到了 但是路径不存在（修改/删除了或者换位置放了）
+
+2. usualList miss 去整体节点树中也 miss 或者不存在（这两种在整体树中是一回事）
+
+对于第 1 种情况
+
+~~从该路径的父节点向上逐层 probe 1 直到 root 然后再从未 probe 的层 逐层向下 probe 1 直到触底~~
+
+- 细节：traceParent 的时候 和 getLevel 的时候可以保存每一层的节点
+
+父节点路径存在意味着
+
+先回溯父节点 probe 然后再向上回溯一个得到其子节点 逐个 probe （若路径不存在则跳过）
+
+从不存在路径的 dirname 的 dirname (前 2 层的根开始) 开始深 probe 然后再回退
+
+对于第 2 种情况 直接从 root 更新树 probe 3 展开匹配
+
+如果还未能匹配到 从树
+
+
+简单粗暴一点
+
+第一种情况不存在路径之后
+
+从 root probe3 如果匹配失败 从最后一层开始 probe1 逐层匹配穷尽 或者 最深 6 层 保存树
+
+第二种情况 也和上面一样
+
+
+
+
 
 ### 模糊匹配
 
+### 路径结果的展示
 
+root > dirname **path-name**
 
