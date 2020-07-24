@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-07-25 00:20:31
+ * @LastEditTime: 2020-07-25 02:13:05
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -51,7 +51,7 @@ function probe(absPath, maxDepth) {
   function walk(filePath, curDepth = 0, chain = '', excludes = []) {
     const matcher = path.join(chain, path.basename(filePath));
     if (curDepth === maxDepth) {
-      endPoints.push(createEndpoint(filePath, curDepth, matcher));
+      endPoints.push(createEndpoint(filePath, matcher));
       return;
     }
     try {
@@ -63,7 +63,7 @@ function probe(absPath, maxDepth) {
         .filter((value) => !excludes.includes(value)) // TODO 这一步可能要在想想
         .filter((value) => fs.statSync(value).isDirectory());
       if (!subPaths.length) {
-        endPoints.push(createEndpoint(filePath, curDepth, matcher));
+        endPoints.push(createEndpoint(filePath, matcher));
         return;
       }
       // 第一个给 chain
@@ -113,19 +113,19 @@ const traceParent = (absPath) => {
 
 // 返回 父节点路径 断层数 i.e trace 失败的次数
 // 到 root path 的时候停止 root path 的有效性交给外面去判断
-const traceExistParent = (absPath, rootPath) => {
-  if (!rootPath) {
-    // TODO 这里改成 log err
-    throw new Error('No root path config!');
-  }
-  let count = 0;
-  let parent = traceParent(absPath);
-  while (!fs.existsSync(parent) && parent !== rootPath) {
-    parent = traceParent(parent);
-    count++;
-  }
-  return { parentPath: parent, failCount: count };
-};
+// const traceExistParent = (absPath, rootPath) => {
+//   if (!rootPath) {
+//     // TODO 这里改成 log err
+//     throw new Error('No root path config!');
+//   }
+//   let count = 0;
+//   let parent = traceParent(absPath);
+//   while (!fs.existsSync(parent) && parent !== rootPath) {
+//     parent = traceParent(parent);
+//     count++;
+//   }
+//   return { parentPath: parent, failCount: count };
+// };
 
 // const rres = traceExistParent(
 //   '/sss/vvv/ccc/sdsfa/sdfsdaf/fsds',

@@ -1,23 +1,42 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 01:05:34
- * @LastEditTime: 2020-07-25 00:00:35
+ * @LastEditTime: 2020-07-25 02:12:02
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: log
  */
 
 const chalk = require('chalk');
-const log = console.log;
+const readline = require('readline');
 
 const logger = {
   err(err, exit = true) {
     let msg = typeof err === 'string' ? err : err.message || err.msg;
 
-    log(chalk.bold.bgRed(' Error '), chalk.red(msg));
+    console.log(chalk.bold.bgRed(' Error '), chalk.red(msg));
     exit && process.exit(1);
   },
   info(msg) {
-    log(chalk.bold.bgGreen.white(' Info '), chalk.white(msg));
+    console.log(chalk.bold.bgGreen.white(' Info '), chalk.green(msg));
+  },
+  // TODO
+  question(tips, question = '') {
+    return new Promise((resolve, reject) => {
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+      console.log(chalk.bold.yellowBright('Oops!'), chalk.yellow(tips));
+      rl.question(`${question} [y/n]\n`, (answer) => {
+        if (answer.toLowerCase() === 'y') {
+          resolve();
+          rl.close();
+        } else {
+          reject();
+          rl.close();
+        }
+      });
+    });
   },
 };
 
@@ -25,7 +44,6 @@ const logger = {
 // logger.err('noooo');
 
 // const readline = require('readline')
-
 
 module.exports = logger;
 

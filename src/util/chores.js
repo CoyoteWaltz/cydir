@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 22:48:11
- * @LastEditTime: 2020-07-25 01:14:35
+ * @LastEditTime: 2020-07-25 02:10:58
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
@@ -9,6 +9,7 @@
 // for beautiful visualization
 function toJSON(obj) {
   return JSON.stringify(obj, '', 2);
+  // return JSON.stringify(obj);
 }
 
 // return different parts of 2 arrays which is new in arr2
