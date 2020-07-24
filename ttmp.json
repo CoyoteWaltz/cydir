@@ -1,0 +1,376 @@
+{
+  "root": "/Users/koyote/programming",
+  "command": "code",
+  "endPoints": [
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/fork_proj",
+      "curDepth": 2,
+      "matcher": "/Users/koyote/programming/programming/FrontEnd/fork_proj"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/html",
+      "curDepth": 2,
+      "matcher": "html"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/imgs",
+      "curDepth": 2,
+      "matcher": "imgs"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/js",
+      "curDepth": 2,
+      "matcher": "js"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/learn_gulp",
+      "curDepth": 2,
+      "matcher": "learn_gulp"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/learn_webpack",
+      "curDepth": 2,
+      "matcher": "learn_webpack"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/lib",
+      "curDepth": 2,
+      "matcher": "lib"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/minipack",
+      "curDepth": 2,
+      "matcher": "minipack"
+    },
+    {
+      "filePath": "/Users/koyote/programming/FrontEnd/my_bundler",
+      "curDepth": 2,
+      "matcher": "my_bundler"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/AddressList_windows",
+      "curDepth": 2,
+      "matcher": "Projects/AddressList_windows"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/PaperPlane",
+      "curDepth": 2,
+      "matcher": "PaperPlane"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina",
+      "curDepth": 2,
+      "matcher": "SHUStudyBar_wechatmina"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/WisdomCourse",
+      "curDepth": 2,
+      "matcher": "WisdomCourse"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/audio_websocket",
+      "curDepth": 2,
+      "matcher": "audio_websocket"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/color_quantization",
+      "curDepth": 2,
+      "matcher": "color_quantization"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/cpoper",
+      "curDepth": 2,
+      "matcher": "cpoper"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/major_helper_flask",
+      "curDepth": 2,
+      "matcher": "major_helper_flask"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/my_Yolov3_pytorch",
+      "curDepth": 2,
+      "matcher": "my_Yolov3_pytorch"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/webox_admin",
+      "curDepth": 2,
+      "matcher": "webox_admin"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/webox_admin_old",
+      "curDepth": 2,
+      "matcher": "webox_admin_old"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/webox_flask",
+      "curDepth": 2,
+      "matcher": "webox_flask"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/webox_front_end_dist",
+      "curDepth": 2,
+      "matcher": "webox_front_end_dist"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Projects/wisdom_course_flask",
+      "curDepth": 2,
+      "matcher": "wisdom_course_flask"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/MLpractice",
+      "curDepth": 2,
+      "matcher": "Python/MLpractice"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/Yolov3_pytorch",
+      "curDepth": 2,
+      "matcher": "Yolov3_pytorch"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/autojump",
+      "curDepth": 2,
+      "matcher": "autojump"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/block_chain",
+      "curDepth": 2,
+      "matcher": "block_chain"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/data_analysis",
+      "curDepth": 2,
+      "matcher": "data_analysis"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/flask_learn",
+      "curDepth": 2,
+      "matcher": "flask_learn"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_apscheduler",
+      "curDepth": 2,
+      "matcher": "learn_apscheduler"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_crawler",
+      "curDepth": 2,
+      "matcher": "learn_crawler"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_cv",
+      "curDepth": 2,
+      "matcher": "learn_cv"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_graphics",
+      "curDepth": 2,
+      "matcher": "learn_graphics"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_jieba",
+      "curDepth": 2,
+      "matcher": "learn_jieba"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_numpy",
+      "curDepth": 2,
+      "matcher": "learn_numpy"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_pyqt",
+      "curDepth": 2,
+      "matcher": "learn_pyqt"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_pytorch",
+      "curDepth": 2,
+      "matcher": "learn_pytorch"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_socket",
+      "curDepth": 2,
+      "matcher": "learn_socket"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_taichi",
+      "curDepth": 2,
+      "matcher": "learn_taichi"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/learn_thread",
+      "curDepth": 2,
+      "matcher": "learn_thread"
+    },
+    {
+      "filePath": "/Users/koyote/programming/Python/sundries",
+      "curDepth": 2,
+      "matcher": "sundries"
+    },
+    {
+      "filePath": "/Users/koyote/programming/SQL/school",
+      "curDepth": 2,
+      "matcher": "SQL/school"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/ADA",
+      "curDepth": 2,
+      "matcher": "cplusplus_file/ADA"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos",
+      "curDepth": 2,
+      "matcher": "VSstudio_repos"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/class_realization",
+      "curDepth": 2,
+      "matcher": "class_realization"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/learn_STL",
+      "curDepth": 2,
+      "matcher": "learn_STL"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/os_practice",
+      "curDepth": 2,
+      "matcher": "os_practice"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/socket_practice",
+      "curDepth": 2,
+      "matcher": "socket_practice"
+    },
+    {
+      "filePath": "/Users/koyote/programming/cplusplus_file/sundries",
+      "curDepth": 2,
+      "matcher": "sundries"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/TestPackage",
+      "curDepth": 2,
+      "matcher": "go/TestPackage"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/go101",
+      "curDepth": 2,
+      "matcher": "go101"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/src",
+      "curDepth": 2,
+      "matcher": "src"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/w1",
+      "curDepth": 2,
+      "matcher": "w1"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/w2",
+      "curDepth": 2,
+      "matcher": "w2"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/w3",
+      "curDepth": 2,
+      "matcher": "w3"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/w4",
+      "curDepth": 2,
+      "matcher": "w4"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/w5",
+      "curDepth": 2,
+      "matcher": "w5"
+    },
+    {
+      "filePath": "/Users/koyote/programming/go/w6",
+      "curDepth": 2,
+      "matcher": "w6"
+    },
+    {
+      "filePath": "/Users/koyote/programming/java/Practise 7",
+      "curDepth": 2,
+      "matcher": "java/Practise 7"
+    },
+    {
+      "filePath": "/Users/koyote/programming/leetcode",
+      "curDepth": 1,
+      "matcher": "leetcode"
+    },
+    {
+      "filePath": "/Users/koyote/programming/nodejs/LuotuoCoin",
+      "curDepth": 2,
+      "matcher": "nodejs/LuotuoCoin"
+    },
+    {
+      "filePath": "/Users/koyote/programming/nodejs/dir0",
+      "curDepth": 2,
+      "matcher": "dir0"
+    },
+    {
+      "filePath": "/Users/koyote/programming/nodejs/learn_blockchain",
+      "curDepth": 2,
+      "matcher": "learn_blockchain"
+    },
+    {
+      "filePath": "/Users/koyote/programming/nodejs/sundries",
+      "curDepth": 2,
+      "matcher": "sundries"
+    },
+    {
+      "filePath": "/Users/koyote/programming/opencv_cpp_linux/3_3_11_bf_convex_hull",
+      "curDepth": 2,
+      "matcher": "opencv_cpp_linux/3_3_11_bf_convex_hull"
+    },
+    {
+      "filePath": "/Users/koyote/programming/opencv_cpp_linux/3_3_7_bf_dis",
+      "curDepth": 2,
+      "matcher": "3_3_7_bf_dis"
+    },
+    {
+      "filePath": "/Users/koyote/programming/opencv_cpp_linux/5_5_10_dc_convex_hull",
+      "curDepth": 2,
+      "matcher": "5_5_10_dc_convex_hull"
+    },
+    {
+      "filePath": "/Users/koyote/programming/opencv_cpp_linux/5_5_4_dc_dis",
+      "curDepth": 2,
+      "matcher": "5_5_4_dc_dis"
+    },
+    {
+      "filePath": "/Users/koyote/programming/opencv_cpp_linux/img",
+      "curDepth": 2,
+      "matcher": "img"
+    },
+    {
+      "filePath": "/Users/koyote/programming/shell",
+      "curDepth": 1,
+      "matcher": "shell"
+    },
+    {
+      "filePath": "/Users/koyote/programming/temp/py兼职",
+      "curDepth": 2,
+      "matcher": "temp/py兼职"
+    },
+    {
+      "filePath": "/Users/koyote/programming/test/123",
+      "curDepth": 2,
+      "matcher": "test/123"
+    },
+    {
+      "filePath": "/Users/koyote/programming/test/223",
+      "curDepth": 2,
+      "matcher": "223"
+    },
+    {
+      "filePath": "/Users/koyote/programming/typescript",
+      "curDepth": 1,
+      "matcher": "typescript"
+    }
+  ]
+}
