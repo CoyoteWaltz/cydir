@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 01:05:34
- * @LastEditTime: 2020-07-25 02:12:02
+ * @LastEditTime: 2020-07-27 21:59:12
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: log
  */
@@ -10,14 +10,17 @@ const chalk = require('chalk');
 const readline = require('readline');
 
 const logger = {
-  err(err, exit = true) {
+  exit(flag = true) {
+    flag && process.exit(1);
+  },
+  err(err) {
     let msg = typeof err === 'string' ? err : err.message || err.msg;
-
     console.log(chalk.bold.bgRed(' Error '), chalk.red(msg));
-    exit && process.exit(1);
+    return this;
   },
   info(msg) {
     console.log(chalk.bold.bgGreen.white(' Info '), chalk.green(msg));
+    return this;
   },
   // TODO
   question(tips, question = '') {

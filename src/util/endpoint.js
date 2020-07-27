@@ -1,15 +1,15 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-24 01:36:41
- * @LastEditTime: 2020-07-25 01:29:41
+ * @LastEditTime: 2020-07-27 23:11:50
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  * @TODO: 
  */ 
 
 // 工厂函数吧 可能之后会单独抽出一个模块来处理 node 相关
-function createEndpoint(filePath, matcher) {
-  return { filePath, matcher };
+function createEndpoint(prefixId, matcher) {
+  return { prefixId, matcher };
 }
 
 // function getChildrenName(node) {

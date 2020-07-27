@@ -1,0 +1,307 @@
+{
+  "root": "/Users/koyote/programming",
+  "command": "",
+  "endPoints": [
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/fork_proj",
+      "matcher": "programming/FrontEnd/fork_proj"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/html",
+      "matcher": "html"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/imgs",
+      "matcher": "imgs"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/js",
+      "matcher": "js"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/learn_gulp",
+      "matcher": "learn_gulp"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/learn_webpack",
+      "matcher": "learn_webpack"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/lib",
+      "matcher": "lib"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/minipack",
+      "matcher": "minipack"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/FrontEnd/my_bundler",
+      "matcher": "my_bundler"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/AddressList_windows",
+      "matcher": "Projects/AddressList_windows"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/PaperPlane",
+      "matcher": "PaperPlane"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina",
+      "matcher": "SHUStudyBar_wechatmina"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/WisdomCourse",
+      "matcher": "WisdomCourse"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/audio_websocket",
+      "matcher": "audio_websocket"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/color_quantization",
+      "matcher": "color_quantization"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/cpoper",
+      "matcher": "cpoper"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/major_helper_flask",
+      "matcher": "major_helper_flask"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/my_Yolov3_pytorch",
+      "matcher": "my_Yolov3_pytorch"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/webox_admin",
+      "matcher": "webox_admin"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/webox_admin_old",
+      "matcher": "webox_admin_old"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/webox_flask",
+      "matcher": "webox_flask"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/webox_front_end_dist",
+      "matcher": "webox_front_end_dist"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Projects/wisdom_course_flask",
+      "matcher": "wisdom_course_flask"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/MLpractice",
+      "matcher": "Python/MLpractice"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/Yolov3_pytorch",
+      "matcher": "Yolov3_pytorch"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/autojump",
+      "matcher": "autojump"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/block_chain",
+      "matcher": "block_chain"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/data_analysis",
+      "matcher": "data_analysis"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/flask_learn",
+      "matcher": "flask_learn"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_apscheduler",
+      "matcher": "learn_apscheduler"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_crawler",
+      "matcher": "learn_crawler"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_cv",
+      "matcher": "learn_cv"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_graphics",
+      "matcher": "learn_graphics"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_jieba",
+      "matcher": "learn_jieba"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_numpy",
+      "matcher": "learn_numpy"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_pyqt",
+      "matcher": "learn_pyqt"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_pytorch",
+      "matcher": "learn_pytorch"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_socket",
+      "matcher": "learn_socket"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_taichi",
+      "matcher": "learn_taichi"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/learn_thread",
+      "matcher": "learn_thread"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/Python/sundries",
+      "matcher": "sundries"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/SQL/school",
+      "matcher": "SQL/school"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/ADA",
+      "matcher": "cplusplus_file/ADA"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/VSstudio_repos",
+      "matcher": "VSstudio_repos"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/c_liunx_os",
+      "matcher": "c_liunx_os"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/class_realization",
+      "matcher": "class_realization"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/learn_STL",
+      "matcher": "learn_STL"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/os_practice",
+      "matcher": "os_practice"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/socket_practice",
+      "matcher": "socket_practice"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/cplusplus_file/sundries",
+      "matcher": "sundries"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/TestPackage",
+      "matcher": "go/TestPackage"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/go101",
+      "matcher": "go101"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/src",
+      "matcher": "src"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/w1",
+      "matcher": "w1"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/w2",
+      "matcher": "w2"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/w3",
+      "matcher": "w3"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/w4",
+      "matcher": "w4"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/w5",
+      "matcher": "w5"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/go/w6",
+      "matcher": "w6"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/java/Practise 7",
+      "matcher": "java/Practise 7"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/leetcode",
+      "matcher": "leetcode"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/nodejs/LuotuoCoin",
+      "matcher": "nodejs/LuotuoCoin"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/nodejs/dir0",
+      "matcher": "dir0"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/nodejs/learn_blockchain",
+      "matcher": "learn_blockchain"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/nodejs/sundries",
+      "matcher": "sundries"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/opencv_cpp_linux/3_3_11_bf_convex_hull",
+      "matcher": "opencv_cpp_linux/3_3_11_bf_convex_hull"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/opencv_cpp_linux/3_3_7_bf_dis",
+      "matcher": "3_3_7_bf_dis"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/opencv_cpp_linux/5_5_10_dc_convex_hull",
+      "matcher": "5_5_10_dc_convex_hull"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/opencv_cpp_linux/5_5_4_dc_dis",
+      "matcher": "5_5_4_dc_dis"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/opencv_cpp_linux/img",
+      "matcher": "img"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/shell",
+      "matcher": "shell"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/temp/py兼职",
+      "matcher": "temp/py兼职"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/test/123",
+      "matcher": "test/123"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/test/223",
+      "matcher": "223"
+    },
+    {
+      "prefixId": "/Users/koyote/programming/typescript",
+      "matcher": "typescript"
+    }
+  ],
+  "usualList": []
+}

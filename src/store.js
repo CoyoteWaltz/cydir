@@ -1,10 +1,11 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-07-25 02:11:43
+ * @LastEditTime: 2020-07-27 23:27:36
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
- * @TODO: recontruct to Singleton
+ * @TODO: 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
+ * 用下标做真的好吗？
  */
 
 const path = require('path');
@@ -17,14 +18,16 @@ const logger = require('./util/log.js');
 const { pathToFileURL } = require('url');
 
 class Store {
+  initDepth = Infinity;
+  cfgPath = getCfgPath();
   constructor() {
-    this.cfgPath = getCfgPath();
-    this.initDepth = 2;
     try {
       const cfg = JSON.parse(fs.readFileSync(this.cfgPath));
       this._root = cfg.root || '';
       this._command = cfg.command || '';
       this._endPoints = cfg.endPoints || [];
+      this._prefixes = cfg.prefixes || [];
+      this.currentDepth = cfg.currentDepth || this.initDepth;
     } catch (e) {}
   }
   save(cb) {
@@ -32,42 +35,41 @@ class Store {
     // TODO JSON.stringify
     fs.writeFile(this.cfgPath, toJSON(this.toJSON()), (err) => {
       if (err) {
-        logger.err(err, false);
-        logger.err('Failed to save config!');
+        logger.err(err);
+        logger.err('Failed to save config!').exit();
       }
       cb();
     });
   }
   toJSON() {
     return {
-      root: this._root || '',
       command: this._command || '',
+      root: this._root || '',
+      currentDepth: this.currentDepth,
       endPoints: this._endPoints || [],
       // TODO
       usualList: this._usualList || [],
+      prefixes: this._prefixes || [],
     };
   }
   get root() {
     return this._root;
   }
-  get command() {
-    return this._command;
-  }
-  get endPoints() {
-    return this._endPoints;
-  }
   set root(value) {
     if (!path.isAbsolute(value)) {
-      logger.err('Path must be absolute!');
+      logger.err('Path must be absolute!').exit();
     }
     if (!fs.existsSync(value)) {
-      logger.err('Path does not exist!');
+      logger.err('Path does not exist!').exit();
     }
     if (!fs.statSync(value).isDirectory()) {
-      logger.err('Path is not a directory!');
+      logger.err('Path is not a directory!').exit();
     }
     this._root = value;
     this.initEndPoints();
+  }
+  get command() {
+    return this._command;
   }
   set command(value) {
     this._command = value;
@@ -75,14 +77,31 @@ class Store {
       logger.info(`Store command: ${value}`);
     });
   }
+  get endPoints() {
+    return this._endPoints;
+  }
   // TODO
   set endPoints(value) {
     this._endPoints = value;
   }
+  get prefixes() {
+    return this._prefixes;
+  }
+  // TODO
+  set prefixes(value) {
+    this._prefixes = value;
+  }
   // 更新根目录 每次更新都 probe 更新
   // 不考虑异步吧
   initEndPoints() {
-    this._endPoints = probe(this._root, this.initDepth);
+    const { endPoints, prefixes, probeDepth } = probe(
+      this._root,
+      this.initDepth
+    );
+    this._endPoints = endPoints;
+    this._prefixes = prefixes;
+    this.currentDepth = probeDepth;
+    // console.log(this._endPoints.length);
     this.save(() => {
       logger.info(`Config root path: ${this._root}`);
     });

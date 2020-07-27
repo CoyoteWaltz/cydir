@@ -1,0 +1,1933 @@
+{
+  "command": "",
+  "root": "/Users/koyote/programming",
+  "currentDepth": 9,
+  "endPoints": [
+    {
+      "prefixId": 0,
+      "matcher": "programming/FrontEnd/fork_proj/HomePage-master/dist/assets"
+    },
+    {
+      "prefixId": 0,
+      "matcher": "css"
+    },
+    {
+      "prefixId": 0,
+      "matcher": "js"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "src/assets"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "components"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "css/common"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "intro"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "layout"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "main"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "js"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "html"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "imgs"
+    },
+    {
+      "prefixId": 4,
+      "matcher": "js/YDKJS"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "learn_gulp/output"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "src"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "vendor"
+    },
+    {
+      "prefixId": 6,
+      "matcher": "learn_webpack/dist"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "production_config/src/style"
+    },
+    {
+      "prefixId": 6,
+      "matcher": "src"
+    },
+    {
+      "prefixId": 8,
+      "matcher": "lib/YDKJS"
+    },
+    {
+      "prefixId": 9,
+      "matcher": "minipack/example"
+    },
+    {
+      "prefixId": 9,
+      "matcher": "src"
+    },
+    {
+      "prefixId": 10,
+      "matcher": "my_bundler/example"
+    },
+    {
+      "prefixId": 11,
+      "matcher": "Projects/AddressList_windows/AddressList1.1/bin/Debug"
+    },
+    {
+      "prefixId": 12,
+      "matcher": "obj/Debug/bin"
+    },
+    {
+      "prefixId": 13,
+      "matcher": "debug/bin/1.1"
+    },
+    {
+      "prefixId": 13,
+      "matcher": "Debug"
+    },
+    {
+      "prefixId": 14,
+      "matcher": "obj/Debug/bin"
+    },
+    {
+      "prefixId": 15,
+      "matcher": "PaperPlane"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "SHUStudyBar_wechatmina/cloudfunctions/callback"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "echo"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "login"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "openapi"
+    },
+    {
+      "prefixId": 17,
+      "matcher": "miniprogram/card/card-preview"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "common"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "component/@vant/weapp/action-sheet"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "area"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "button"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "card"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "cell"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "cell-group"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "checkbox"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "checkbox-group"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "circle"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "col"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "collapse"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "collapse-item"
+    },
+    {
+      "prefixId": 20,
+      "matcher": "common/style/mixins"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "count-down"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "datetime-picker"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "definitions"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "dialog"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "divider"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "dropdown-item"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "dropdown-menu"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "field"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "goods-action"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "goods-action-button"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "goods-action-icon"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "grid"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "grid-item"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "icon"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "image"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "index-anchor"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "index-bar"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "info"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "loading"
+    },
+    {
+      "prefixId": 21,
+      "matcher": "mixins/observer"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "nav-bar"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "notice-bar"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "notify"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "overlay"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "panel"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "picker"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "picker-column"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "popup"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "progress"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "radio"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "radio-group"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "rate"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "row"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "search"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "sidebar"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "sidebar-item"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "skeleton"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "slider"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "stepper"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "steps"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "sticky"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "submit-bar"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "swipe-cell"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "switch"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "tab"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "tabbar"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "tabbar-item"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "tabs"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "tag"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "toast"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "transition"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "tree-select"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "uploader"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "wxs"
+    },
+    {
+      "prefixId": 22,
+      "matcher": "custom-tab-bar"
+    },
+    {
+      "prefixId": 23,
+      "matcher": "images/cxx_icon"
+    },
+    {
+      "prefixId": 23,
+      "matcher": "icon"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "pages/card-detail"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "main"
+    },
+    {
+      "prefixId": 25,
+      "matcher": "my-course/my-course-detail"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "new-course"
+    },
+    {
+      "prefixId": 26,
+      "matcher": "user/profile"
+    },
+    {
+      "prefixId": 26,
+      "matcher": "student"
+    },
+    {
+      "prefixId": 26,
+      "matcher": "teacher"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "welcome"
+    },
+    {
+      "prefixId": 27,
+      "matcher": "WisdomCourse/.quasar"
+    },
+    {
+      "prefixId": 27,
+      "matcher": "public"
+    },
+    {
+      "prefixId": 28,
+      "matcher": "src/assets/images"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "common"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "components/arrangement"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "autoxk"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "course"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "query"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "css/themes"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "layouts"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "network"
+    },
+    {
+      "prefixId": 32,
+      "matcher": "pages/admin"
+    },
+    {
+      "prefixId": 32,
+      "matcher": "common"
+    },
+    {
+      "prefixId": 32,
+      "matcher": "student"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "plugins"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "router"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "statics/icons"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "store/bulletin"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "college"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "semester"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "teacher"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "user"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "styles"
+    },
+    {
+      "prefixId": 15,
+      "matcher": "audio_websocket"
+    },
+    {
+      "prefixId": 35,
+      "matcher": "color_quantization/Data"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "results/homo128"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "homo16"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "homo256"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "sig128"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "sk128"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "sk16"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "sk256"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "vc128"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "vc16"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "vc256"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "新建文件夹"
+    },
+    {
+      "prefixId": 37,
+      "matcher": "results2/old"
+    },
+    {
+      "prefixId": 38,
+      "matcher": "cpoper/src/configuration"
+    },
+    {
+      "prefixId": 38,
+      "matcher": "util"
+    },
+    {
+      "prefixId": 39,
+      "matcher": "major_helper_flask/api/v1"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "common/libs"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "models"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "tasks"
+    },
+    {
+      "prefixId": 41,
+      "matcher": "config"
+    },
+    {
+      "prefixId": 41,
+      "matcher": "docs"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "my_Yolov3_pytorch/cfg"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "data"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "ddd"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "det"
+    },
+    {
+      "prefixId": 43,
+      "matcher": "webox_admin/dist/css"
+    },
+    {
+      "prefixId": 43,
+      "matcher": "fonts"
+    },
+    {
+      "prefixId": 43,
+      "matcher": "img"
+    },
+    {
+      "prefixId": 43,
+      "matcher": "js"
+    },
+    {
+      "prefixId": 44,
+      "matcher": "js"
+    },
+    {
+      "prefixId": 44,
+      "matcher": "public"
+    },
+    {
+      "prefixId": 45,
+      "matcher": "src/assets"
+    },
+    {
+      "prefixId": 45,
+      "matcher": "components"
+    },
+    {
+      "prefixId": 45,
+      "matcher": "pages"
+    },
+    {
+      "prefixId": 45,
+      "matcher": "plugins"
+    },
+    {
+      "prefixId": 45,
+      "matcher": "views"
+    },
+    {
+      "prefixId": 46,
+      "matcher": "webox_admin_old/my-app/public"
+    },
+    {
+      "prefixId": 47,
+      "matcher": "src/assets"
+    },
+    {
+      "prefixId": 47,
+      "matcher": "components"
+    },
+    {
+      "prefixId": 47,
+      "matcher": "plugins"
+    },
+    {
+      "prefixId": 48,
+      "matcher": "webox_flask/api_doc"
+    },
+    {
+      "prefixId": 49,
+      "matcher": "migrations/versions"
+    },
+    {
+      "prefixId": 50,
+      "matcher": "webox/api/v1_0"
+    },
+    {
+      "prefixId": 50,
+      "matcher": "v2_0"
+    },
+    {
+      "prefixId": 51,
+      "matcher": "jobs/tasks"
+    },
+    {
+      "prefixId": 52,
+      "matcher": "libs"
+    },
+    {
+      "prefixId": 52,
+      "matcher": "logs"
+    },
+    {
+      "prefixId": 52,
+      "matcher": "utils"
+    },
+    {
+      "prefixId": 53,
+      "matcher": "webox_front_end_dist/css"
+    },
+    {
+      "prefixId": 53,
+      "matcher": "fonts"
+    },
+    {
+      "prefixId": 53,
+      "matcher": "img"
+    },
+    {
+      "prefixId": 53,
+      "matcher": "js"
+    },
+    {
+      "prefixId": 54,
+      "matcher": "wisdom_course_flask/migrations/versions"
+    },
+    {
+      "prefixId": 55,
+      "matcher": "wisdom/api/v1_0"
+    },
+    {
+      "prefixId": 56,
+      "matcher": "jobs/tasks"
+    },
+    {
+      "prefixId": 57,
+      "matcher": "libs"
+    },
+    {
+      "prefixId": 57,
+      "matcher": "logs"
+    },
+    {
+      "prefixId": 57,
+      "matcher": "utils"
+    },
+    {
+      "prefixId": 58,
+      "matcher": "Python/MLpractice/PatternRecognition/exp1_visulization"
+    },
+    {
+      "prefixId": 58,
+      "matcher": "exp2_bayes_clsfy"
+    },
+    {
+      "prefixId": 58,
+      "matcher": "exp5_pca"
+    },
+    {
+      "prefixId": 59,
+      "matcher": "forstudent/OPENCVdoc/OpenCvChinaManual"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "opencv-slides/examples/ex01"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "ex02"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "ex03"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "ex04"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "ex05"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "images"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "dataset/exp2img/facedetection"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "negatives"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "positives"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "positives1"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "test"
+    },
+    {
+      "prefixId": 62,
+      "matcher": "genderdata"
+    },
+    {
+      "prefixId": 63,
+      "matcher": "╤щ╓д╩╡╤щ┤·┬ы░№/facedetecttest"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "facedetecttrain/doc"
+    },
+    {
+      "prefixId": 65,
+      "matcher": "matchdemo/ORL"
+    },
+    {
+      "prefixId": 65,
+      "matcher": "cha"
+    },
+    {
+      "prefixId": 65,
+      "matcher": "pic"
+    },
+    {
+      "prefixId": 66,
+      "matcher": "╩╡╤щ╓╕╡╝"
+    },
+    {
+      "prefixId": 58,
+      "matcher": "linear_discriminant_analysis"
+    },
+    {
+      "prefixId": 67,
+      "matcher": "data_visulization"
+    },
+    {
+      "prefixId": 68,
+      "matcher": "maths_modeling/files"
+    },
+    {
+      "prefixId": 69,
+      "matcher": "ml_basic/basic_visualization"
+    },
+    {
+      "prefixId": 69,
+      "matcher": "bayes_classifier"
+    },
+    {
+      "prefixId": 69,
+      "matcher": "kmeans"
+    },
+    {
+      "prefixId": 70,
+      "matcher": "knn/kNN_Dating"
+    },
+    {
+      "prefixId": 71,
+      "matcher": "kNN_hand_writing/testDigits"
+    },
+    {
+      "prefixId": 71,
+      "matcher": "trainingDigits"
+    },
+    {
+      "prefixId": 67,
+      "matcher": "regression"
+    },
+    {
+      "prefixId": 72,
+      "matcher": "regression_tree/cart_data"
+    },
+    {
+      "prefixId": 73,
+      "matcher": "tree/cart_data"
+    },
+    {
+      "prefixId": 73,
+      "matcher": "decision_tree_glass"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "Yolov3_pytorch/cfg"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "data"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "det"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "autojump/bin"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "docs"
+    },
+    {
+      "prefixId": 76,
+      "matcher": "tests/integration"
+    },
+    {
+      "prefixId": 76,
+      "matcher": "unit"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "tools"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "block_chain/practice1"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "practice2"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "practice3"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "practice4"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "practice5"
+    },
+    {
+      "prefixId": 78,
+      "matcher": "data_analysis/knn_practice"
+    },
+    {
+      "prefixId": 79,
+      "matcher": "weekly_work/week1"
+    },
+    {
+      "prefixId": 79,
+      "matcher": "week2"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "flask_learn"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_apscheduler"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_crawler"
+    },
+    {
+      "prefixId": 81,
+      "matcher": "learn_cv/files"
+    },
+    {
+      "prefixId": 82,
+      "matcher": "imgs/projected"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_graphics"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_jieba"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_numpy"
+    },
+    {
+      "prefixId": 83,
+      "matcher": "learn_pyqt/copy_from_itn"
+    },
+    {
+      "prefixId": 84,
+      "matcher": "learn_pytorch/STN"
+    },
+    {
+      "prefixId": 85,
+      "matcher": "data/MNIST/processed"
+    },
+    {
+      "prefixId": 85,
+      "matcher": "raw"
+    },
+    {
+      "prefixId": 86,
+      "matcher": "cifar-10-batches-py"
+    },
+    {
+      "prefixId": 87,
+      "matcher": "learn_socket/tcp"
+    },
+    {
+      "prefixId": 87,
+      "matcher": "udp"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_taichi"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "learn_thread"
+    },
+    {
+      "prefixId": 88,
+      "matcher": "sundries/information_theory_assignment"
+    },
+    {
+      "prefixId": 89,
+      "matcher": "SQL/school"
+    },
+    {
+      "prefixId": 90,
+      "matcher": "cplusplus_file/ADA/3_3_7_bf_dis"
+    },
+    {
+      "prefixId": 91,
+      "matcher": "VSstudio_repos/2-6 排序/Debug/2-6 排序.tlog"
+    },
+    {
+      "prefixId": 92,
+      "matcher": "dm"
+    },
+    {
+      "prefixId": 92,
+      "matcher": "pro"
+    },
+    {
+      "prefixId": 93,
+      "matcher": "7/Debug/7.tlog"
+    },
+    {
+      "prefixId": 94,
+      "matcher": "AddressBook/bin"
+    },
+    {
+      "prefixId": 94,
+      "matcher": "debug"
+    },
+    {
+      "prefixId": 95,
+      "matcher": "pro/x64/Debug/AddressBook.tlog"
+    },
+    {
+      "prefixId": 96,
+      "matcher": "BinaryTree/BinaryTree/Debug/BinaryTree.tlog"
+    },
+    {
+      "prefixId": 97,
+      "matcher": "Debug"
+    },
+    {
+      "prefixId": 97,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 98,
+      "matcher": "Database1_test/Database1_test/bin/Debug"
+    },
+    {
+      "prefixId": 99,
+      "matcher": "obj/Debug"
+    },
+    {
+      "prefixId": 100,
+      "matcher": "Debug1/Debug/Debug1.tlog"
+    },
+    {
+      "prefixId": 101,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 102,
+      "matcher": "pro/x64/Debug/Debug1.tlog"
+    },
+    {
+      "prefixId": 103,
+      "matcher": "DirectGraph/Debug"
+    },
+    {
+      "prefixId": 104,
+      "matcher": "DirectGraph/Debug/DirectGraph.tlog"
+    },
+    {
+      "prefixId": 103,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 105,
+      "matcher": "Generalized Table/Debug"
+    },
+    {
+      "prefixId": 106,
+      "matcher": "Generalized Table/Debug/Generali.5A9923B2.tlog"
+    },
+    {
+      "prefixId": 105,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 107,
+      "matcher": "HFB's proj/Debug"
+    },
+    {
+      "prefixId": 108,
+      "matcher": "HFB's proj/Debug/HFB's proj.tlog"
+    },
+    {
+      "prefixId": 107,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 109,
+      "matcher": "HashTable-LinkAddress/Debug"
+    },
+    {
+      "prefixId": 110,
+      "matcher": "HashTable-LinkAddress/Debug/HashTabl.A9720996.tlog"
+    },
+    {
+      "prefixId": 109,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 111,
+      "matcher": "Heap/Debug"
+    },
+    {
+      "prefixId": 112,
+      "matcher": "Heap/Debug/Heap.tlog"
+    },
+    {
+      "prefixId": 111,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 113,
+      "matcher": "HuffmanTree/Debug"
+    },
+    {
+      "prefixId": 114,
+      "matcher": "HuffmanTree/Debug/HuffmanTree.tlog"
+    },
+    {
+      "prefixId": 113,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 115,
+      "matcher": "LInklist_wiz_head(undone)"
+    },
+    {
+      "prefixId": 116,
+      "matcher": "List/Debug"
+    },
+    {
+      "prefixId": 117,
+      "matcher": "List/Debug/List.tlog"
+    },
+    {
+      "prefixId": 116,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 118,
+      "matcher": "MyQueue/Debug"
+    },
+    {
+      "prefixId": 119,
+      "matcher": "MyQueue/Debug/MyQueue.tlog"
+    },
+    {
+      "prefixId": 118,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 120,
+      "matcher": "MyStack/Debug"
+    },
+    {
+      "prefixId": 121,
+      "matcher": "MyStack/Debug/MyStack.tlog"
+    },
+    {
+      "prefixId": 120,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 122,
+      "matcher": "MyString/bin"
+    },
+    {
+      "prefixId": 122,
+      "matcher": "debug"
+    },
+    {
+      "prefixId": 123,
+      "matcher": "pro/x64/Debug/MyString.tlog"
+    },
+    {
+      "prefixId": 124,
+      "matcher": "OpencvPro2/OpencvPro2/x64/Debug/OpencvPro2.tlog"
+    },
+    {
+      "prefixId": 125,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 126,
+      "matcher": "x64/Debug"
+    },
+    {
+      "prefixId": 127,
+      "matcher": "PriorityQueue/Debug"
+    },
+    {
+      "prefixId": 128,
+      "matcher": "PriorityQueue/Debug/PriorityQueue.tlog"
+    },
+    {
+      "prefixId": 127,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 129,
+      "matcher": "Project1/Debug/Project1.tlog"
+    },
+    {
+      "prefixId": 130,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 130,
+      "matcher": "dm"
+    },
+    {
+      "prefixId": 131,
+      "matcher": "pro.32/x64/Debug/Project1.tlog"
+    },
+    {
+      "prefixId": 132,
+      "matcher": "RecursiveLinklist/Debug/Recursiv.A36ECC42.tlog"
+    },
+    {
+      "prefixId": 133,
+      "matcher": "Self-BalancingBinaryTree/Debug"
+    },
+    {
+      "prefixId": 133,
+      "matcher": "Release"
+    },
+    {
+      "prefixId": 134,
+      "matcher": "Self-BalancingBinaryTree/Debug/Self-Bal.96056E85.tlog"
+    },
+    {
+      "prefixId": 135,
+      "matcher": "Release/Self-Bal.96056E85.tlog"
+    },
+    {
+      "prefixId": 133,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 136,
+      "matcher": "SeqList/Debug"
+    },
+    {
+      "prefixId": 137,
+      "matcher": "SeqList/Debug/SeqList.tlog"
+    },
+    {
+      "prefixId": 136,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 138,
+      "matcher": "SortedBinaryTree/Debug"
+    },
+    {
+      "prefixId": 139,
+      "matcher": "SortedBinaryTree/Debug/SortedBinaryTree.tlog"
+    },
+    {
+      "prefixId": 138,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 140,
+      "matcher": "Test/dm"
+    },
+    {
+      "prefixId": 141,
+      "matcher": "test.32/x64/Debug/Test.tlog"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "Test_OpenMP/Debug"
+    },
+    {
+      "prefixId": 143,
+      "matcher": "Test_OpenMP/Debug/Test_OpenMP.tlog"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "ThreadedBinaryTree/ThreadedBinaryTree"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 145,
+      "matcher": "Tree/Debug"
+    },
+    {
+      "prefixId": 146,
+      "matcher": "Tree/Debug/Tree.tlog"
+    },
+    {
+      "prefixId": 145,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 147,
+      "matcher": "UVa 12412/Debug/UVa 12412.tlog"
+    },
+    {
+      "prefixId": 148,
+      "matcher": "debug/bin"
+    },
+    {
+      "prefixId": 148,
+      "matcher": "debug"
+    },
+    {
+      "prefixId": 149,
+      "matcher": "pro/x64/Debug/debug.tlog"
+    },
+    {
+      "prefixId": 150,
+      "matcher": "myCrossList/Debug"
+    },
+    {
+      "prefixId": 150,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 151,
+      "matcher": "myCrossList/Debug/myCrossList.tlog"
+    },
+    {
+      "prefixId": 152,
+      "matcher": "myLinklist/bin"
+    },
+    {
+      "prefixId": 153,
+      "matcher": "pro/x64/Debug/myLinklist.tlog"
+    },
+    {
+      "prefixId": 154,
+      "matcher": "openGL_test/Debug"
+    },
+    {
+      "prefixId": 155,
+      "matcher": "openGL_test/Debug/openGL_test.tlog"
+    },
+    {
+      "prefixId": 156,
+      "matcher": "opencv_pro/bin"
+    },
+    {
+      "prefixId": 157,
+      "matcher": "opencv_pro/x64/Debug/opencv_pro.tlog"
+    },
+    {
+      "prefixId": 158,
+      "matcher": "x64/Debug"
+    },
+    {
+      "prefixId": 159,
+      "matcher": "socket_practice/bin"
+    },
+    {
+      "prefixId": 159,
+      "matcher": "socket_practice"
+    },
+    {
+      "prefixId": 160,
+      "matcher": "test InheritancePlusComposition/pro/x64/Debug/test Inh.04A1A9D7.tlog"
+    },
+    {
+      "prefixId": 161,
+      "matcher": "test_OpenMP_KMP/Debug"
+    },
+    {
+      "prefixId": 161,
+      "matcher": "bin"
+    },
+    {
+      "prefixId": 162,
+      "matcher": "test_OpenMP_KMP/Debug/test_OpenMP_KMP.tlog"
+    },
+    {
+      "prefixId": 163,
+      "matcher": "test_openmp20190310/Debug"
+    },
+    {
+      "prefixId": 164,
+      "matcher": "test_openmp20190310/Debug/test_ope.A830FA8D.tlog"
+    },
+    {
+      "prefixId": 165,
+      "matcher": "the next palindromic number/dm"
+    },
+    {
+      "prefixId": 166,
+      "matcher": "tnpn/x64/Debug/the next.6CE49C6C.tlog"
+    },
+    {
+      "prefixId": 167,
+      "matcher": "习题2-5　分数化小数（decimal）/dm"
+    },
+    {
+      "prefixId": 168,
+      "matcher": "pro.win32/x64/Debug/Project2.tlog"
+    },
+    {
+      "prefixId": 169,
+      "matcher": "最小值min/dm"
+    },
+    {
+      "prefixId": 170,
+      "matcher": "pro/x64/Debug/最小值min.tlog"
+    },
+    {
+      "prefixId": 171,
+      "matcher": "随机抽取/dm"
+    },
+    {
+      "prefixId": 172,
+      "matcher": "pro32/x64/Debug/随机抽取.tlog"
+    },
+    {
+      "prefixId": 173,
+      "matcher": "c_liunx_os/datalab-handout"
+    },
+    {
+      "prefixId": 174,
+      "matcher": "class_realization/Tree/bin/Debug"
+    },
+    {
+      "prefixId": 175,
+      "matcher": "obj/Debug"
+    },
+    {
+      "prefixId": 176,
+      "matcher": "UndirectGraph/bin/Debug"
+    },
+    {
+      "prefixId": 177,
+      "matcher": "obj/Debug"
+    },
+    {
+      "prefixId": 178,
+      "matcher": "UnionFindSet/bin/Debug"
+    },
+    {
+      "prefixId": 179,
+      "matcher": "obj/Debug"
+    },
+    {
+      "prefixId": 180,
+      "matcher": "learn_STL/hash_map.dSYM/Contents/Resources/DWARF"
+    },
+    {
+      "prefixId": 181,
+      "matcher": "os_practice"
+    },
+    {
+      "prefixId": 181,
+      "matcher": "socket_practice"
+    },
+    {
+      "prefixId": 181,
+      "matcher": "sundries"
+    },
+    {
+      "prefixId": 182,
+      "matcher": "go/TestPackage/x/y/vendor/w/foo"
+    },
+    {
+      "prefixId": 183,
+      "matcher": "go101/articles/res"
+    },
+    {
+      "prefixId": 184,
+      "matcher": "web/static/bootstrap/v3.3.7/css"
+    },
+    {
+      "prefixId": 184,
+      "matcher": "fonts"
+    },
+    {
+      "prefixId": 184,
+      "matcher": "js"
+    },
+    {
+      "prefixId": 185,
+      "matcher": "code-prettify/2019-03-25"
+    },
+    {
+      "prefixId": 185,
+      "matcher": "2019-05-11"
+    },
+    {
+      "prefixId": 186,
+      "matcher": "go101/css"
+    },
+    {
+      "prefixId": 186,
+      "matcher": "images"
+    },
+    {
+      "prefixId": 186,
+      "matcher": "txt"
+    },
+    {
+      "prefixId": 187,
+      "matcher": "jquery"
+    },
+    {
+      "prefixId": 188,
+      "matcher": "prism/2017-11-02"
+    },
+    {
+      "prefixId": 188,
+      "matcher": "2019-05-11"
+    },
+    {
+      "prefixId": 189,
+      "matcher": "templates"
+    },
+    {
+      "prefixId": 190,
+      "matcher": "src/hello"
+    },
+    {
+      "prefixId": 191,
+      "matcher": "w1"
+    },
+    {
+      "prefixId": 191,
+      "matcher": "w2"
+    },
+    {
+      "prefixId": 191,
+      "matcher": "w3"
+    },
+    {
+      "prefixId": 191,
+      "matcher": "w4"
+    },
+    {
+      "prefixId": 191,
+      "matcher": "w5"
+    },
+    {
+      "prefixId": 191,
+      "matcher": "w6"
+    },
+    {
+      "prefixId": 192,
+      "matcher": "java/Practise 7"
+    },
+    {
+      "prefixId": 193,
+      "matcher": "leetcode"
+    },
+    {
+      "prefixId": 194,
+      "matcher": "nodejs/LuotuoCoin/bilibiliDemo/encryption"
+    },
+    {
+      "prefixId": 195,
+      "matcher": "src/tests"
+    },
+    {
+      "prefixId": 196,
+      "matcher": "dir0/bbb"
+    },
+    {
+      "prefixId": 196,
+      "matcher": "sss"
+    },
+    {
+      "prefixId": 197,
+      "matcher": "learn_blockchain"
+    },
+    {
+      "prefixId": 197,
+      "matcher": "sundries"
+    },
+    {
+      "prefixId": 198,
+      "matcher": "opencv_cpp_linux/3_3_11_bf_convex_hull"
+    },
+    {
+      "prefixId": 198,
+      "matcher": "3_3_7_bf_dis"
+    },
+    {
+      "prefixId": 198,
+      "matcher": "5_5_10_dc_convex_hull"
+    },
+    {
+      "prefixId": 198,
+      "matcher": "5_5_4_dc_dis"
+    },
+    {
+      "prefixId": 198,
+      "matcher": "img"
+    },
+    {
+      "prefixId": 193,
+      "matcher": "shell"
+    },
+    {
+      "prefixId": 199,
+      "matcher": "temp/py兼职/data_ana"
+    },
+    {
+      "prefixId": 199,
+      "matcher": "lab8"
+    },
+    {
+      "prefixId": 199,
+      "matcher": "lab9"
+    },
+    {
+      "prefixId": 200,
+      "matcher": "labprep7/__MACOSX"
+    },
+    {
+      "prefixId": 199,
+      "matcher": "labprep8"
+    },
+    {
+      "prefixId": 201,
+      "matcher": "project2/project22"
+    },
+    {
+      "prefixId": 199,
+      "matcher": "project3"
+    },
+    {
+      "prefixId": 202,
+      "matcher": "test/123"
+    },
+    {
+      "prefixId": 202,
+      "matcher": "223"
+    },
+    {
+      "prefixId": 193,
+      "matcher": "typescript"
+    }
+  ],
+  "usualList": [],
+  "prefixes": [
+    "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist",
+    "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src",
+    "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/css",
+    "/Users/koyote/programming/FrontEnd",
+    "/Users/koyote/programming/FrontEnd/js",
+    "/Users/koyote/programming/FrontEnd/learn_gulp",
+    "/Users/koyote/programming/FrontEnd/learn_webpack",
+    "/Users/koyote/programming/FrontEnd/learn_webpack/production_config/src",
+    "/Users/koyote/programming/FrontEnd/lib",
+    "/Users/koyote/programming/FrontEnd/minipack",
+    "/Users/koyote/programming/FrontEnd/my_bundler",
+    "/Users/koyote/programming/Projects/AddressList_windows/AddressList1.1/bin",
+    "/Users/koyote/programming/Projects/AddressList_windows/AddressList1.1/obj/Debug",
+    "/Users/koyote/programming/Projects/AddressList_windows/debug/bin",
+    "/Users/koyote/programming/Projects/AddressList_windows/debug/obj/Debug",
+    "/Users/koyote/programming/Projects",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/cloudfunctions",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/card",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component/@vant/weapp",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component/@vant/weapp/common/style",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component/@vant/weapp/mixins",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/images",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/my-course",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/user",
+    "/Users/koyote/programming/Projects/WisdomCourse",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/assets",
+    "/Users/koyote/programming/Projects/WisdomCourse/src",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/components",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/css",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/pages",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/statics",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/store",
+    "/Users/koyote/programming/Projects/color_quantization",
+    "/Users/koyote/programming/Projects/color_quantization/results",
+    "/Users/koyote/programming/Projects/color_quantization/results2",
+    "/Users/koyote/programming/Projects/cpoper/src",
+    "/Users/koyote/programming/Projects/major_helper_flask/api",
+    "/Users/koyote/programming/Projects/major_helper_flask/common",
+    "/Users/koyote/programming/Projects/major_helper_flask",
+    "/Users/koyote/programming/Projects/my_Yolov3_pytorch",
+    "/Users/koyote/programming/Projects/webox_admin/dist",
+    "/Users/koyote/programming/Projects/webox_admin",
+    "/Users/koyote/programming/Projects/webox_admin/src",
+    "/Users/koyote/programming/Projects/webox_admin_old/my-app",
+    "/Users/koyote/programming/Projects/webox_admin_old/my-app/src",
+    "/Users/koyote/programming/Projects/webox_flask",
+    "/Users/koyote/programming/Projects/webox_flask/migrations",
+    "/Users/koyote/programming/Projects/webox_flask/webox/api",
+    "/Users/koyote/programming/Projects/webox_flask/webox/jobs",
+    "/Users/koyote/programming/Projects/webox_flask/webox",
+    "/Users/koyote/programming/Projects/webox_front_end_dist",
+    "/Users/koyote/programming/Projects/wisdom_course_flask/migrations",
+    "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/api",
+    "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/jobs",
+    "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/OPENCVdoc",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/OPENCVdoc/opencv-slides/examples",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/dataset/exp2img",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/dataset",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/╤щ╓д╩╡╤щ┤·┬ы░№",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/╤щ╓д╩╡╤щ┤·┬ы░№/facedetecttrain",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/╤щ╓д╩╡╤щ┤·┬ы░№/matchdemo",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent",
+    "/Users/koyote/programming/Python/MLpractice",
+    "/Users/koyote/programming/Python/MLpractice/maths_modeling",
+    "/Users/koyote/programming/Python/MLpractice/ml_basic",
+    "/Users/koyote/programming/Python/MLpractice/ml_basic/knn",
+    "/Users/koyote/programming/Python/MLpractice/ml_basic/knn/kNN_hand_writing",
+    "/Users/koyote/programming/Python/MLpractice/regression_tree",
+    "/Users/koyote/programming/Python/MLpractice/tree",
+    "/Users/koyote/programming/Python/Yolov3_pytorch",
+    "/Users/koyote/programming/Python/autojump",
+    "/Users/koyote/programming/Python/autojump/tests",
+    "/Users/koyote/programming/Python/block_chain",
+    "/Users/koyote/programming/Python/data_analysis",
+    "/Users/koyote/programming/Python/data_analysis/weekly_work",
+    "/Users/koyote/programming/Python",
+    "/Users/koyote/programming/Python/learn_cv",
+    "/Users/koyote/programming/Python/learn_cv/imgs",
+    "/Users/koyote/programming/Python/learn_pyqt",
+    "/Users/koyote/programming/Python/learn_pytorch",
+    "/Users/koyote/programming/Python/learn_pytorch/data/MNIST",
+    "/Users/koyote/programming/Python/learn_pytorch/data",
+    "/Users/koyote/programming/Python/learn_socket",
+    "/Users/koyote/programming/Python/sundries",
+    "/Users/koyote/programming/SQL",
+    "/Users/koyote/programming/cplusplus_file/ADA",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6 排序/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6 排序",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/7/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/AddressBook",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/AddressBook/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/BinaryTree/BinaryTree/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/BinaryTree",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Database1_test/Database1_test/bin",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Database1_test/Database1_test/obj",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/DirectGraph",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/DirectGraph/DirectGraph/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Generalized Table",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Generalized Table/Generalized Table/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HFB's proj",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HFB's proj/HFB's proj/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HashTable-LinkAddress",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HashTable-LinkAddress/HashTable-LinkAddress/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Heap",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Heap/Heap/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HuffmanTree",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HuffmanTree/HuffmanTree/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/List",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/List/List/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyQueue",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyQueue/MyQueue/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyStack",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyStack/MyStack/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyString",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyString/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2/OpencvPro2/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2/x64",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/PriorityQueue",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/PriorityQueue/PriorityQueue/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/pro.32/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/RecursiveLinklist/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Self-BalancingBinaryTree/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Self-BalancingBinaryTree/Release",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SeqList",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SeqList/SeqList/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SortedBinaryTree",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SortedBinaryTree/SortedBinaryTree/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test/test.32/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test_OpenMP",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test_OpenMP/Test_OpenMP/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/ThreadedBinaryTree",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Tree",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Tree/Tree/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/UVa 12412/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/debug/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myCrossList",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myCrossList/myCrossList/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myLinklist",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myLinklist/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/openGL_test",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/openGL_test/openGL_test/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro/opencv_pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro/x64",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/socket_practice",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test InheritancePlusComposition/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP/test_OpenMP_KMP/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_openmp20190310",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_openmp20190310/test_openmp20190310/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/the next palindromic number",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/the next palindromic number/tnpn/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/习题2-5　分数化小数（decimal）",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/习题2-5　分数化小数（decimal）/pro.win32/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/最小值min",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/最小值min/pro/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/随机抽取",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/随机抽取/pro32/x64/Debug",
+    "/Users/koyote/programming/cplusplus_file/c_liunx_os",
+    "/Users/koyote/programming/cplusplus_file/class_realization/Tree/bin",
+    "/Users/koyote/programming/cplusplus_file/class_realization/Tree/obj",
+    "/Users/koyote/programming/cplusplus_file/class_realization/UndirectGraph/bin",
+    "/Users/koyote/programming/cplusplus_file/class_realization/UndirectGraph/obj",
+    "/Users/koyote/programming/cplusplus_file/class_realization/UnionFindSet/bin",
+    "/Users/koyote/programming/cplusplus_file/class_realization/UnionFindSet/obj",
+    "/Users/koyote/programming/cplusplus_file/learn_STL/hash_map.dSYM/Contents/Resources",
+    "/Users/koyote/programming/cplusplus_file",
+    "/Users/koyote/programming/go/TestPackage/x/y/vendor/w",
+    "/Users/koyote/programming/go/go101/articles",
+    "/Users/koyote/programming/go/go101/web/static/bootstrap/v3.3.7",
+    "/Users/koyote/programming/go/go101/web/static/code-prettify",
+    "/Users/koyote/programming/go/go101/web/static/go101",
+    "/Users/koyote/programming/go/go101/web/static",
+    "/Users/koyote/programming/go/go101/web/static/prism",
+    "/Users/koyote/programming/go/go101/web",
+    "/Users/koyote/programming/go/src",
+    "/Users/koyote/programming/go",
+    "/Users/koyote/programming/java",
+    "/Users/koyote/programming",
+    "/Users/koyote/programming/nodejs/LuotuoCoin/bilibiliDemo",
+    "/Users/koyote/programming/nodejs/LuotuoCoin/src",
+    "/Users/koyote/programming/nodejs/dir0",
+    "/Users/koyote/programming/nodejs",
+    "/Users/koyote/programming/opencv_cpp_linux",
+    "/Users/koyote/programming/temp/py兼职",
+    "/Users/koyote/programming/temp/py兼职/labprep7",
+    "/Users/koyote/programming/temp/py兼职/project2",
+    "/Users/koyote/programming/test"
+  ]
+}
