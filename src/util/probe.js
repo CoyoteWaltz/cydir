@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-07-28 00:16:14
+ * @LastEditTime: 2020-07-29 23:26:08
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -54,8 +54,10 @@ function probe(absPath, maxDepth, excludes = []) {
   if (!fs.existsSync(absPath)) {
     return [endPoints, prefixes];
   }
-  function genPrefixId(filePath) {
-    const prefix = path.dirname(filePath);
+  function genPrefixId(filePath, matcher) {
+    // const prefix = filePath.slice(0, filePath.lastIndexOf(matcher));
+    console.log(filePath, matcher, filePath.lastIndexOf(matcher));
+    const prefix = filePath.slice(0, filePath.lastIndexOf(matcher));
     let prefixId = prefixes.lastIndexOf(prefix);
     if (prefixId < 0) {
       prefixId = prefixes.push(prefix) - 1;
@@ -65,11 +67,24 @@ function probe(absPath, maxDepth, excludes = []) {
 
   function walk(filePath, curDepth = 0, chain = '', excludes = []) {
     // excludes absPath 的数组
+    if (
+      filePath ===
+      '/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP'
+    ) {
+      console.log('.....');
+    }
     const basename = path.basename(filePath);
     const matcher = path.join(chain, basename);
     if (curDepth === maxDepth) {
       probeDepth = maxDepth;
-      endPoints.push(createEndpoint(genPrefixId(filePath), matcher));
+      endPoints.push(
+        createEndpoint(
+          genPrefixId(filePath, matcher),
+          // prefixes[genPrefixId(filePath, matcher)],
+          matcher,
+          filePath
+        )
+      );
       return;
     }
     try {
@@ -81,7 +96,14 @@ function probe(absPath, maxDepth, excludes = []) {
         .filter((value) => fs.statSync(value).isDirectory());
       if (!subPaths.length) {
         probeDepth = curDepth > probeDepth ? curDepth : probeDepth;
-        endPoints.push(createEndpoint(genPrefixId(filePath), matcher));
+        endPoints.push(
+          createEndpoint(
+            genPrefixId(filePath, matcher),
+            // prefixes[genPrefixId(filePath, matcher)],
+            matcher,
+            filePath
+          )
+        );
         return;
       }
       // 第一个给 chain
@@ -106,24 +128,8 @@ function probe(absPath, maxDepth, excludes = []) {
   };
 }
 
-// const res = probe('/Users/koyote/programming', 2);
+// const res = probe('/Users/koyote/programming', Infinity);
 // console.log(res);
-
-// // get all nodes of the layer
-// const getLayer = (root, depth = 1) => {
-//   const queue = [root];
-//   while (depth) {
-//     for (let i = queue.length; i > 0; --i) {
-//       const node = queue.shift();
-//       queue.push(...node.children);
-//     }
-//     depth--;
-//   }
-//   return queue;
-// };
-
-// const res = getLayer(data, 2);
-// console.log('res: ', res);
 
 const serialize = (tree) => {
   const res = [...(tree.children || []).flatMap(serialize), tree];
@@ -168,39 +174,37 @@ const distance = (current, target) => {
 // match 到之后 但是 路径不存在 做的事情 回溯 probe
 // 逐级回溯 搜索 如果无 继续回溯 同时 exclude list 中加入上一个回溯的层 后续的
 // 都是深入到原始深度 直接拿 Config 的
-const start = 'failedPath'; // -> 直接拿节点的 prefix 如果不是节点(usualList 中) 就是字符串的 path.dirname()
-const root = 'root';
-let current = start;
+// const start = 'failedPath'; // -> 直接拿节点的 prefix 如果不是节点(usualList 中) 就是字符串的 path.dirname()
+// const root = 'root';
+// let current = start;
 
-let matchFailed = !true;
-// let traceDepth = 0;       // 回溯的次数 不用了。。。直接用 currentDepth
-let originDepth = 4; // cfg 的 currentPath
-let currentDepth = originDepth; //  这里搞个算法: distance(start, root)
-let parent;
-const excludes = [];  // 同时也是 需要更新 endpoints 和 prefixes 的数组
-if (currentDepth === -1) {
-  // 直接跳过下面的循环
-  logger.err('其实是出错的')
-  parent = root;
-}
-while (matchFailed && parent !== root ) {
-  --currentDepth;
-  parent = traceParent(current);
-  if (!fs.existsSync(parent)) {
-    // 回溯不存在 继续
-    continue;
-  }
-  // 需要触达的深度 = 原始深度 - 当前到 root 的深度
-  const res = probe(parent, originDepth - currentDepth, excludes);
-  matchFailed = match(res);
-  excludes.push(parent);
-}
-if (parent === root) {
-  // 到头了还没
-  // 重新 probe MAX_PROBE_DEPTH
-}
-
-
+// let matchFailed = !true;
+// // let traceDepth = 0;       // 回溯的次数 不用了。。。直接用 currentDepth
+// let originDepth = 4; // cfg 的 currentPath
+// let currentDepth = originDepth; //  这里搞个算法: distance(start, root)
+// let parent;
+// const excludes = [];  // 同时也是 需要更新 endpoints 和 prefixes 的数组
+// if (currentDepth === -1) {
+//   // 直接跳过下面的循环
+//   logger.err('其实是出错的')
+//   parent = root;
+// }
+// while (matchFailed && parent !== root ) {
+//   --currentDepth;
+//   parent = traceParent(current);
+//   if (!fs.existsSync(parent)) {
+//     // 回溯不存在 继续
+//     continue;
+//   }
+//   // 需要触达的深度 = 原始深度 - 当前到 root 的深度
+//   const res = probe(parent, originDepth - currentDepth, excludes);
+//   matchFailed = match(res);  // TODO
+//   excludes.push(parent);
+// }
+// if (parent === root) {
+//   // 到头了还没
+//   // 重新 probe MAX_PROBE_DEPTH 不 到 originDepth !!
+// }
 
 // 返回 父节点路径 断层数 i.e trace 失败的次数
 // 到 root path 的时候停止 root path 的有效性交给外面去判断
@@ -230,18 +234,6 @@ if (parent === root) {
 // const res = serialize(data);
 // console.log(res[res.length - 1].name, traceParent(res[res.length - 1].name));
 // console.log(res);
-
-// 验证 prefix
-const { prefixes, endPoints } = require('../../prefixtmp.json');
-const { match } = require('assert');
-
-endPoints.forEach(({ prefixId, matcher }) => {
-  const fullPath = path.join(prefixes[prefixId], path.basename(matcher));
-  // console.log(fullPath);
-  if (!fs.statSync(fullPath).isDirectory()) {
-    logger.err(fullPath);
-  }
-});
 
 module.exports = {
   // serialize,

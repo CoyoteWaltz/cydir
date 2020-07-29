@@ -3,14 +3,14 @@
 配置命令行指令`commandX` 以及 目标路径`/path/to/somewhere`
 
 ```bash
-cpop config-path /path/to/somewhere
-cpop config-command code
+cyder config-path /path/to/somewhere
+cyder config-command code
 ```
 
 对其路径下文件进行模糊匹配
 
 ```bash
-cider proj
+cyder proj
 ```
 
 如果在配置的子路径下存在类似`projectA`名字的目录
@@ -25,11 +25,13 @@ code /path/to/somewhere/../projectA
 
 ### 路径扫描 and 存储
 
-
-
 ### 模糊匹配
+
+考虑加上 上级目录的情况:
+
+- 匹配的字符串`../../match`会对前第二级的目录生效
+- 直接先找出`../../`这样的前缀，之后直接`path.resolve`即可
 
 ### 路径结果的展示
 
 root > dirname **path-name**
-

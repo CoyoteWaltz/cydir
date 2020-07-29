@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-07-27 23:27:36
+ * @LastEditTime: 2020-07-29 23:37:35
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -18,7 +18,7 @@ const logger = require('./util/log.js');
 const { pathToFileURL } = require('url');
 
 class Store {
-  initDepth = Infinity;
+  initDepth = 3;
   cfgPath = getCfgPath();
   constructor() {
     try {
@@ -73,9 +73,9 @@ class Store {
   }
   set command(value) {
     this._command = value;
-    this.save(() => {
-      logger.info(`Store command: ${value}`);
-    });
+    // this.save(() => {
+    //   logger.info(`Store command: ${value}`);
+    // });
   }
   get endPoints() {
     return this._endPoints;
@@ -93,27 +93,26 @@ class Store {
   }
   // 更新根目录 每次更新都 probe 更新
   // 不考虑异步吧
-  initEndPoints() {
-    const { endPoints, prefixes, probeDepth } = probe(
-      this._root,
-      this.initDepth
-    );
+  initEndPoints(depth = this.initDepth) {
+    const { endPoints, prefixes, probeDepth } = probe(this._root, depth);
     this._endPoints = endPoints;
     this._prefixes = prefixes;
     this.currentDepth = probeDepth;
-    // console.log(this._endPoints.length);
+
     this.save(() => {
       logger.info(`Config root path: ${this._root}`);
     });
   }
+  setDepth(value = 0) {
+    if (value <= 0) {
+      return;
+    }
+    this.currentDepth = value;
+    this.initEndPoints(value);
+  }
 }
 
 const store = new Store();
-
-store.root = '/Users/koyote/programming';
-// store.command = 'code';
-store.save();
-// console.log(store);
 
 module.exports = store;
 
