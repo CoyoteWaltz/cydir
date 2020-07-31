@@ -1,34 +1,36 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-07-29 23:47:16
+ * @LastEditTime: 2020-07-31 23:21:45
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
+ * @TODO: 写一下匹配结果之后的逻辑
  */
 
-const Fuse = require('fuse.js');
-const store = require('./store.js');
 const path = require('path');
-const fs = require('fs')
+const fs = require('fs');
+
+const Fuse = require('fuse.js');
+// const {  } = require('./util/constants.js')
+const { probe, distance, traceParent } = require('./probe.js');
 
 const scoreThreshold = 0.45;
 const diffThreshold = 0.08;
 
 /**
- * fuzzy match endPoints
+ * fuzzy match endpoints
  * return results 连续 score 相差不过 threshold 的
  * @param {string} target
- * @param {Array} endPoints
+ * @param {Array} endpoints
  */
-function scan(target, endPoints) {
-  console.log(target, endPoints.length);
+function scan(target, endpoints) {
+  console.log(target, endpoints.length);
   const option = {
     keys: ['matcher'],
     includeScore: true,
     threshold: scoreThreshold, // 这个越低越好 那个算法嘛
   };
-  // const fuse = new Fuse(endPoints, option);
-  const fuse = new Fuse(endPoints, option);
+  const fuse = new Fuse(endpoints, option);
   const matches = fuse.search(target);
   // console.log(matches);
   console.log(matches.length);
@@ -42,7 +44,7 @@ function scan(target, endPoints) {
     if (score - bestScore > diffThreshold) {
       break;
     }
-    results.push(endPoints[refIndex]);
+    results.push(endpoints[refIndex]);
   }
 
   return results;
@@ -53,65 +55,78 @@ function scan(target, endPoints) {
 // 如果能分出数组 再进行 fuse 搜索
 // 得到下标 join 回去 拼接 prefix
 
-const target = 'test omp';
-const { prefixes, endPoints } = store;
-console.log(endPoints.length);
-
-const results = scan(target, endPoints);
-console.log(
-  '-------',
-  results.map((v) => {
-    return {
-      prefix: prefixes[v.prefixId],
-      // full: path.resolve(prefixes[v.prefixId], v.matcher),
-      exists: fs.existsSync(path.resolve(prefixes[v.prefixId], v.matcher)),
-      ...v,
-    };
-  })
-);
-
-
-
-
-/**
- * 从匹配成功但是不存在的路径回溯 更新
- *
- */
-function traceProbe(abc) {}
-
-
-// TODO
 // match 到之后 但是 路径不存在 做的事情 回溯 probe
 // 逐级回溯 搜索 如果无 继续回溯 同时 exclude list 中加入上一个回溯的层 后续的
-// 都是深入到原始深度 直接拿 Config 的
-// const start = 'failedPath'; // -> 直接拿节点的 prefix 如果不是节点(usualList 中) 就是字符串的 path.dirname()
-// const root = 'root';
-// let current = start;
+/**
+ *
+ * @param {string} target
+ * @param {string} start - search start path
+ * @param {string} root - stop at root
+ * @param {number} originDepth
+ */
+function traceProbe(target, start, root, originDepth) {
+  let current = traceParent(start); // 从父开始
+  let currentDepth = distance(current, root);
+  console.log('first depth:   ', currentDepth);
+  console.log('current root: ', current, root);
+  // TODO
+  if (currentDepth === -1) {
+    // 直接跳过下面的循环
+    logger.err('其实是出错的');
+    current = root;
+  }
+  let exclude; // 同时也是 需要更新 endpoints 和 prefixes 的数组
+  const addition = {
+    endpoints: [],
+    prefixes: [],
+    updatedPath: '',
+    probeDepth: originDepth,
+  };
+  while (current !== root) {
+    if (fs.existsSync(current)) {
+      // 回溯不存在 继续
+      // 需要触达的深度 = 原始深度 - 当前到 root 的深度
+      const { endpoints, prefixes, probeDepth } = probe(
+        current,
+        originDepth - currentDepth, // probe 到原始深度
+        [exclude] // 只需要去除上一个即可
+      );
 
-// let matchFailed = !true;
-// // let traceDepth = 0;       // 回溯的次数 不用了。。。直接用 currentDepth
-// let originDepth = 4; // cfg 的 currentPath
-// let currentDepth = originDepth; //  这里搞个算法: distance(start, root)
-// let parent;
-// const excludes = [];  // 同时也是 需要更新 endpoints 和 prefixes 的数组
-// if (currentDepth === -1) {
-//   // 直接跳过下面的循环
-//   logger.err('其实是出错的')
-//   parent = root;
-// }
-// while (matchFailed && parent !== root ) {
-//   --currentDepth;
-//   parent = traceParent(current);
-//   if (!fs.existsSync(parent)) {
-//     // 回溯不存在 继续
-//     continue;
-//   }
-//   // 需要触达的深度 = 原始深度 - 当前到 root 的深度
-//   const res = probe(parent, originDepth - currentDepth, excludes);
-//   matchFailed = match(res);  // TODO
-//   excludes.push(parent);
-// }
-// if (parent === root) {
-//   // 到头了还没
-//   // 重新 probe MAX_PROBE_DEPTH 不 到 originDepth !!
-// }
+      addition.endpoints.push(...endpoints);
+      addition.prefixes.push(...prefixes);
+      const results = scan(target, endpoints);
+      if (results.length) {
+        addition.probeDepth = probeDepth;
+        addition.updatedPath = current;
+        console.log('found!!!!!');
+        return { results, addition };
+      }
+      exclude = current;
+    }
+    current = traceParent(current);
+    --currentDepth;
+    console.log('next while deppppth  ', currentDepth);
+  }
+  let results = [];
+  if (current === root) {
+    // 到头了还没
+    // 重新 probe 到 originDepth !!
+    console.log('reach root!!');
+    const { endpoints, prefixes, probeDepth } = probe(
+      current,
+      originDepth // probe 到原始深度
+    );
+    results = scan(target, endpoints);
+    addition.endpoints = endpoints;
+    addition.prefixes = prefixes;
+    addition.probeDepth = probeDepth;
+    addition.updatedPath = root;
+  }
+
+  return { results, addition };
+}
+
+module.exports = {
+  traceProbe,
+  scan,
+};

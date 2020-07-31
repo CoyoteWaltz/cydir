@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-07-29 23:37:35
+ * @LastEditTime: 2020-07-31 22:03:29
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -12,10 +12,9 @@ const path = require('path');
 const fs = require('fs');
 
 // const { getMatchers } = require('./util/endpoint.js');
-const { toJSON, noop } = require('./util/chores.js');
-const { getCfgPath, probe } = require('./util/probe.js');
-const logger = require('./util/log.js');
-const { pathToFileURL } = require('url');
+const { toJSON, noop } = require('../util/chores.js');
+const { getCfgPath, probe } = require('../probe.js');
+const logger = require('../util/log.js');
 
 class Store {
   initDepth = 3;
@@ -25,10 +24,12 @@ class Store {
       const cfg = JSON.parse(fs.readFileSync(this.cfgPath));
       this._root = cfg.root || '';
       this._command = cfg.command || '';
-      this._endPoints = cfg.endPoints || [];
+      this._endpoints = cfg.endpoints || [];
       this._prefixes = cfg.prefixes || [];
       this.currentDepth = cfg.currentDepth || this.initDepth;
-    } catch (e) {}
+    } catch (e) {
+      logger.err(e)
+    }
   }
   save(cb) {
     cb = cb || noop;
@@ -46,7 +47,7 @@ class Store {
       command: this._command || '',
       root: this._root || '',
       currentDepth: this.currentDepth,
-      endPoints: this._endPoints || [],
+      endpoints: this._endpoints || [],
       // TODO
       usualList: this._usualList || [],
       prefixes: this._prefixes || [],
@@ -66,7 +67,7 @@ class Store {
       logger.err('Path is not a directory!').exit();
     }
     this._root = value;
-    this.initEndPoints();
+    this.initEndpoints();
   }
   get command() {
     return this._command;
@@ -77,12 +78,12 @@ class Store {
     //   logger.info(`Store command: ${value}`);
     // });
   }
-  get endPoints() {
-    return this._endPoints;
+  get endpoints() {
+    return this._endpoints;
   }
   // TODO
-  set endPoints(value) {
-    this._endPoints = value;
+  set endpoints(value) {
+    this._endpoints = value;
   }
   get prefixes() {
     return this._prefixes;
@@ -93,9 +94,10 @@ class Store {
   }
   // 更新根目录 每次更新都 probe 更新
   // 不考虑异步吧
-  initEndPoints(depth = this.initDepth) {
-    const { endPoints, prefixes, probeDepth } = probe(this._root, depth);
-    this._endPoints = endPoints;
+  initEndpoints(depth = this.initDepth) {
+    console.log('----root: ', this._root === '');
+    const { endpoints, prefixes, probeDepth } = probe(this._root, depth);
+    this._endpoints = endpoints;
     this._prefixes = prefixes;
     this.currentDepth = probeDepth;
 
@@ -108,7 +110,7 @@ class Store {
       return;
     }
     this.currentDepth = value;
-    this.initEndPoints(value);
+    this.initEndpoints(value);
   }
 }
 

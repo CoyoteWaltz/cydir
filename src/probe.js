@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-07-29 23:26:08
+ * @LastEditTime: 2020-07-31 23:14:36
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -9,17 +9,17 @@
 const path = require('path');
 const fs = require('fs');
 // const { diffArrays } = require('./chores.js');
-const { createEndpoint } = require('./endpoint.js');
+const { createEndpoint } = require('./store/endpoint.js');
 
-const { MAX_PROBE_DEPTH, BLACKLIST } = require('./constants.js');
-const logger = require('./log.js');
+const { MAX_PROBE_DEPTH, BLACKLIST } = require('./util/constants.js');
+const logger = require('./util/log.js');
 
 // const data = require('../../paths.json');
 
 // TODO
 function getCfgPath() {
   // for debug
-  const tmpPath = path.resolve(__dirname, '../../prefixtmp.json');
+  const tmpPath = '/Users/koyote/programming/Projects/cpoper/prefixtmp.json';
 
   const glbPth = path.resolve(
     process.env.HOME || process.env.USERPROFILE || __dirname, //  直接拿的 环境变量 HOME
@@ -44,19 +44,19 @@ function getCfgPath() {
  * @param {number} maxDepth 到根的距离
  */
 function probe(absPath, maxDepth, excludes = []) {
-  // return [Endpoints[], prefix[]]
+  // return [endpoints[], prefix[]]
   maxDepth = maxDepth || MAX_PROBE_DEPTH;
   // 递归遍历目录 到达一定深度结束 返回 tree 节点结果
   // 接受参数 绝对路径
-  const endPoints = [];
+  const endpoints = [];
   const prefixes = [];
   let probeDepth = 0;
   if (!fs.existsSync(absPath)) {
-    return [endPoints, prefixes];
+    return { endpoints, prefixes, probeDepth };
   }
   function genPrefixId(filePath, matcher) {
     // const prefix = filePath.slice(0, filePath.lastIndexOf(matcher));
-    console.log(filePath, matcher, filePath.lastIndexOf(matcher));
+    // console.log(filePath, matcher, filePath.lastIndexOf(matcher));
     const prefix = filePath.slice(0, filePath.lastIndexOf(matcher));
     let prefixId = prefixes.lastIndexOf(prefix);
     if (prefixId < 0) {
@@ -67,17 +67,11 @@ function probe(absPath, maxDepth, excludes = []) {
 
   function walk(filePath, curDepth = 0, chain = '', excludes = []) {
     // excludes absPath 的数组
-    if (
-      filePath ===
-      '/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP'
-    ) {
-      console.log('.....');
-    }
     const basename = path.basename(filePath);
     const matcher = path.join(chain, basename);
     if (curDepth === maxDepth) {
       probeDepth = maxDepth;
-      endPoints.push(
+      endpoints.push(
         createEndpoint(
           genPrefixId(filePath, matcher),
           // prefixes[genPrefixId(filePath, matcher)],
@@ -96,7 +90,7 @@ function probe(absPath, maxDepth, excludes = []) {
         .filter((value) => fs.statSync(value).isDirectory());
       if (!subPaths.length) {
         probeDepth = curDepth > probeDepth ? curDepth : probeDepth;
-        endPoints.push(
+        endpoints.push(
           createEndpoint(
             genPrefixId(filePath, matcher),
             // prefixes[genPrefixId(filePath, matcher)],
@@ -122,7 +116,7 @@ function probe(absPath, maxDepth, excludes = []) {
   walk(absPath, 0, '', excludes); // chain 传 ''
   console.log('probe depth: ', probeDepth);
   return {
-    endPoints,
+    endpoints,
     prefixes,
     probeDepth,
   };
@@ -237,8 +231,9 @@ const distance = (current, target) => {
 
 module.exports = {
   // serialize,
-  // traceParent,
+  traceParent,
   getCfgPath,
   // traceExistParent,
   probe,
+  distance,
 };

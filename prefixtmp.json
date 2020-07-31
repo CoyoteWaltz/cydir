@@ -2,7 +2,7 @@
   "command": "code",
   "root": "/Users/koyote/programming",
   "currentDepth": 9,
-  "endPoints": [
+  "endpoints": [
     {
       "prefixId": 0,
       "matcher": "programming/FrontEnd/fork_proj/HomePage-master/dist/assets",
@@ -755,8 +755,13 @@
     },
     {
       "prefixId": 14,
-      "matcher": "cpoper/src/configuration",
-      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/configuration"
+      "matcher": "cpoper/src/cli",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/cli"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "store",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/store"
     },
     {
       "prefixId": 30,

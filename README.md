@@ -25,6 +25,8 @@ code /path/to/somewhere/../projectA
 
 ### 路径扫描 and 存储
 
+每次匹配成功将 endpoint 加入 usualList 同时删除
+
 ### 模糊匹配
 
 考虑加上 上级目录的情况:
