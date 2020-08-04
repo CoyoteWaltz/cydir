@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-07-31 23:21:45
+ * @LastEditTime: 2020-08-04 22:38:06
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 写一下匹配结果之后的逻辑
@@ -13,8 +13,9 @@ const fs = require('fs');
 const Fuse = require('fuse.js');
 // const {  } = require('./util/constants.js')
 const { probe, distance, traceParent } = require('./probe.js');
+const logger = require('./util/log.js');
 
-const scoreThreshold = 0.45;
+const scoreThreshold = 0.15;
 const diffThreshold = 0.08;
 
 /**
@@ -22,6 +23,7 @@ const diffThreshold = 0.08;
  * return results 连续 score 相差不过 threshold 的
  * @param {string} target
  * @param {Array} endpoints
+ * @return { { index: <int>, endpoint: <endpoint> }[] }
  */
 function scan(target, endpoints) {
   console.log(target, endpoints.length);
@@ -38,9 +40,9 @@ function scan(target, endpoints) {
     return [];
   }
   const bestScore = matches[0].score;
-  let results = [];
+  const results = [];
 
-  for (const { refIndex, score } of matches) {
+  for (const { score, refIndex } of matches) {
     if (score - bestScore > diffThreshold) {
       break;
     }
@@ -64,13 +66,21 @@ function scan(target, endpoints) {
  * @param {string} root - stop at root
  * @param {number} originDepth
  */
-function traceProbe(target, start, root, originDepth) {
+function traceProbe(
+  target,
+  start,
+  { root, currentDepth: originDepth, prefixes: oldPrefixes }
+) {
+  // prefixes copy 一份 做增量更新 之后替换原来的
+  // endpoints 先做原始的过滤 然后在增量
+  console.log('ori dep:  ', originDepth);
   let current = traceParent(start); // 从父开始
   let currentDepth = distance(current, root);
   console.log('first depth:   ', currentDepth);
   console.log('current root: ', current, root);
   // TODO
-  if (currentDepth === -1) {
+  // if (currentDepth === -1) {
+  if (start === root) {
     // 直接跳过下面的循环
     logger.err('其实是出错的');
     current = root;
@@ -78,23 +88,27 @@ function traceProbe(target, start, root, originDepth) {
   let exclude; // 同时也是 需要更新 endpoints 和 prefixes 的数组
   const addition = {
     endpoints: [],
-    prefixes: [],
+    prefixes: oldPrefixes.slice(), // copy
     updatedPath: '',
     probeDepth: originDepth,
   };
+
   while (current !== root) {
+    console.log('loop:  ', current);
     if (fs.existsSync(current)) {
       // 回溯不存在 继续
       // 需要触达的深度 = 原始深度 - 当前到 root 的深度
-      const { endpoints, prefixes, probeDepth } = probe(
+      const { endpoints, probeDepth } = probe(
         current,
         originDepth - currentDepth, // probe 到原始深度
+        addition.prefixes,
         [exclude] // 只需要去除上一个即可
       );
 
       addition.endpoints.push(...endpoints);
-      addition.prefixes.push(...prefixes);
+      // addition.prefixes.push(...prefixes);
       const results = scan(target, endpoints);
+      console.log('ssssssssscan');
       if (results.length) {
         addition.probeDepth = probeDepth;
         addition.updatedPath = current;
@@ -112,13 +126,15 @@ function traceProbe(target, start, root, originDepth) {
     // 到头了还没
     // 重新 probe 到 originDepth !!
     console.log('reach root!!');
-    const { endpoints, prefixes, probeDepth } = probe(
+    const { endpoints, probeDepth } = probe(
       current,
-      originDepth // probe 到原始深度
+      originDepth, // probe 到原始深度
+      addition.prefixes,
+      [exclude]
     );
     results = scan(target, endpoints);
     addition.endpoints = endpoints;
-    addition.prefixes = prefixes;
+    // addition.prefixes = prefixes;  // 无需更新
     addition.probeDepth = probeDepth;
     addition.updatedPath = root;
   }
@@ -126,7 +142,42 @@ function traceProbe(target, start, root, originDepth) {
   return { results, addition };
 }
 
+// traceProbe 搜索成功之后 对 matcher 拆分再次匹配获得精确路径
+// 生成新的 endpoint 放入 usualList (可能有 middle)
+// 如果 拆分匹配的结果是 matcher 就删除 endpoints
+// TODO
+/**
+ *
+ * @param {string} target
+ * @param {object} result endpoint
+ * @param {Array} endpoints
+ */
+function extract(target, endpoint, endpointsList) {
+  console.log('before --- ', endpoint);
+  const matcher = endpoint.matcher;
+  const split = matcher.split(path.sep);
+  console.log(split);
+  const fuse = new Fuse(split);
+  const res = fuse.search(target);
+  console.log(res);
+  const precise = res[0].refIndex;
+
+  const newEndpoint = {
+    ...endpoint,
+    middle: split.slice(0, precise).join(path.sep),
+    matcher: split.slice(precise).join(path.sep),
+  };
+  // console.log('new ---', newEndpoint);
+  // 删原始
+  if (newEndpoint !== endpoint.matcher) {
+    // endpointsList.splice(index, 1);
+  }
+
+  return newEndpoint;
+}
+
 module.exports = {
   traceProbe,
   scan,
+  extract,
 };

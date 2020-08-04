@@ -1,11 +1,12 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-07-31 22:03:29
+ * @LastEditTime: 2020-08-04 22:35:55
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
- * @TODO: 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
- * 用下标做真的好吗？
+ * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
+ *        2. 用下标做真的好吗？
+ *        3. 构造时读取文件检查文件格式 不符合就 reset
  */
 
 const path = require('path');
@@ -26,9 +27,10 @@ class Store {
       this._command = cfg.command || '';
       this._endpoints = cfg.endpoints || [];
       this._prefixes = cfg.prefixes || [];
+      this.usualList = cfg.usualList || [];
       this.currentDepth = cfg.currentDepth || this.initDepth;
     } catch (e) {
-      logger.err(e)
+      logger.err(e);
     }
   }
   save(cb) {
@@ -96,9 +98,9 @@ class Store {
   // 不考虑异步吧
   initEndpoints(depth = this.initDepth) {
     console.log('----root: ', this._root === '');
-    const { endpoints, prefixes, probeDepth } = probe(this._root, depth);
+    this._prefixes = [];
+    const { endpoints, probeDepth } = probe(this._root, depth, this._prefixes);
     this._endpoints = endpoints;
-    this._prefixes = prefixes;
     this.currentDepth = probeDepth;
 
     this.save(() => {
@@ -117,13 +119,3 @@ class Store {
 const store = new Store();
 
 module.exports = store;
-
-// const node = {
-//   name: '',
-//   weight: 0,
-//   children: [], // 获得子路径的数量
-//   purity: 0, // 文件数量 / 目录数
-//   path: 0, // 相对于根结点的距离 root 为 0
-//   updateTime: Date.now(), // 每次遍历生成一次即可
-//   passTimes: 0,
-// };

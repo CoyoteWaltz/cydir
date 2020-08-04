@@ -37,3 +37,5 @@ code /path/to/somewhere/../projectA
 ### 路径结果的展示
 
 root > dirname **path-name**
+
+reset? 检查配置文件是否符合格式

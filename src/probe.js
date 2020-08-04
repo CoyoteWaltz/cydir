@@ -1,20 +1,17 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-07-31 23:14:36
+ * @LastEditTime: 2020-08-04 22:32:45
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
 
 const path = require('path');
 const fs = require('fs');
-// const { diffArrays } = require('./chores.js');
 const { createEndpoint } = require('./store/endpoint.js');
 
 const { MAX_PROBE_DEPTH, BLACKLIST } = require('./util/constants.js');
 const logger = require('./util/log.js');
-
-// const data = require('../../paths.json');
 
 // TODO
 function getCfgPath() {
@@ -42,14 +39,16 @@ function getCfgPath() {
  *
  * @param {string} absPath
  * @param {number} maxDepth 到根的距离
+ * @param {Array} prefixes modified inside!
+ * @param {Array} excludes
+ * @returns {object}
  */
-function probe(absPath, maxDepth, excludes = []) {
-  // return [endpoints[], prefix[]]
+function probe(absPath, maxDepth, prefixes, excludes = []) {
+  // return [endpoints[]]
   maxDepth = maxDepth || MAX_PROBE_DEPTH;
   // 递归遍历目录 到达一定深度结束 返回 tree 节点结果
   // 接受参数 绝对路径
   const endpoints = [];
-  const prefixes = [];
   let probeDepth = 0;
   if (!fs.existsSync(absPath)) {
     return { endpoints, prefixes, probeDepth };
@@ -67,16 +66,15 @@ function probe(absPath, maxDepth, excludes = []) {
 
   function walk(filePath, curDepth = 0, chain = '', excludes = []) {
     // excludes absPath 的数组
-    const basename = path.basename(filePath);
-    const matcher = path.join(chain, basename);
+    const matcher = path.join(chain, path.basename(filePath));
     if (curDepth === maxDepth) {
       probeDepth = maxDepth;
       endpoints.push(
         createEndpoint(
           genPrefixId(filePath, matcher),
-          // prefixes[genPrefixId(filePath, matcher)],
           matcher,
-          filePath
+          '', // TODO 删
+          path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
         )
       );
       return;
@@ -93,9 +91,9 @@ function probe(absPath, maxDepth, excludes = []) {
         endpoints.push(
           createEndpoint(
             genPrefixId(filePath, matcher),
-            // prefixes[genPrefixId(filePath, matcher)],
             matcher,
-            filePath
+            '', // TODO 删
+            path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
           )
         );
         return;
@@ -117,13 +115,10 @@ function probe(absPath, maxDepth, excludes = []) {
   console.log('probe depth: ', probeDepth);
   return {
     endpoints,
-    prefixes,
+    // prefixes,
     probeDepth,
   };
 }
-
-// const res = probe('/Users/koyote/programming', Infinity);
-// console.log(res);
 
 const serialize = (tree) => {
   const res = [...(tree.children || []).flatMap(serialize), tree];
@@ -137,12 +132,6 @@ const traceParent = (absPath) => {
   return path.dirname(absPath);
 };
 
-// current: /root/a /b/c/d/e/f
-//  target: /root/a /g/c
-// => -1
-// current: /root/a/b/c/d/e/f
-//  target: /root/a/b/c
-// => 3  /d/e/f
 /**
  *
  * all abs paths
@@ -160,80 +149,11 @@ const distance = (current, target) => {
   }
   return sub[1].trim(sep).split(sep).length - +(sub[1][0] === sep); // in case: /root/a/ /root/a/b
 };
-// let rroot = '/root/a/b/c/d/e';
-// let sssub = '/root/a/b/c/d/e/d/f/s/f/s';
-// console.log(distance(sssub, rroot));
-
-// TODO
-// match 到之后 但是 路径不存在 做的事情 回溯 probe
-// 逐级回溯 搜索 如果无 继续回溯 同时 exclude list 中加入上一个回溯的层 后续的
-// 都是深入到原始深度 直接拿 Config 的
-// const start = 'failedPath'; // -> 直接拿节点的 prefix 如果不是节点(usualList 中) 就是字符串的 path.dirname()
-// const root = 'root';
-// let current = start;
-
-// let matchFailed = !true;
-// // let traceDepth = 0;       // 回溯的次数 不用了。。。直接用 currentDepth
-// let originDepth = 4; // cfg 的 currentPath
-// let currentDepth = originDepth; //  这里搞个算法: distance(start, root)
-// let parent;
-// const excludes = [];  // 同时也是 需要更新 endpoints 和 prefixes 的数组
-// if (currentDepth === -1) {
-//   // 直接跳过下面的循环
-//   logger.err('其实是出错的')
-//   parent = root;
-// }
-// while (matchFailed && parent !== root ) {
-//   --currentDepth;
-//   parent = traceParent(current);
-//   if (!fs.existsSync(parent)) {
-//     // 回溯不存在 继续
-//     continue;
-//   }
-//   // 需要触达的深度 = 原始深度 - 当前到 root 的深度
-//   const res = probe(parent, originDepth - currentDepth, excludes);
-//   matchFailed = match(res);  // TODO
-//   excludes.push(parent);
-// }
-// if (parent === root) {
-//   // 到头了还没
-//   // 重新 probe MAX_PROBE_DEPTH 不 到 originDepth !!
-// }
-
-// 返回 父节点路径 断层数 i.e trace 失败的次数
-// 到 root path 的时候停止 root path 的有效性交给外面去判断
-// const traceExistParent = (absPath, rootPath) => {
-//   if (!rootPath) {
-//     // TODO 这里改成 log err
-//     throw new Error('No root path config!');
-//   }
-//   let count = 0;
-//   let parent = traceParent(absPath);
-//   while (!fs.existsSync(parent) && parent !== rootPath) {
-//     parent = traceParent(parent);
-//     count++;
-//   }
-//   return { parentPath: parent, failCount: count };
-// };
-
-// const rres = traceExistParent(
-//   '/sss/vvv/ccc/sdsfa/sdfsdaf/fsds',
-//   '/sss/vvv/ccc'
-// );
-// console.log(rres);
-
-// const res = probe('/Users/koyote/programming', data);
-// console.log(res);
-
-// const res = serialize(data);
-// console.log(res[res.length - 1].name, traceParent(res[res.length - 1].name));
-// console.log(res);
 
 module.exports = {
-  // serialize,
+  serialize,
   traceParent,
   getCfgPath,
-  // traceExistParent,
   probe,
   distance,
 };
