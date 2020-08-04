@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-04 22:38:06
+ * @LastEditTime: 2020-08-05 00:10:15
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 写一下匹配结果之后的逻辑
@@ -82,14 +82,14 @@ function traceProbe(
   // if (currentDepth === -1) {
   if (start === root) {
     // 直接跳过下面的循环
-    logger.err('其实是出错的');
+    logger.err('start === root');
     current = root;
   }
   let exclude; // 同时也是 需要更新 endpoints 和 prefixes 的数组
   const addition = {
     endpoints: [],
     prefixes: oldPrefixes.slice(), // copy
-    updatedPath: '',
+    updatePath: '',
     probeDepth: originDepth,
   };
 
@@ -111,7 +111,7 @@ function traceProbe(
       console.log('ssssssssscan');
       if (results.length) {
         addition.probeDepth = probeDepth;
-        addition.updatedPath = current;
+        addition.updatePath = current;
         console.log('found!!!!!');
         return { results, addition };
       }
@@ -136,7 +136,7 @@ function traceProbe(
     addition.endpoints = endpoints;
     // addition.prefixes = prefixes;  // 无需更新
     addition.probeDepth = probeDepth;
-    addition.updatedPath = root;
+    addition.updatePath = root;
   }
 
   return { results, addition };
@@ -152,7 +152,7 @@ function traceProbe(
  * @param {object} result endpoint
  * @param {Array} endpoints
  */
-function extract(target, endpoint, endpointsList) {
+function extract(target, endpoint) {
   console.log('before --- ', endpoint);
   const matcher = endpoint.matcher;
   const split = matcher.split(path.sep);
@@ -161,13 +161,14 @@ function extract(target, endpoint, endpointsList) {
   const res = fuse.search(target);
   console.log(res);
   const precise = res[0].refIndex;
+  console.log('precise ', precise);
 
   const newEndpoint = {
     ...endpoint,
     middle: split.slice(0, precise).join(path.sep),
-    matcher: split.slice(precise).join(path.sep),
+    matcher: split.slice(precise, precise + 1).join(path.sep),
   };
-  // console.log('new ---', newEndpoint);
+  console.log('new ---', newEndpoint);
   // 删原始
   if (newEndpoint !== endpoint.matcher) {
     // endpointsList.splice(index, 1);

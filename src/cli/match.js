@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-04 22:33:37
+ * @LastEditTime: 2020-08-05 00:14:40
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -22,15 +22,20 @@ function handleTrace(traceRes, state) {
   state.newDepth = traceRes.addition.probeDepth;
   state.newPrefixes = traceRes.addition.prefixes;
   state.newEndpoints = traceRes.addition.endpoints;
+  state.updatePath = traceRes.addition.updatePath;
   const results = traceRes.results;
-  if (results.length && preFire(results, traceRes.addition)) {
+  if (results.length && preFire(results, state.newPrefixes)) {
     logger.info('回溯成功!!');
     state.results = results;
     return true;
   }
   return false;
 }
-
+/**
+ *
+ * @param {string} target
+ * @returns {object} state
+ */
 function match(target) {
   const store = require('../store');
   const state = {
@@ -38,6 +43,8 @@ function match(target) {
     newDepth: -1,
     newPrefixes: [],
     newEndpoints: [],
+    results: [],
+    updatePath: '',
   };
   let results = scan(target, store.usualList);
   if (results.length) {
@@ -131,16 +138,13 @@ function match(target) {
  *
  * @param {Array} results endpoints[]
  */
-function preFire(results) {
+function preFire(results, prefixes) {
+  console.log(results);
   const fullPaths = results
-    .map((ep) => parseFullPath(ep))
+    .map((ep) => parseFullPath(ep, prefixes))
     .filter((p) => fs.existsSync(p));
-  if (fullPaths.length > 1) {
+  if (fullPaths.length >= 1) {
     // TODO
-    console.log('yes! fire! ', fullPaths);
-    return true;
-  } else if (fullPaths.length === 1) {
-    // fire();
     console.log('yes! fire! ', fullPaths);
     return true;
   }

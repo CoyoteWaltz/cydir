@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-04 22:35:55
+ * @LastEditTime: 2020-08-05 00:01:36
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -51,7 +51,7 @@ class Store {
       currentDepth: this.currentDepth,
       endpoints: this._endpoints || [],
       // TODO
-      usualList: this._usualList || [],
+      usualList: this.usualList || [],
       prefixes: this._prefixes || [],
     };
   }
@@ -85,7 +85,11 @@ class Store {
   }
   // TODO
   set endpoints(value) {
-    this._endpoints = value;
+    if (Array.isArray(value)) {
+      this._endpoints = value;
+    } else {
+      logger.err('endpoints store not Array!').info(value);
+    }
   }
   get prefixes() {
     return this._prefixes;
