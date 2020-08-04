@@ -3,14 +3,14 @@
 配置命令行指令`commandX` 以及 目标路径`/path/to/somewhere`
 
 ```bash
-cyder config-path /path/to/somewhere
-cyder config-command code
+cydir config-path /path/to/somewhere
+cydir config-command code
 ```
 
 对其路径下文件进行模糊匹配
 
 ```bash
-cyder proj
+cydir proj
 ```
 
 如果在配置的子路径下存在类似`projectA`名字的目录
