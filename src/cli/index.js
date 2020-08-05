@@ -1,22 +1,27 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-05 00:08:09
+ * @LastEditTime: 2020-08-05 21:47:15
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
  */
 
+const { fire } = require('./command.js');
 const match = require('./match.js');
 const store = require('../store');
 const { extract } = require('../search.js');
+const { parseFullPath } = require('../store/endpoint.js');
+const logger = require('../util/log.js');
 
 function searchHandler(target) {
   const newState = match(target);
   const results = newState.results;
   if (newState.inUsual) {
     // 从 ul 匹配的 直接 fire
-    // fire(results); // TODO
+    console.log('rrr>>>> ', results);
+    const targetPath = parseFullPath(results[0]);
+    fire(targetPath); // TODO
   } else if (results.length) {
     // 有匹配结果
     // 多结果的提示
@@ -56,6 +61,13 @@ function searchHandler(target) {
       }
       store.prefixes = newState.newPrefixes;
     }
+    fire(parseFullPath(toUsual));
+  } else {
+    // 没有结果
+    logger
+      .err('Failed to find!')
+      .info('Please give me a more precise name.')
+      .exit();
   }
 }
 

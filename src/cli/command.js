@@ -1,39 +1,48 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
- * @Date: 2020-07-16 22:24:37
- * @LastEditTime: 2020-07-23 00:29:54
+ * @Date: 2020-07-17 23:10:37
+ * @LastEditTime: 2020-08-05 22:42:46
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
- * @Description:
+ * @Description: 处理命令相关
+ * @TODO:
  */
 
-const fs = require('fs');
-const { configurationPath } = require('../util/path.js');
-const { jsonStringify } = require('../util/chores.js');
-const log = require('../util/log.js');
+const { exec } = require('child_process');
 
-function configCmd(command) {
-  // log.info(command);
+const logger = require('../util/log.js');
+const store = require('../store');
 
-  if (!command) {
-    log.err('No command to set!');
-  }
-  const configFn = configurationPath();
-  if (!fs.existsSync(configFn)) {
-    // initialize a config object
-    // todo get an empty config for init
-    const config = {
-      command: [command],
-    };
-    console.log(config);
-    // store
-    fs.writeFileSync(configFn, jsonStringify(config));
-  } else {
-    const data = require(configFn);
-    console.log(data);
-    data.command = command;
-    fs.writeFileSync(configFn, jsonStringify(data));
-  }
-  log.info(`Config command ${command}`)
+/**
+ *
+ * @param {string} targetPath ensured an existed path
+ */
+function fire(targetPath) {
+  const execution = `${store.command} ${targetPath}`;
+  logger
+    .emphasisPath(targetPath)
+    .question('', 'sure?')
+    .then(() => {
+      exec(execution, (err, stdout, stderr) => {
+        if (err) {
+          logger.err(err);
+        }
+        if (stderr) {
+          logger.err(stderr);
+        }
+        if (stdout) {
+          logger.info('stdout: ');
+          console.log(stdout);
+        }
+        logger.info('Success!');
+        store.cfgPath = './fire.json';
+        store.save();
+      });
+    })
+    .catch(() => {
+      logger.info('Do nothing...');
+    });
 }
-configCmd('eeeee');
-module.exports = configCmd;
+
+module.exports = {
+  fire,
+};

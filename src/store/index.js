@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-05 00:01:36
+ * @LastEditTime: 2020-08-05 22:31:20
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -16,10 +16,13 @@ const fs = require('fs');
 const { toJSON, noop } = require('../util/chores.js');
 const { getCfgPath, probe } = require('../probe.js');
 const logger = require('../util/log.js');
+const { getCommandTips } = require('../util/constants.js');
 
 class Store {
   initDepth = 3;
-  cfgPath = getCfgPath();
+  // cfgPath = getCfgPath();
+  cfgPath = './fire.json'; // TODO del
+
   constructor() {
     try {
       const cfg = JSON.parse(fs.readFileSync(this.cfgPath));
@@ -76,9 +79,10 @@ class Store {
   }
   set command(value) {
     this._command = value;
-    // this.save(() => {
-    //   logger.info(`Store command: ${value}`);
-    // });
+    this.save(() => {
+      logger.info(`Store command: ${this._command}`);
+      logger.notice(getCommandTips(this._command));
+    });
   }
   get endpoints() {
     return this._endpoints;

@@ -18,7 +18,7 @@ cydir proj
 等同于执行
 
 ```bash
-code /path/to/somewhere/../projectA
+code /path/to/somewhere/.../projectA
 ```
 
 目标/功能：不用再去到对应目录了 在任何地方 `cider <fuzzy_path>` 即可用编辑器打开项目

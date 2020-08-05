@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-05 00:14:40
+ * @LastEditTime: 2020-08-05 21:46:51
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -52,7 +52,7 @@ function match(target) {
     if (preFire(results)) {
       // 不用更新
       state.inUsual = true;
-      // state.results = results;
+      state.results = results;
       return state;
     } else {
       // 路径不存在
@@ -106,7 +106,8 @@ function match(target) {
   console.log('nooooo: ', state.newEndpoints.length);
   if (state.newEndpoints.length) {
     for (const endpoint of state.newEndpoints.slice()) {
-      const fullPath = parseFullPath(endpoint);
+      const fullPath = parseFullPath(endpoint, state.newPrefixes);
+      
       const { endpoints: newEps, probeDepth } = probe(
         fullPath,
         Infinity,
@@ -123,6 +124,7 @@ function match(target) {
         //   .info(parseFullPath(results[0]));
         // console.log(store.prefixes.map((v, i) => `${i}  ${v}`));
         state.results = results;
+        state.newDepth += probeDepth;
         // return;
       }
     }

@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 01:05:34
- * @LastEditTime: 2020-08-04 22:36:22
+ * @LastEditTime: 2020-08-05 22:43:02
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: log
  */
@@ -9,6 +9,7 @@
 const chalk = require('chalk');
 const readline = require('readline');
 const { toJSON } = require('./chores.js');
+const path = require('path');
 
 const logger = {
   exit(flag = true) {
@@ -20,8 +21,21 @@ const logger = {
     return this;
   },
   info(msg) {
-    msg = typeof msg === 'string' ? chalk.green(msg) : chalk.white(toJSON(msg));
+    msg = typeof msg === 'string' ? chalk.white(msg) : chalk.white(toJSON(msg));
     console.log(chalk.bold.bgGreen.white(' Info '), msg);
+    return this;
+  },
+  emphasisPath(dirPath) {
+    console.log(
+      chalk.bold.yellowBright('Got it!'),
+      `${chalk.bold.white(path.dirname(dirPath))}${chalk.bold.yellow(
+        path.sep + path.basename(dirPath)
+      )}`
+    );
+    return this;
+  },
+  notice(msg) {
+    console.log(chalk.bold.bgYellow.white(' Notice '), chalk.bold.yellow(msg));
     return this;
   },
   // TODO
@@ -31,8 +45,7 @@ const logger = {
         input: process.stdin,
         output: process.stdout,
       });
-      console.log(chalk.bold.yellowBright('Oops!'), chalk.yellow(tips));
-      rl.question(`${question} [y/n]\n`, (answer) => {
+      rl.question(`${tips? chalk.yellow(tips) + ' ': ''}${question} [y/n]`, (answer) => {
         if (answer.toLowerCase() === 'y') {
           resolve();
           rl.close();
@@ -44,6 +57,5 @@ const logger = {
     });
   },
 };
-
 
 module.exports = logger;
