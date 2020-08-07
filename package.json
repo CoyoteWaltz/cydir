@@ -4,7 +4,7 @@
   "description": "cmd tool for openning ide",
   "author": "CoyoteWaltz <coyote_waltz@163.com>",
   "bin": {
-    "cpop": "./src/index.js"
+    "cydir": "./src/index.js"
   },
   "main": "index.js",
   "scripts": {

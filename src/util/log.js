@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 01:05:34
- * @LastEditTime: 2020-08-05 22:43:02
+ * @LastEditTime: 2020-08-07 22:57:42
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: log
  */
@@ -21,7 +21,7 @@ const logger = {
     return this;
   },
   info(msg) {
-    msg = typeof msg === 'string' ? chalk.white(msg) : chalk.white(toJSON(msg));
+    msg = typeof msg === 'string' ? msg : toJSON(msg);
     console.log(chalk.bold.bgGreen.white(' Info '), msg);
     return this;
   },
@@ -35,7 +35,7 @@ const logger = {
     return this;
   },
   notice(msg) {
-    console.log(chalk.bold.bgYellow.white(' Notice '), chalk.bold.yellow(msg));
+    console.log(chalk.bold.bgYellow.white(' Notice '), chalk.bold.yellow.italic(msg));
     return this;
   },
   // TODO

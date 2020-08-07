@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-04 22:32:45
+ * @LastEditTime: 2020-08-07 23:19:36
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -16,7 +16,7 @@ const logger = require('./util/log.js');
 // TODO
 function getCfgPath() {
   // for debug
-  const tmpPath = '/Users/koyote/programming/Projects/cpoper/prefixtmp.json';
+  const tmpPath = '/Users/koyote/programming/Projects/cpoper/nnnntmp.json';
 
   const glbPth = path.resolve(
     process.env.HOME || process.env.USERPROFILE || __dirname, //  直接拿的 环境变量 HOME
@@ -44,6 +44,7 @@ function getCfgPath() {
  * @returns {object}
  */
 function probe(absPath, maxDepth, prefixes, excludes = []) {
+  console.log(absPath);
   // return [endpoints[]]
   maxDepth = maxDepth || MAX_PROBE_DEPTH;
   // 递归遍历目录 到达一定深度结束 返回 tree 节点结果
@@ -79,13 +80,26 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
       );
       return;
     }
+    // console.log('matcher: ', matcher);
     try {
       const subPaths = fs
         .readdirSync(filePath)
         .filter((value) => !BLACKLIST.includes(value))
         .map((value) => path.resolve(filePath, value)) // 转 abs path
         .filter((value) => !excludes.includes(value)) // TODO 这一步可能要在想想
-        .filter((value) => fs.statSync(value).isDirectory());
+        .filter((value) => {
+          // console.log(fs.existsSync(value));
+          if (fs.existsSync(value)) {
+            const stat = fs.statSync(value);
+            // console.log(stat);
+            if (stat.isSymbolicLink()) {
+              console.log(value, stat.isDirectory(), stat.isSymbolicLink());
+            }
+            return stat.isDirectory();
+          }
+        });
+
+      // console.log(subPaths);
       if (!subPaths.length) {
         probeDepth = curDepth > probeDepth ? curDepth : probeDepth;
         endpoints.push(
@@ -106,7 +120,9 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
         });
       }
     } catch (e) {
+      console.log(e);
       logger.err(e);
+      // TODO
       // ignore this error walk
       return;
     }

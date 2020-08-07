@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-05 21:47:15
+ * @LastEditTime: 2020-08-07 23:52:12
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -13,6 +13,14 @@ const store = require('../store');
 const { extract } = require('../search.js');
 const { parseFullPath } = require('../store/endpoint.js');
 const logger = require('../util/log.js');
+
+function storeCommand(cmd) {
+  store.command = cmd;
+}
+
+function storeRootPath(root) {
+  store.root = root;
+}
 
 function searchHandler(target) {
   const newState = match(target);
@@ -64,6 +72,8 @@ function searchHandler(target) {
     fire(parseFullPath(toUsual));
   } else {
     // 没有结果
+    // 也存一下
+    
     logger
       .err('Failed to find!')
       .info('Please give me a more precise name.')
@@ -73,4 +83,6 @@ function searchHandler(target) {
 
 module.exports = {
   searchHandler,
+  storeCommand,
+  storeRootPath,
 };

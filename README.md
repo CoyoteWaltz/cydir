@@ -21,7 +21,7 @@ cydir proj
 code /path/to/somewhere/.../projectA
 ```
 
-目标/功能：不用再去到对应目录了 在任何地方 `cider <fuzzy_path>` 即可用编辑器打开项目
+目标/功能：不用再去到对应目录了 在任何地方 `cydir <fuzzy_path>` 即可用编辑器打开项目
 
 ### 路径扫描 and 存储
 

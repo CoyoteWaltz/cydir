@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-05 21:46:51
+ * @LastEditTime: 2020-08-07 23:32:26
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -110,7 +110,7 @@ function match(target) {
       
       const { endpoints: newEps, probeDepth } = probe(
         fullPath,
-        Infinity,
+        2,
         state.newPrefixes
       );
       // console.log(newEps.map((v) => v.fullPath));
