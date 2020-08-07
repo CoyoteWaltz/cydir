@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-07 23:41:58
+ * @LastEditTime: 2020-08-08 00:42:32
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 写一下匹配结果之后的逻辑
@@ -16,7 +16,7 @@ const { probe, distance, traceParent } = require('./probe.js');
 const logger = require('./util/log.js');
 const { createEndpoint } = require('./store/endpoint.js');
 
-const scoreThreshold = 0.45;
+const scoreThreshold = 0.15;
 const diffThreshold = 0.08;
 
 /**

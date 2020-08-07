@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-07 23:32:26
+ * @LastEditTime: 2020-08-08 00:09:12
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -20,11 +20,11 @@ const logger = require('../util/log');
 
 function handleTrace(traceRes, state) {
   state.newDepth = traceRes.addition.probeDepth;
-  state.newPrefixes = traceRes.addition.prefixes;
-  state.newEndpoints = traceRes.addition.endpoints;
+  state.prefixes = traceRes.addition.prefixes;
+  state.endpoints = traceRes.addition.endpoints;
   state.updatePath = traceRes.addition.updatePath;
   const results = traceRes.results;
-  if (results.length && preFire(results, state.newPrefixes)) {
+  if (results.length && preFire(results, state.prefixes)) {
     logger.info('回溯成功!!');
     state.results = results;
     return true;
@@ -41,8 +41,8 @@ function match(target) {
   const state = {
     inUsual: false,
     newDepth: -1,
-    newPrefixes: [],
-    newEndpoints: [],
+    prefixes: [],
+    endpoints: [],
     results: [],
     updatePath: '',
   };
@@ -103,20 +103,20 @@ function match(target) {
   // oops 此时是 trace 之后 或者 endpoints 中 scan 之后
   // 这两者都失败了 但是 trace 已经更新了全部
   // 此时 对于 所有的 增量 endpoints 都进行 深入 infinity
-  console.log('nooooo: ', state.newEndpoints.length);
-  if (state.newEndpoints.length) {
-    for (const endpoint of state.newEndpoints.slice()) {
-      const fullPath = parseFullPath(endpoint, state.newPrefixes);
+  console.log('nooooo: ', state.endpoints.length);
+  if (state.endpoints.length) {
+    for (const endpoint of state.endpoints.slice()) {
+      const fullPath = parseFullPath(endpoint, state.prefixes);
       
       const { endpoints: newEps, probeDepth } = probe(
         fullPath,
         2,
-        state.newPrefixes
+        state.prefixes
       );
       // console.log(newEps.map((v) => v.fullPath));
       results = scan(target, newEps);
       // console.log(results.length);
-      state.newEndpoints.push(...newEps);
+      state.endpoints.push(...newEps);
       if (results.length) {
         // logger
         //   .info('yes yes yes ')

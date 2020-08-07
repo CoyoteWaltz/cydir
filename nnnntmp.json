@@ -1017,24 +1017,2004 @@
       "prefixId": 5,
       "matcher": "typescript",
       "fullPath": "/Users/koyote/programming/typescript"
+    },
+    {
+      "prefixId": 45,
+      "matcher": "HomePage-master/dist/assets",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/assets"
+    },
+    {
+      "prefixId": 46,
+      "matcher": "css",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/css"
+    },
+    {
+      "prefixId": 46,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/js"
+    },
+    {
+      "prefixId": 47,
+      "matcher": "src/assets",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/assets"
+    },
+    {
+      "prefixId": 48,
+      "matcher": "components",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/components"
+    },
+    {
+      "prefixId": 48,
+      "matcher": "css",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/css"
+    },
+    {
+      "prefixId": 48,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/js"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "html",
+      "fullPath": "/Users/koyote/programming/FrontEnd/html"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "imgs",
+      "fullPath": "/Users/koyote/programming/FrontEnd/imgs"
+    },
+    {
+      "prefixId": 49,
+      "matcher": "YDKJS",
+      "fullPath": "/Users/koyote/programming/FrontEnd/js/YDKJS"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "output",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_gulp/output"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "src",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_gulp/src"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "vendor",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_gulp/vendor"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "dist",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_webpack/dist"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "production_config/src/style",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_webpack/production_config/src/style"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "src",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_webpack/src"
+    },
+    {
+      "prefixId": 50,
+      "matcher": "YDKJS",
+      "fullPath": "/Users/koyote/programming/FrontEnd/lib/YDKJS"
+    },
+    {
+      "prefixId": 4,
+      "matcher": "example",
+      "fullPath": "/Users/koyote/programming/FrontEnd/minipack/example"
+    },
+    {
+      "prefixId": 4,
+      "matcher": "src",
+      "fullPath": "/Users/koyote/programming/FrontEnd/minipack/src"
+    },
+    {
+      "prefixId": 51,
+      "matcher": "example",
+      "fullPath": "/Users/koyote/programming/FrontEnd/my_bundler/example"
+    },
+    {
+      "prefixId": 6,
+      "matcher": "AddressList1.1/bin/Debug",
+      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/AddressList1.1/bin/Debug"
+    },
+    {
+      "prefixId": 52,
+      "matcher": "obj/Debug",
+      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/AddressList1.1/obj/Debug"
+    },
+    {
+      "prefixId": 6,
+      "matcher": "debug/bin/1.1",
+      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/debug/bin/1.1"
+    },
+    {
+      "prefixId": 53,
+      "matcher": "Debug",
+      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/debug/bin/Debug"
+    },
+    {
+      "prefixId": 54,
+      "matcher": "obj/Debug",
+      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/debug/obj/Debug"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "PaperPlane",
+      "fullPath": "/Users/koyote/programming/Projects/PaperPlane"
+    },
+    {
+      "prefixId": 8,
+      "matcher": "cloudfunctions/callback",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/cloudfunctions/callback"
+    },
+    {
+      "prefixId": 55,
+      "matcher": "echo",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/cloudfunctions/echo"
+    },
+    {
+      "prefixId": 55,
+      "matcher": "login",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/cloudfunctions/login"
+    },
+    {
+      "prefixId": 55,
+      "matcher": "openapi",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/cloudfunctions/openapi"
+    },
+    {
+      "prefixId": 8,
+      "matcher": "miniprogram/card/card-preview",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/card/card-preview"
+    },
+    {
+      "prefixId": 56,
+      "matcher": "common",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/common"
+    },
+    {
+      "prefixId": 56,
+      "matcher": "component/@vant",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component/@vant"
+    },
+    {
+      "prefixId": 57,
+      "matcher": "custom-tab-bar",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component/custom-tab-bar"
+    },
+    {
+      "prefixId": 56,
+      "matcher": "images/cxx_icon",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/images/cxx_icon"
+    },
+    {
+      "prefixId": 58,
+      "matcher": "icon",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/images/icon"
+    },
+    {
+      "prefixId": 56,
+      "matcher": "pages/card-detail",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/card-detail"
+    },
+    {
+      "prefixId": 59,
+      "matcher": "main",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/main"
+    },
+    {
+      "prefixId": 59,
+      "matcher": "my-course",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/my-course"
+    },
+    {
+      "prefixId": 59,
+      "matcher": "new-course",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/new-course"
+    },
+    {
+      "prefixId": 59,
+      "matcher": "user",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/user"
+    },
+    {
+      "prefixId": 59,
+      "matcher": "welcome",
+      "fullPath": "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/welcome"
+    },
+    {
+      "prefixId": 9,
+      "matcher": ".quasar",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/.quasar"
+    },
+    {
+      "prefixId": 9,
+      "matcher": "public",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/public"
+    },
+    {
+      "prefixId": 9,
+      "matcher": "src/assets/images",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/assets/images"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "common",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/common"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "components/arrangement",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/components/arrangement"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "autoxk",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/components/autoxk"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "course",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/components/course"
+    },
+    {
+      "prefixId": 61,
+      "matcher": "query",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/components/query"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "css/themes",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/css/themes"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "layouts",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/layouts"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "network",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/network"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "pages/admin",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/pages/admin"
+    },
+    {
+      "prefixId": 62,
+      "matcher": "common",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/pages/common"
+    },
+    {
+      "prefixId": 62,
+      "matcher": "student",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/pages/student"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "plugins",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/plugins"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "router",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/router"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "statics/icons",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/statics/icons"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "store/bulletin",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/store/bulletin"
+    },
+    {
+      "prefixId": 63,
+      "matcher": "college",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/store/college"
+    },
+    {
+      "prefixId": 63,
+      "matcher": "semester",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/store/semester"
+    },
+    {
+      "prefixId": 63,
+      "matcher": "teacher",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/store/teacher"
+    },
+    {
+      "prefixId": 63,
+      "matcher": "user",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/store/user"
+    },
+    {
+      "prefixId": 60,
+      "matcher": "styles",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/src/styles"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "audio_websocket",
+      "fullPath": "/Users/koyote/programming/Projects/audio_websocket"
+    },
+    {
+      "prefixId": 10,
+      "matcher": "Data",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/Data"
+    },
+    {
+      "prefixId": 10,
+      "matcher": "results/homo128",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/homo128"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "homo16",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/homo16"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "homo256",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/homo256"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "sig128",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/sig128"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "sk128",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/sk128"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "sk16",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/sk16"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "sk256",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/sk256"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "vc128",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/vc128"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "vc16",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/vc16"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "vc256",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/vc256"
+    },
+    {
+      "prefixId": 64,
+      "matcher": "新建文件夹",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results/新建文件夹"
+    },
+    {
+      "prefixId": 10,
+      "matcher": "results2/old",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/results2/old"
+    },
+    {
+      "prefixId": 11,
+      "matcher": "src/cli",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/cli"
+    },
+    {
+      "prefixId": 65,
+      "matcher": "store",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/store"
+    },
+    {
+      "prefixId": 65,
+      "matcher": "util",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/util"
+    },
+    {
+      "prefixId": 11,
+      "matcher": "test",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/test"
+    },
+    {
+      "prefixId": 12,
+      "matcher": "api/v1",
+      "fullPath": "/Users/koyote/programming/Projects/major_helper_flask/api/v1"
+    },
+    {
+      "prefixId": 12,
+      "matcher": "common/libs",
+      "fullPath": "/Users/koyote/programming/Projects/major_helper_flask/common/libs"
+    },
+    {
+      "prefixId": 66,
+      "matcher": "models",
+      "fullPath": "/Users/koyote/programming/Projects/major_helper_flask/common/models"
+    },
+    {
+      "prefixId": 66,
+      "matcher": "tasks",
+      "fullPath": "/Users/koyote/programming/Projects/major_helper_flask/common/tasks"
+    },
+    {
+      "prefixId": 12,
+      "matcher": "config",
+      "fullPath": "/Users/koyote/programming/Projects/major_helper_flask/config"
+    },
+    {
+      "prefixId": 12,
+      "matcher": "docs",
+      "fullPath": "/Users/koyote/programming/Projects/major_helper_flask/docs"
+    },
+    {
+      "prefixId": 13,
+      "matcher": "cfg",
+      "fullPath": "/Users/koyote/programming/Projects/my_Yolov3_pytorch/cfg"
+    },
+    {
+      "prefixId": 13,
+      "matcher": "data",
+      "fullPath": "/Users/koyote/programming/Projects/my_Yolov3_pytorch/data"
+    },
+    {
+      "prefixId": 13,
+      "matcher": "ddd",
+      "fullPath": "/Users/koyote/programming/Projects/my_Yolov3_pytorch/ddd"
+    },
+    {
+      "prefixId": 13,
+      "matcher": "det",
+      "fullPath": "/Users/koyote/programming/Projects/my_Yolov3_pytorch/det"
+    },
+    {
+      "prefixId": 14,
+      "matcher": "dist/css",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/css"
+    },
+    {
+      "prefixId": 67,
+      "matcher": "fonts",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/fonts"
+    },
+    {
+      "prefixId": 67,
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/img"
+    },
+    {
+      "prefixId": 67,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/js"
+    },
+    {
+      "prefixId": 14,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/js"
+    },
+    {
+      "prefixId": 14,
+      "matcher": "public",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/public"
+    },
+    {
+      "prefixId": 14,
+      "matcher": "src/assets",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/src/assets"
+    },
+    {
+      "prefixId": 68,
+      "matcher": "components",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/src/components"
+    },
+    {
+      "prefixId": 68,
+      "matcher": "pages",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/src/pages"
+    },
+    {
+      "prefixId": 68,
+      "matcher": "plugins",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/src/plugins"
+    },
+    {
+      "prefixId": 68,
+      "matcher": "views",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/src/views"
+    },
+    {
+      "prefixId": 69,
+      "matcher": "my-app/public",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin_old/my-app/public"
+    },
+    {
+      "prefixId": 70,
+      "matcher": "src/assets",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin_old/my-app/src/assets"
+    },
+    {
+      "prefixId": 71,
+      "matcher": "components",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin_old/my-app/src/components"
+    },
+    {
+      "prefixId": 71,
+      "matcher": "plugins",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin_old/my-app/src/plugins"
+    },
+    {
+      "prefixId": 15,
+      "matcher": "api_doc",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/api_doc"
+    },
+    {
+      "prefixId": 15,
+      "matcher": "migrations/versions",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/migrations/versions"
+    },
+    {
+      "prefixId": 15,
+      "matcher": "webox/api/v1_0",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/webox/api/v1_0"
+    },
+    {
+      "prefixId": 72,
+      "matcher": "v2_0",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/webox/api/v2_0"
+    },
+    {
+      "prefixId": 73,
+      "matcher": "jobs/tasks",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/webox/jobs/tasks"
+    },
+    {
+      "prefixId": 73,
+      "matcher": "libs",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/webox/libs"
+    },
+    {
+      "prefixId": 73,
+      "matcher": "logs",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/webox/logs"
+    },
+    {
+      "prefixId": 73,
+      "matcher": "utils",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/webox/utils"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "css",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/css"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "fonts",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/js"
+    },
+    {
+      "prefixId": 17,
+      "matcher": "migrations/versions",
+      "fullPath": "/Users/koyote/programming/Projects/wisdom_course_flask/migrations/versions"
+    },
+    {
+      "prefixId": 17,
+      "matcher": "wisdom/api/v1_0",
+      "fullPath": "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/api/v1_0"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "jobs/tasks",
+      "fullPath": "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/jobs/tasks"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "libs",
+      "fullPath": "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/libs"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "logs",
+      "fullPath": "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/logs"
+    },
+    {
+      "prefixId": 74,
+      "matcher": "utils",
+      "fullPath": "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/utils"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "PatternRecognition/exp1_visulization",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/exp1_visulization"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "exp2_bayes_clsfy",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/exp2_bayes_clsfy"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "exp5_pca",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/exp5_pca"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "forstudent/OPENCVdoc",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/OPENCVdoc"
+    },
+    {
+      "prefixId": 76,
+      "matcher": "dataset",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/dataset"
+    },
+    {
+      "prefixId": 76,
+      "matcher": "╤щ╓д╩╡╤щ┤·┬ы░№",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/╤щ╓д╩╡╤щ┤·┬ы░№"
+    },
+    {
+      "prefixId": 76,
+      "matcher": "╩╡╤щ╓╕╡╝",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/╩╡╤щ╓╕╡╝"
+    },
+    {
+      "prefixId": 75,
+      "matcher": "linear_discriminant_analysis",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition/linear_discriminant_analysis"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "data_visulization",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/data_visulization"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "maths_modeling/files",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/maths_modeling/files"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "ml_basic/basic_visualization",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/ml_basic/basic_visualization"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "bayes_classifier",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/ml_basic/bayes_classifier"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "kmeans",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/ml_basic/kmeans"
+    },
+    {
+      "prefixId": 77,
+      "matcher": "knn/kNN_Dating",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/ml_basic/knn/kNN_Dating"
+    },
+    {
+      "prefixId": 78,
+      "matcher": "kNN_hand_writing",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/ml_basic/knn/kNN_hand_writing"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "regression",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/regression"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "regression_tree/cart_data",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/regression_tree/cart_data"
+    },
+    {
+      "prefixId": 18,
+      "matcher": "tree/cart_data",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/tree/cart_data"
+    },
+    {
+      "prefixId": 79,
+      "matcher": "decision_tree_glass",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/tree/decision_tree_glass"
+    },
+    {
+      "prefixId": 20,
+      "matcher": "cfg",
+      "fullPath": "/Users/koyote/programming/Python/Yolov3_pytorch/cfg"
+    },
+    {
+      "prefixId": 20,
+      "matcher": "data",
+      "fullPath": "/Users/koyote/programming/Python/Yolov3_pytorch/data"
+    },
+    {
+      "prefixId": 20,
+      "matcher": "det",
+      "fullPath": "/Users/koyote/programming/Python/Yolov3_pytorch/det"
+    },
+    {
+      "prefixId": 21,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/Python/autojump/bin"
+    },
+    {
+      "prefixId": 21,
+      "matcher": "docs",
+      "fullPath": "/Users/koyote/programming/Python/autojump/docs"
+    },
+    {
+      "prefixId": 21,
+      "matcher": "tests/integration",
+      "fullPath": "/Users/koyote/programming/Python/autojump/tests/integration"
+    },
+    {
+      "prefixId": 80,
+      "matcher": "unit",
+      "fullPath": "/Users/koyote/programming/Python/autojump/tests/unit"
+    },
+    {
+      "prefixId": 21,
+      "matcher": "tools",
+      "fullPath": "/Users/koyote/programming/Python/autojump/tools"
+    },
+    {
+      "prefixId": 22,
+      "matcher": "practice1",
+      "fullPath": "/Users/koyote/programming/Python/block_chain/practice1"
+    },
+    {
+      "prefixId": 22,
+      "matcher": "practice2",
+      "fullPath": "/Users/koyote/programming/Python/block_chain/practice2"
+    },
+    {
+      "prefixId": 22,
+      "matcher": "practice3",
+      "fullPath": "/Users/koyote/programming/Python/block_chain/practice3"
+    },
+    {
+      "prefixId": 22,
+      "matcher": "practice4",
+      "fullPath": "/Users/koyote/programming/Python/block_chain/practice4"
+    },
+    {
+      "prefixId": 22,
+      "matcher": "practice5",
+      "fullPath": "/Users/koyote/programming/Python/block_chain/practice5"
+    },
+    {
+      "prefixId": 23,
+      "matcher": "knn_practice",
+      "fullPath": "/Users/koyote/programming/Python/data_analysis/knn_practice"
+    },
+    {
+      "prefixId": 23,
+      "matcher": "weekly_work/week1",
+      "fullPath": "/Users/koyote/programming/Python/data_analysis/weekly_work/week1"
+    },
+    {
+      "prefixId": 81,
+      "matcher": "week2",
+      "fullPath": "/Users/koyote/programming/Python/data_analysis/weekly_work/week2"
+    },
+    {
+      "prefixId": 24,
+      "matcher": ".circleci",
+      "fullPath": "/Users/koyote/programming/Python/fastText/.circleci"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "alignment",
+      "fullPath": "/Users/koyote/programming/Python/fastText/alignment"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "crawl",
+      "fullPath": "/Users/koyote/programming/Python/fastText/crawl"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "docs",
+      "fullPath": "/Users/koyote/programming/Python/fastText/docs"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "python/benchmarks",
+      "fullPath": "/Users/koyote/programming/Python/fastText/python/benchmarks"
+    },
+    {
+      "prefixId": 82,
+      "matcher": "doc/examples",
+      "fullPath": "/Users/koyote/programming/Python/fastText/python/doc/examples"
+    },
+    {
+      "prefixId": 82,
+      "matcher": "fasttext_module/fasttext",
+      "fullPath": "/Users/koyote/programming/Python/fastText/python/fasttext_module/fasttext"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "scripts/kbcompletion",
+      "fullPath": "/Users/koyote/programming/Python/fastText/scripts/kbcompletion"
+    },
+    {
+      "prefixId": 83,
+      "matcher": "quantization",
+      "fullPath": "/Users/koyote/programming/Python/fastText/scripts/quantization"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "src",
+      "fullPath": "/Users/koyote/programming/Python/fastText/src"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "tests",
+      "fullPath": "/Users/koyote/programming/Python/fastText/tests"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "webassembly/doc/examples",
+      "fullPath": "/Users/koyote/programming/Python/fastText/webassembly/doc/examples"
+    },
+    {
+      "prefixId": 24,
+      "matcher": "website/blog",
+      "fullPath": "/Users/koyote/programming/Python/fastText/website/blog"
+    },
+    {
+      "prefixId": 84,
+      "matcher": "core",
+      "fullPath": "/Users/koyote/programming/Python/fastText/website/core"
+    },
+    {
+      "prefixId": 84,
+      "matcher": "pages/en",
+      "fullPath": "/Users/koyote/programming/Python/fastText/website/pages/en"
+    },
+    {
+      "prefixId": 84,
+      "matcher": "static/docs",
+      "fullPath": "/Users/koyote/programming/Python/fastText/website/static/docs"
+    },
+    {
+      "prefixId": 85,
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/Python/fastText/website/static/img"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "flask_learn",
+      "fullPath": "/Users/koyote/programming/Python/flask_learn"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_apscheduler",
+      "fullPath": "/Users/koyote/programming/Python/learn_apscheduler"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_crawler",
+      "fullPath": "/Users/koyote/programming/Python/learn_crawler"
+    },
+    {
+      "prefixId": 25,
+      "matcher": "files",
+      "fullPath": "/Users/koyote/programming/Python/learn_cv/files"
+    },
+    {
+      "prefixId": 25,
+      "matcher": "imgs/projected",
+      "fullPath": "/Users/koyote/programming/Python/learn_cv/imgs/projected"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_graphics",
+      "fullPath": "/Users/koyote/programming/Python/learn_graphics"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_jieba",
+      "fullPath": "/Users/koyote/programming/Python/learn_jieba"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_numpy",
+      "fullPath": "/Users/koyote/programming/Python/learn_numpy"
+    },
+    {
+      "prefixId": 86,
+      "matcher": "copy_from_itn",
+      "fullPath": "/Users/koyote/programming/Python/learn_pyqt/copy_from_itn"
+    },
+    {
+      "prefixId": 26,
+      "matcher": "STN",
+      "fullPath": "/Users/koyote/programming/Python/learn_pytorch/STN"
+    },
+    {
+      "prefixId": 26,
+      "matcher": "data/MNIST/processed",
+      "fullPath": "/Users/koyote/programming/Python/learn_pytorch/data/MNIST/processed"
+    },
+    {
+      "prefixId": 87,
+      "matcher": "raw",
+      "fullPath": "/Users/koyote/programming/Python/learn_pytorch/data/MNIST/raw"
+    },
+    {
+      "prefixId": 88,
+      "matcher": "cifar-10-batches-py",
+      "fullPath": "/Users/koyote/programming/Python/learn_pytorch/data/cifar-10-batches-py"
+    },
+    {
+      "prefixId": 27,
+      "matcher": "tcp",
+      "fullPath": "/Users/koyote/programming/Python/learn_socket/tcp"
+    },
+    {
+      "prefixId": 27,
+      "matcher": "udp",
+      "fullPath": "/Users/koyote/programming/Python/learn_socket/udp"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_taichi",
+      "fullPath": "/Users/koyote/programming/Python/learn_taichi"
+    },
+    {
+      "prefixId": 19,
+      "matcher": "learn_thread",
+      "fullPath": "/Users/koyote/programming/Python/learn_thread"
+    },
+    {
+      "prefixId": 28,
+      "matcher": "data",
+      "fullPath": "/Users/koyote/programming/Python/rasa/data"
+    },
+    {
+      "prefixId": 28,
+      "matcher": "models",
+      "fullPath": "/Users/koyote/programming/Python/rasa/models"
+    },
+    {
+      "prefixId": 28,
+      "matcher": "rasa-assistant/data",
+      "fullPath": "/Users/koyote/programming/Python/rasa/rasa-assistant/data"
+    },
+    {
+      "prefixId": 89,
+      "matcher": "tests",
+      "fullPath": "/Users/koyote/programming/Python/rasa/rasa-assistant/tests"
+    },
+    {
+      "prefixId": 28,
+      "matcher": "results",
+      "fullPath": "/Users/koyote/programming/Python/rasa/results"
+    },
+    {
+      "prefixId": 28,
+      "matcher": "tests",
+      "fullPath": "/Users/koyote/programming/Python/rasa/tests"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "data",
+      "fullPath": "/Users/koyote/programming/Python/sentiment_analysis_textcnn/data"
+    },
+    {
+      "prefixId": 29,
+      "matcher": "textcnn",
+      "fullPath": "/Users/koyote/programming/Python/sentiment_analysis_textcnn/textcnn"
+    },
+    {
+      "prefixId": 90,
+      "matcher": "information_theory_assignment",
+      "fullPath": "/Users/koyote/programming/Python/sundries/information_theory_assignment"
+    },
+    {
+      "prefixId": 91,
+      "matcher": "school",
+      "fullPath": "/Users/koyote/programming/SQL/school"
+    },
+    {
+      "prefixId": 92,
+      "matcher": "3_3_7_bf_dis",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/ADA/3_3_7_bf_dis"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "2-6    排序/Debug/2-6 排序.tlog",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6    排序/Debug/2-6 排序.tlog"
+    },
+    {
+      "prefixId": 93,
+      "matcher": "dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6    排序/dm"
+    },
+    {
+      "prefixId": 93,
+      "matcher": "pro",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6    排序/pro"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "7/Debug/7.tlog",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/7/Debug/7.tlog"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "AddressBook/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/AddressBook/bin"
+    },
+    {
+      "prefixId": 94,
+      "matcher": "debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/AddressBook/debug"
+    },
+    {
+      "prefixId": 94,
+      "matcher": "pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/AddressBook/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "BinaryTree/BinaryTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/BinaryTree/BinaryTree/Debug"
+    },
+    {
+      "prefixId": 95,
+      "matcher": "Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/BinaryTree/Debug"
+    },
+    {
+      "prefixId": 95,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/BinaryTree/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Database1_test/Database1_test/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Database1_test/Database1_test/bin"
+    },
+    {
+      "prefixId": 96,
+      "matcher": "obj",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Database1_test/Database1_test/obj"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Debug1/Debug/Debug1.tlog",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1/Debug/Debug1.tlog"
+    },
+    {
+      "prefixId": 97,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1/bin"
+    },
+    {
+      "prefixId": 97,
+      "matcher": "pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "DirectGraph/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/DirectGraph/Debug"
+    },
+    {
+      "prefixId": 98,
+      "matcher": "DirectGraph/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/DirectGraph/DirectGraph/Debug"
+    },
+    {
+      "prefixId": 98,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/DirectGraph/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Generalized Table/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Generalized Table/Debug"
+    },
+    {
+      "prefixId": 99,
+      "matcher": "Generalized Table/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Generalized Table/Generalized Table/Debug"
+    },
+    {
+      "prefixId": 99,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Generalized Table/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "HFB's proj/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HFB's proj/Debug"
+    },
+    {
+      "prefixId": 100,
+      "matcher": "HFB's proj/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HFB's proj/HFB's proj/Debug"
+    },
+    {
+      "prefixId": 100,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HFB's proj/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "HashTable-LinkAddress/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HashTable-LinkAddress/Debug"
+    },
+    {
+      "prefixId": 101,
+      "matcher": "HashTable-LinkAddress/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HashTable-LinkAddress/HashTable-LinkAddress/Debug"
+    },
+    {
+      "prefixId": 101,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HashTable-LinkAddress/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Heap/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Heap/Debug"
+    },
+    {
+      "prefixId": 102,
+      "matcher": "Heap/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Heap/Heap/Debug"
+    },
+    {
+      "prefixId": 102,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Heap/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "HuffmanTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HuffmanTree/Debug"
+    },
+    {
+      "prefixId": 103,
+      "matcher": "HuffmanTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HuffmanTree/HuffmanTree/Debug"
+    },
+    {
+      "prefixId": 103,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HuffmanTree/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "LInklist_wiz_head(undone)",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/LInklist_wiz_head(undone)"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "List/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/List/Debug"
+    },
+    {
+      "prefixId": 104,
+      "matcher": "List/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/List/List/Debug"
+    },
+    {
+      "prefixId": 104,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/List/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "MyQueue/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyQueue/Debug"
+    },
+    {
+      "prefixId": 105,
+      "matcher": "MyQueue/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyQueue/MyQueue/Debug"
+    },
+    {
+      "prefixId": 105,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyQueue/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "MyStack/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyStack/Debug"
+    },
+    {
+      "prefixId": 106,
+      "matcher": "MyStack/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyStack/MyStack/Debug"
+    },
+    {
+      "prefixId": 106,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyStack/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "MyString/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyString/bin"
+    },
+    {
+      "prefixId": 107,
+      "matcher": "debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyString/debug"
+    },
+    {
+      "prefixId": 107,
+      "matcher": "pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyString/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "OpencvPro2/OpencvPro2/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2/OpencvPro2/x64"
+    },
+    {
+      "prefixId": 108,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2/bin"
+    },
+    {
+      "prefixId": 108,
+      "matcher": "x64/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2/x64/Debug"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "PriorityQueue/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/PriorityQueue/Debug"
+    },
+    {
+      "prefixId": 109,
+      "matcher": "PriorityQueue/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/PriorityQueue/PriorityQueue/Debug"
+    },
+    {
+      "prefixId": 109,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/PriorityQueue/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Project1/Debug/Project1.tlog",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/Debug/Project1.tlog"
+    },
+    {
+      "prefixId": 110,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/bin"
+    },
+    {
+      "prefixId": 110,
+      "matcher": "dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/dm"
+    },
+    {
+      "prefixId": 110,
+      "matcher": "pro.32/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/pro.32/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "RecursiveLinklist/Debug/Recursiv.A36ECC42.tlog",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/RecursiveLinklist/Debug/Recursiv.A36ECC42.tlog"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Self-BalancingBinaryTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Debug"
+    },
+    {
+      "prefixId": 111,
+      "matcher": "Release",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Release"
+    },
+    {
+      "prefixId": 111,
+      "matcher": "Self-BalancingBinaryTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Self-BalancingBinaryTree/Debug"
+    },
+    {
+      "prefixId": 112,
+      "matcher": "Release",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Self-BalancingBinaryTree/Release"
+    },
+    {
+      "prefixId": 111,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "SeqList/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SeqList/Debug"
+    },
+    {
+      "prefixId": 113,
+      "matcher": "SeqList/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SeqList/SeqList/Debug"
+    },
+    {
+      "prefixId": 113,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SeqList/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "SortedBinaryTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SortedBinaryTree/Debug"
+    },
+    {
+      "prefixId": 114,
+      "matcher": "SortedBinaryTree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SortedBinaryTree/SortedBinaryTree/Debug"
+    },
+    {
+      "prefixId": 114,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SortedBinaryTree/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Test/dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test/dm"
+    },
+    {
+      "prefixId": 115,
+      "matcher": "test.32/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test/test.32/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Test_OpenMP/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test_OpenMP/Debug"
+    },
+    {
+      "prefixId": 116,
+      "matcher": "Test_OpenMP/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test_OpenMP/Test_OpenMP/Debug"
+    },
+    {
+      "prefixId": 116,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test_OpenMP/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "ThreadedBinaryTree/ThreadedBinaryTree",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/ThreadedBinaryTree/ThreadedBinaryTree"
+    },
+    {
+      "prefixId": 117,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/ThreadedBinaryTree/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "Tree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Tree/Debug"
+    },
+    {
+      "prefixId": 118,
+      "matcher": "Tree/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Tree/Tree/Debug"
+    },
+    {
+      "prefixId": 118,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Tree/bin"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "UVa 12412/Debug/UVa 12412.tlog",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/UVa 12412/Debug/UVa 12412.tlog"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "debug/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/debug/bin"
+    },
+    {
+      "prefixId": 119,
+      "matcher": "debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/debug/debug"
+    },
+    {
+      "prefixId": 119,
+      "matcher": "pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/debug/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "myCrossList/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myCrossList/Debug"
+    },
+    {
+      "prefixId": 120,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myCrossList/bin"
+    },
+    {
+      "prefixId": 120,
+      "matcher": "myCrossList/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myCrossList/myCrossList/Debug"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "myLinklist/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myLinklist/bin"
+    },
+    {
+      "prefixId": 121,
+      "matcher": "pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myLinklist/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "openGL_test/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/openGL_test/Debug"
+    },
+    {
+      "prefixId": 122,
+      "matcher": "openGL_test/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/openGL_test/openGL_test/Debug"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "opencv_pro/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro/bin"
+    },
+    {
+      "prefixId": 123,
+      "matcher": "opencv_pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro/opencv_pro/x64"
+    },
+    {
+      "prefixId": 123,
+      "matcher": "x64/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro/x64/Debug"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "socket_practice/bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/socket_practice/bin"
+    },
+    {
+      "prefixId": 124,
+      "matcher": "socket_practice",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/socket_practice/socket_practice"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "test InheritancePlusComposition/pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test InheritancePlusComposition/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "test_OpenMP_KMP/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP/Debug"
+    },
+    {
+      "prefixId": 125,
+      "matcher": "bin",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP/bin"
+    },
+    {
+      "prefixId": 125,
+      "matcher": "test_OpenMP_KMP/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP/test_OpenMP_KMP/Debug"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "test_openmp20190310/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_openmp20190310/Debug"
+    },
+    {
+      "prefixId": 126,
+      "matcher": "test_openmp20190310/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_openmp20190310/test_openmp20190310/Debug"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "the next palindromic number/dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/the next palindromic number/dm"
+    },
+    {
+      "prefixId": 127,
+      "matcher": "tnpn/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/the next palindromic number/tnpn/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "习题2-5　分数化小数（decimal）/dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/习题2-5　分数化小数（decimal）/dm"
+    },
+    {
+      "prefixId": 128,
+      "matcher": "pro.win32/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/习题2-5　分数化小数（decimal）/pro.win32/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "最小值min/dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/最小值min/dm"
+    },
+    {
+      "prefixId": 129,
+      "matcher": "pro/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/最小值min/pro/x64"
+    },
+    {
+      "prefixId": 31,
+      "matcher": "随机抽取/dm",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/随机抽取/dm"
+    },
+    {
+      "prefixId": 130,
+      "matcher": "pro32/x64",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/随机抽取/pro32/x64"
+    },
+    {
+      "prefixId": 131,
+      "matcher": "datalab-handout",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/c_liunx_os/datalab-handout"
+    },
+    {
+      "prefixId": 32,
+      "matcher": "Tree/bin/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/class_realization/Tree/bin/Debug"
+    },
+    {
+      "prefixId": 132,
+      "matcher": "obj/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/class_realization/Tree/obj/Debug"
+    },
+    {
+      "prefixId": 32,
+      "matcher": "UndirectGraph/bin/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/class_realization/UndirectGraph/bin/Debug"
+    },
+    {
+      "prefixId": 133,
+      "matcher": "obj/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/class_realization/UndirectGraph/obj/Debug"
+    },
+    {
+      "prefixId": 32,
+      "matcher": "UnionFindSet/bin/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/class_realization/UnionFindSet/bin/Debug"
+    },
+    {
+      "prefixId": 134,
+      "matcher": "obj/Debug",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/class_realization/UnionFindSet/obj/Debug"
+    },
+    {
+      "prefixId": 135,
+      "matcher": "hash_map.dSYM/Contents/Resources",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/learn_STL/hash_map.dSYM/Contents/Resources"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "os_practice",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/os_practice"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "socket_practice",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/socket_practice"
+    },
+    {
+      "prefixId": 30,
+      "matcher": "sundries",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/sundries"
+    },
+    {
+      "prefixId": 136,
+      "matcher": "Contents/Resources/DWARF",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/test.dSYM/Contents/Resources/DWARF"
+    },
+    {
+      "prefixId": 137,
+      "matcher": "x/y/vendor",
+      "fullPath": "/Users/koyote/programming/go/TestPackage/x/y/vendor"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "articles/res",
+      "fullPath": "/Users/koyote/programming/go/go101/articles/res"
+    },
+    {
+      "prefixId": 34,
+      "matcher": "web/static/bootstrap",
+      "fullPath": "/Users/koyote/programming/go/go101/web/static/bootstrap"
+    },
+    {
+      "prefixId": 138,
+      "matcher": "code-prettify",
+      "fullPath": "/Users/koyote/programming/go/go101/web/static/code-prettify"
+    },
+    {
+      "prefixId": 138,
+      "matcher": "go101",
+      "fullPath": "/Users/koyote/programming/go/go101/web/static/go101"
+    },
+    {
+      "prefixId": 138,
+      "matcher": "jquery",
+      "fullPath": "/Users/koyote/programming/go/go101/web/static/jquery"
+    },
+    {
+      "prefixId": 138,
+      "matcher": "prism",
+      "fullPath": "/Users/koyote/programming/go/go101/web/static/prism"
+    },
+    {
+      "prefixId": 139,
+      "matcher": "templates",
+      "fullPath": "/Users/koyote/programming/go/go101/web/templates"
+    },
+    {
+      "prefixId": 140,
+      "matcher": "hello",
+      "fullPath": "/Users/koyote/programming/go/src/hello"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "w1",
+      "fullPath": "/Users/koyote/programming/go/w1"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "w2",
+      "fullPath": "/Users/koyote/programming/go/w2"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "w3",
+      "fullPath": "/Users/koyote/programming/go/w3"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "w4",
+      "fullPath": "/Users/koyote/programming/go/w4"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "w5",
+      "fullPath": "/Users/koyote/programming/go/w5"
+    },
+    {
+      "prefixId": 33,
+      "matcher": "w6",
+      "fullPath": "/Users/koyote/programming/go/w6"
+    },
+    {
+      "prefixId": 141,
+      "matcher": "Practise 7",
+      "fullPath": "/Users/koyote/programming/java/Practise 7"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "leetcode",
+      "fullPath": "/Users/koyote/programming/leetcode"
+    },
+    {
+      "prefixId": 35,
+      "matcher": "dist",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/dist"
+    },
+    {
+      "prefixId": 35,
+      "matcher": "docs/.vuepress/components",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/components"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "nav",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/nav"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "plugins",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/plugins"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "public",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/public"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "styles",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/styles"
+    },
+    {
+      "prefixId": 142,
+      "matcher": "theme",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/theme"
+    },
+    {
+      "prefixId": 143,
+      "matcher": "api",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/api"
+    },
+    {
+      "prefixId": 143,
+      "matcher": "concepts",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/concepts"
+    },
+    {
+      "prefixId": 143,
+      "matcher": "getting-started",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/docs/getting-started"
+    },
+    {
+      "prefixId": 35,
+      "matcher": "scripts",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/scripts"
+    },
+    {
+      "prefixId": 35,
+      "matcher": "src/core",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/core"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "helpers",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/helpers"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "search/bitap",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/search/bitap"
+    },
+    {
+      "prefixId": 145,
+      "matcher": "extended",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/search/extended"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "tools",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/tools"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "transform",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/transform"
+    },
+    {
+      "prefixId": 35,
+      "matcher": "test/__snapshots__",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/test/__snapshots__"
+    },
+    {
+      "prefixId": 146,
+      "matcher": "fixtures",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/test/fixtures"
+    },
+    {
+      "prefixId": 37,
+      "matcher": "bilibiliDemo/encryption",
+      "fullPath": "/Users/koyote/programming/nodejs/LuotuoCoin/bilibiliDemo/encryption"
+    },
+    {
+      "prefixId": 37,
+      "matcher": "src/tests",
+      "fullPath": "/Users/koyote/programming/nodejs/LuotuoCoin/src/tests"
+    },
+    {
+      "prefixId": 38,
+      "matcher": "bbb",
+      "fullPath": "/Users/koyote/programming/nodejs/dir0/bbb"
+    },
+    {
+      "prefixId": 38,
+      "matcher": "sss",
+      "fullPath": "/Users/koyote/programming/nodejs/dir0/sss"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "learn_blockchain",
+      "fullPath": "/Users/koyote/programming/nodejs/learn_blockchain"
+    },
+    {
+      "prefixId": 36,
+      "matcher": "sundries",
+      "fullPath": "/Users/koyote/programming/nodejs/sundries"
+    },
+    {
+      "prefixId": 39,
+      "matcher": "3_3_11_bf_convex_hull",
+      "fullPath": "/Users/koyote/programming/opencv_cpp_linux/3_3_11_bf_convex_hull"
+    },
+    {
+      "prefixId": 39,
+      "matcher": "3_3_7_bf_dis",
+      "fullPath": "/Users/koyote/programming/opencv_cpp_linux/3_3_7_bf_dis"
+    },
+    {
+      "prefixId": 39,
+      "matcher": "5_5_10_dc_convex_hull",
+      "fullPath": "/Users/koyote/programming/opencv_cpp_linux/5_5_10_dc_convex_hull"
+    },
+    {
+      "prefixId": 39,
+      "matcher": "5_5_4_dc_dis",
+      "fullPath": "/Users/koyote/programming/opencv_cpp_linux/5_5_4_dc_dis"
+    },
+    {
+      "prefixId": 39,
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/opencv_cpp_linux/img"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "shell",
+      "fullPath": "/Users/koyote/programming/shell"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "data_ana",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/data_ana"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "lab8",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/lab8"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "lab9",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/lab9"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "labprep7/__MACOSX",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/labprep7/__MACOSX"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "labprep8",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/labprep8"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "project2/project22",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/project2/project22"
+    },
+    {
+      "prefixId": 40,
+      "matcher": "project3",
+      "fullPath": "/Users/koyote/programming/temp/py兼职/project3"
+    },
+    {
+      "prefixId": 41,
+      "matcher": "123",
+      "fullPath": "/Users/koyote/programming/test/123"
+    },
+    {
+      "prefixId": 41,
+      "matcher": "223",
+      "fullPath": "/Users/koyote/programming/test/223"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "tp11/tp111",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp11/tp111"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "tp12/tp122",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp12/tp122"
+    },
+    {
+      "prefixId": 42,
+      "matcher": "tp13/tp131/xx2",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp13/tp131/xx2"
+    },
+    {
+      "prefixId": 148,
+      "matcher": "xxx",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp13/tp131/xxx"
+    },
+    {
+      "prefixId": 149,
+      "matcher": "tp132",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp13/tp132"
+    },
+    {
+      "prefixId": 149,
+      "matcher": "tp133",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp13/tp133"
+    },
+    {
+      "prefixId": 150,
+      "matcher": "tp21/tp211",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp2/tp21/tp211"
+    },
+    {
+      "prefixId": 44,
+      "matcher": "tp31",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp3/tp31"
+    },
+    {
+      "prefixId": 44,
+      "matcher": "tp32",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp3/tp32"
+    },
+    {
+      "prefixId": 44,
+      "matcher": "tp33",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp3/tp33"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "typescript",
+      "fullPath": "/Users/koyote/programming/typescript"
     }
   ],
   "usualList": [
     {
+      "prefixId": 6,
+      "matcher": "debug",
+      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/debug"
+    },
+    {
       "prefixId": 5,
-      "matcher": "Python",
-      "fullPath": "/Users/koyote/programming/Python/MLpractice/PatternRecognition"
+      "matcher": "typescript",
+      "fullPath": "/Users/koyote/programming/typescript"
     },
     {
-      "prefixId": 7,
-      "matcher": "cpoper",
-      "fullPath": "/Users/koyote/programming/Projects/cpoper/src"
+      "prefixId": 43,
+      "matcher": "tp31",
+      "middle": "tp3",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp3/tp31"
     },
     {
-      "prefixId": 30,
-      "matcher": "2-6    排序",
-      "middle": "VSstudio_repos",
-      "fullPath": "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6    排序"
+      "prefixId": 42,
+      "matcher": "tp12",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp12"
+    },
+    {
+      "prefixId": 147,
+      "matcher": "tp112",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp11/tp112"
     }
   ],
   "prefixes": [
@@ -1082,6 +3062,112 @@
     "/Users/koyote/programming/test/",
     "/Users/koyote/programming/tmptttt/tp1/",
     "/Users/koyote/programming/tmptttt/",
-    "/Users/koyote/programming/tmptttt/tp3/"
+    "/Users/koyote/programming/tmptttt/tp3/",
+    "/Users/koyote/programming/FrontEnd/fork_proj/",
+    "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/",
+    "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/",
+    "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/",
+    "/Users/koyote/programming/FrontEnd/js/",
+    "/Users/koyote/programming/FrontEnd/lib/",
+    "/Users/koyote/programming/FrontEnd/my_bundler/",
+    "/Users/koyote/programming/Projects/AddressList_windows/AddressList1.1/",
+    "/Users/koyote/programming/Projects/AddressList_windows/debug/bin/",
+    "/Users/koyote/programming/Projects/AddressList_windows/debug/",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/cloudfunctions/",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/component/",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/images/",
+    "/Users/koyote/programming/Projects/SHUStudyBar_wechatmina/miniprogram/pages/",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/components/",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/pages/",
+    "/Users/koyote/programming/Projects/WisdomCourse/src/store/",
+    "/Users/koyote/programming/Projects/color_quantization/results/",
+    "/Users/koyote/programming/Projects/cpoper/src/",
+    "/Users/koyote/programming/Projects/major_helper_flask/common/",
+    "/Users/koyote/programming/Projects/webox_admin/dist/",
+    "/Users/koyote/programming/Projects/webox_admin/src/",
+    "/Users/koyote/programming/Projects/webox_admin_old/",
+    "/Users/koyote/programming/Projects/webox_admin_old/my-app/",
+    "/Users/koyote/programming/Projects/webox_admin_old/my-app/src/",
+    "/Users/koyote/programming/Projects/webox_flask/webox/api/",
+    "/Users/koyote/programming/Projects/webox_flask/webox/",
+    "/Users/koyote/programming/Projects/wisdom_course_flask/wisdom/",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/",
+    "/Users/koyote/programming/Python/MLpractice/PatternRecognition/forstudent/",
+    "/Users/koyote/programming/Python/MLpractice/ml_basic/",
+    "/Users/koyote/programming/Python/MLpractice/ml_basic/knn/",
+    "/Users/koyote/programming/Python/MLpractice/tree/",
+    "/Users/koyote/programming/Python/autojump/tests/",
+    "/Users/koyote/programming/Python/data_analysis/weekly_work/",
+    "/Users/koyote/programming/Python/fastText/python/",
+    "/Users/koyote/programming/Python/fastText/scripts/",
+    "/Users/koyote/programming/Python/fastText/website/",
+    "/Users/koyote/programming/Python/fastText/website/static/",
+    "/Users/koyote/programming/Python/learn_pyqt/",
+    "/Users/koyote/programming/Python/learn_pytorch/data/MNIST/",
+    "/Users/koyote/programming/Python/learn_pytorch/data/",
+    "/Users/koyote/programming/Python/rasa/rasa-assistant/",
+    "/Users/koyote/programming/Python/sundries/",
+    "/Users/koyote/programming/SQL/",
+    "/Users/koyote/programming/cplusplus_file/ADA/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/2-6    排序/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/AddressBook/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/BinaryTree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Database1_test/Database1_test/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Debug1/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/DirectGraph/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Generalized Table/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HFB's proj/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HashTable-LinkAddress/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Heap/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/HuffmanTree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/List/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyQueue/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyStack/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/MyString/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/OpencvPro2/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/PriorityQueue/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Project1/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Self-BalancingBinaryTree/Self-BalancingBinaryTree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SeqList/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/SortedBinaryTree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Test_OpenMP/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/ThreadedBinaryTree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/Tree/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/debug/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myCrossList/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/myLinklist/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/openGL_test/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/opencv_pro/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/socket_practice/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_OpenMP_KMP/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/test_openmp20190310/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/the next palindromic number/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/习题2-5　分数化小数（decimal）/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/最小值min/",
+    "/Users/koyote/programming/cplusplus_file/VSstudio_repos/随机抽取/",
+    "/Users/koyote/programming/cplusplus_file/c_liunx_os/",
+    "/Users/koyote/programming/cplusplus_file/class_realization/Tree/",
+    "/Users/koyote/programming/cplusplus_file/class_realization/UndirectGraph/",
+    "/Users/koyote/programming/cplusplus_file/class_realization/UnionFindSet/",
+    "/Users/koyote/programming/cplusplus_file/learn_STL/",
+    "/Users/koyote/programming/cplusplus_file/test.dSYM/",
+    "/Users/koyote/programming/go/TestPackage/",
+    "/Users/koyote/programming/go/go101/web/static/",
+    "/Users/koyote/programming/go/go101/web/",
+    "/Users/koyote/programming/go/src/",
+    "/Users/koyote/programming/java/",
+    "/Users/koyote/programming/nodejs/Fuse/docs/.vuepress/",
+    "/Users/koyote/programming/nodejs/Fuse/docs/",
+    "/Users/koyote/programming/nodejs/Fuse/src/",
+    "/Users/koyote/programming/nodejs/Fuse/src/search/",
+    "/Users/koyote/programming/nodejs/Fuse/test/",
+    "/Users/koyote/programming/tmptttt/tp1/tp11/",
+    "/Users/koyote/programming/tmptttt/tp1/tp13/tp131/",
+    "/Users/koyote/programming/tmptttt/tp1/tp13/",
+    "/Users/koyote/programming/tmptttt/tp2/"
   ]
 }

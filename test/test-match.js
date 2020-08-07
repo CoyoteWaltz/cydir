@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-03 22:49:25
- * @LastEditTime: 2020-08-04 22:28:29
+ * @LastEditTime: 2020-08-08 00:09:26
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -43,13 +43,13 @@ const ul = `[{
 const state = match('tmptttt');
 
 
-// console.log(state.newPrefixes.map((v, i) => `${i}  ${v}`))
+// console.log(state.prefixes.map((v, i) => `${i}  ${v}`))
 
 
-// state.newEndpoints.forEach((ep) => {
+// state.endpoints.forEach((ep) => {
 //   // const fullPath = path.join(prefixes[prefixId], matcher);
 //   // console.log(ep);
-//   const fullPath = parseFullPath(ep, state.newPrefixes);
+//   const fullPath = parseFullPath(ep, state.prefixes);
 //   // console.log(fullPath);
 //   // console.log(distance(fullPath, store.root));
 
@@ -59,4 +59,4 @@ const state = match('tmptttt');
 // });
 
 console.log(state.results);
-console.log(state.newPrefixes.length);
+console.log(state.prefixes.length);

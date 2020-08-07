@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-07 23:37:43
+ * @LastEditTime: 2020-08-08 00:30:45
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
@@ -36,11 +36,13 @@ function fire(targetPath) {
         }
         logger.info('Success!');
         // store.cfgPath = './fire.json';
-        store.save();
       });
     })
     .catch(() => {
       logger.info('Do nothing...');
+    })
+    .finally(() => {
+      store.save();
     });
 }
 
