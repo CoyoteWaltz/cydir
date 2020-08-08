@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-08 20:57:42
+ * @LastEditTime: 2020-08-08 21:48:44
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -22,7 +22,7 @@ function storeRootPath(root) {
   store.root = root;
 }
 
-function searchHandler(target) {
+function searchHandler(target, confirm) {
   if (!store.check()) {
     return;
   }
@@ -90,7 +90,7 @@ function searchHandler(target) {
       store.usualList.push(targetEndpoint);
     }
     const targetPath = parseFullPath(targetEndpoint);
-    fire(targetPath);
+    fire(targetPath, confirm);
   }
 }
 

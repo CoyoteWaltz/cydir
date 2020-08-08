@@ -2,7 +2,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 22:29:06
- * @LastEditTime: 2020-08-08 21:15:31
+ * @LastEditTime: 2020-08-08 21:47:58
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
@@ -11,6 +11,7 @@ const { program } = require('commander');
 
 const { joinSep } = require('./util/chores.js');
 const { storeRootPath, storeCommand, searchHandler } = require('./cli');
+const logger = require('./util/log.js');
 
 program.version('0.0.1');
 // .usage('').version(require('../package.json').version);
@@ -19,7 +20,7 @@ program.version('0.0.1');
 program
   .arguments('[paths...]')
   // .description('<command> on your <directory>')
-  .option('-p, --prompt', 'Prompt before exec command')
+  .option('-s, --skip-confirm', 'Skip confirm before exec command')
   .option('-e, --exact', 'Exact match')
   .option('-c, --case-sensitive', 'Match with case sensitive')
   .action((paths, cmdObj) => {
@@ -27,13 +28,17 @@ program
       program.help();
     } else {
       console.log(paths);
-      const { prompt, exact, caseSensitive } = cmdObj;
-      const searchOption = { prompt, exact, caseSensitive };
+      const { exact, caseSensitive } = cmdObj;
+      const searchOption = { exact, caseSensitive };
       const fullPath = joinSep(paths);
-      console.log(prompt, exact, caseSensitive);
-      console.log(fullPath);
       require('./search/config.js').setOption(searchOption);
-      searchHandler(fullPath);
+      const confirm = !cmdObj.skipConfirm
+      console.log(confirm, exact, caseSensitive);
+      console.log(fullPath);
+      if (!confirm) {
+        logger.info('no confirm')
+      }
+      searchHandler(fullPath, confirm);
     }
   });
 

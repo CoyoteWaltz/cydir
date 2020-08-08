@@ -1,13 +1,13 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-08 20:30:20
- * @LastEditTime: 2020-08-08 21:09:14
+ * @LastEditTime: 2020-08-08 21:50:33
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
  */
 
-const defaultThreshold = 0.45;
+const defaultThreshold = 0.38;
 
 const fuseOption = {
   keys: ['matcher'],

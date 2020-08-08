@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-08 20:29:39
+ * @LastEditTime: 2020-08-08 21:41:24
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -117,18 +117,12 @@ function match(target) {
       // console.log(results.length);
       state.endpoints.push(...newEps);
       if (results.length) {
-        // logger
-        //   .info('yes yes yes ')
-        //   .info(results)
-        //   .info(parseFullPath(results[0]));
-        // console.log(store.prefixes.map((v, i) => `${i}  ${v}`));
         state.results = results;
         state.newDepth += probeDepth;
-        // return;
+        return state; // 找到就不继续了
       }
     }
   }
-  // return augmented;
   return state;
 }
 // 放到外面去做

@@ -230,6 +230,11 @@
     },
     {
       "prefixId": 16,
+      "matcher": "fonts",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
+    },
+    {
+      "prefixId": 16,
       "matcher": "img",
       "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
     },
@@ -1490,6 +1495,11 @@
     },
     {
       "prefixId": 67,
+      "matcher": "fonts",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/fonts"
+    },
+    {
+      "prefixId": 67,
       "matcher": "img",
       "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/img"
     },
@@ -1597,6 +1607,11 @@
       "prefixId": 16,
       "matcher": "css",
       "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/css"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "fonts",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
     },
     {
       "prefixId": 16,
@@ -3005,6 +3020,11 @@
       "prefixId": 16,
       "matcher": "fonts",
       "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
+    },
+    {
+      "prefixId": 144,
+      "matcher": "transform",
+      "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/transform"
     }
   ],
   "prefixes": [
