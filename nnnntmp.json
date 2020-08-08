@@ -190,11 +190,6 @@
     },
     {
       "prefixId": 14,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/Projects/webox_admin/js"
-    },
-    {
-      "prefixId": 14,
       "matcher": "public",
       "fullPath": "/Users/koyote/programming/Projects/webox_admin/public"
     },
@@ -237,11 +232,6 @@
       "prefixId": 16,
       "matcher": "img",
       "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
-    },
-    {
-      "prefixId": 16,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/js"
     },
     {
       "prefixId": 7,
@@ -1029,11 +1019,6 @@
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/css"
     },
     {
-      "prefixId": 46,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/js"
-    },
-    {
       "prefixId": 47,
       "matcher": "src/assets",
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/assets"
@@ -1047,11 +1032,6 @@
       "prefixId": 48,
       "matcher": "css",
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/css"
-    },
-    {
-      "prefixId": 48,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/js"
     },
     {
       "prefixId": 1,
@@ -1499,16 +1479,6 @@
       "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/img"
     },
     {
-      "prefixId": 67,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/js"
-    },
-    {
-      "prefixId": 14,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/Projects/webox_admin/js"
-    },
-    {
       "prefixId": 14,
       "matcher": "public",
       "fullPath": "/Users/koyote/programming/Projects/webox_admin/public"
@@ -1612,11 +1582,6 @@
       "prefixId": 16,
       "matcher": "img",
       "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
-    },
-    {
-      "prefixId": 16,
-      "matcher": "js",
-      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/js"
     },
     {
       "prefixId": 17,
@@ -2939,6 +2904,11 @@
       "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp11/tp111"
     },
     {
+      "prefixId": 147,
+      "matcher": "tp112",
+      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp11/tp112"
+    },
+    {
       "prefixId": 42,
       "matcher": "tp12/tp122",
       "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp12/tp122"
@@ -2991,30 +2961,20 @@
   ],
   "usualList": [
     {
-      "prefixId": 6,
-      "matcher": "debug",
-      "fullPath": "/Users/koyote/programming/Projects/AddressList_windows/debug"
+      "prefixId": 77,
+      "matcher": "bayes_classifier",
+      "fullPath": "/Users/koyote/programming/Python/MLpractice/ml_basic/bayes_classifier"
     },
     {
-      "prefixId": 5,
-      "matcher": "typescript",
-      "fullPath": "/Users/koyote/programming/typescript"
+      "prefixId": 14,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/js"
     },
     {
-      "prefixId": 43,
-      "matcher": "tp31",
-      "middle": "tp3",
-      "fullPath": "/Users/koyote/programming/tmptttt/tp3/tp31"
-    },
-    {
-      "prefixId": 42,
-      "matcher": "tp12",
-      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp12"
-    },
-    {
-      "prefixId": 147,
-      "matcher": "tp112",
-      "fullPath": "/Users/koyote/programming/tmptttt/tp1/tp11/tp112"
+      "prefixId": 0,
+      "matcher": "FrontEnd",
+      "middle": "programming",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master"
     }
   ],
   "prefixes": [

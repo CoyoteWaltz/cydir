@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-08 00:40:16
+ * @LastEditTime: 2020-08-08 20:25:42
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -23,6 +23,9 @@ function storeRootPath(root) {
 }
 
 function searchHandler(target) {
+  if (!store.check()) {
+    return;
+  }
   let targetEndpoint;
   const newState = match(target);
   const results = newState.results;
@@ -61,6 +64,7 @@ function searchHandler(target) {
         .filter((v) => v >= 0);
       console.log('removed prefix! ', removePrefixIds);
       console.log('---------');
+      // 保留之前的
       store.endpoints = store.endpoints.filter(
         (ep) => !removePrefixIds.includes(ep.prefixId)
       );

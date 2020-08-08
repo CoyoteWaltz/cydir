@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-08 00:30:45
+ * @LastEditTime: 2020-08-08 18:26:44
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
@@ -17,8 +17,8 @@ const store = require('../store');
  * @param {string} targetPath ensured an existed path
  */
 function fire(targetPath) {
-  // 这里 path 需要给 '' 不然会被空格分割
-  const execution = `${store.command} '${targetPath}'`;
+  // 这里需要给 "" 不然会被空格分割
+  const execution = `"${store.command}" "${targetPath}"`;
   logger
     .emphasisPath(targetPath)
     .question('', 'sure?')

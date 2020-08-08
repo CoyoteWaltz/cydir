@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-08 00:47:57
+ * @LastEditTime: 2020-08-08 18:50:52
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -27,6 +27,7 @@ const diffThreshold = 0.08;
  * @return { { index: <int>, endpoint: <endpoint> }[] }
  */
 function scan(target, endpoints) {
+  console.log(target);
   console.log(target, endpoints.length);
   const option = {
     keys: ['matcher'],

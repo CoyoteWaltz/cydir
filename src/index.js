@@ -2,16 +2,16 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 22:29:06
- * @LastEditTime: 2020-08-07 23:41:14
+ * @LastEditTime: 2020-08-08 18:59:35
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
 
 const { program } = require('commander');
 const chalk = require('chalk');
+const { joinSep } = require('./util/chores.js');
 const { storeRootPath, storeCommand, searchHandler } = require('./cli');
 
-let target;
 // program;
 // .name("my-command")
 // .usage('')
@@ -34,16 +34,16 @@ program
       console.log(paths);
       console.log(cmdObj.prompt);
       console.log(cmdObj.caseSensitive);
-      console.log(paths.join(' '));
-      const fullPath = paths.join(' ');
-      target = fullPath
+      const fullPath = joinSep(paths);
+      console.log(fullPath);
       searchHandler(fullPath);
     }
   });
 
 program
   .command('config-command <command>')
-  .description(chalk.yellow('Config command on your file path'))
+  // .description(chalk.yellow('Config command on your file path'))
+  .description('Config command on your file path [e.g: cydir "code"]')
   .action((command) => {
     console.log(command);
     console.log();
@@ -58,7 +58,6 @@ program
     console.log();
     storeRootPath(rootPath);
   });
-
 program.parse(process.argv);
 
 // if (program.configCommand) {
@@ -123,5 +122,3 @@ program.parse(process.argv);
 //   await program.parseAsync(process.argv);
 // }
 // main();
-
-console.log('>>>>>>>>>> ', target);

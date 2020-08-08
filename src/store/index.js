@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-08 00:26:06
+ * @LastEditTime: 2020-08-08 20:26:46
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -24,17 +24,19 @@ class Store {
   // cfgPath = './fire.json'; // TODO del
 
   constructor() {
+    let cfg;
     try {
-      const cfg = JSON.parse(fs.readFileSync(this.cfgPath));
-      this._root = cfg.root || '';
-      this._command = cfg.command || '';
-      this._endpoints = cfg.endpoints || [];
-      this._prefixes = cfg.prefixes || [];
-      this.usualList = cfg.usualList || [];
-      this.currentDepth = cfg.currentDepth || this.initDepth;
+      cfg = JSON.parse(fs.readFileSync(this.cfgPath));
     } catch (e) {
       logger.err(e);
+      cfg = {};
     }
+    this._root = cfg.root || '';
+    this._command = cfg.command || '';
+    this._endpoints = cfg.endpoints || [];
+    this._prefixes = cfg.prefixes || [];
+    this.usualList = cfg.usualList || [];
+    this.currentDepth = cfg.currentDepth || this.initDepth;
   }
   save(cb) {
     cb = cb || noop;
@@ -73,7 +75,7 @@ class Store {
     }
     this._root = value;
     this.initEndpoints();
-    this.usualList = []
+    this.usualList = [];
     this.save(() => {
       logger.info(`Config root path: ${this._root}`);
     });
@@ -114,8 +116,6 @@ class Store {
     const { endpoints, probeDepth } = probe(this._root, depth, this._prefixes);
     this._endpoints = endpoints;
     this.currentDepth = probeDepth;
-
-    
   }
   setDepth(value = 0) {
     if (value <= 0) {
@@ -123,6 +123,18 @@ class Store {
     }
     this.currentDepth = value;
     this.initEndpoints(value);
+  }
+  check() {
+    // TODO
+    if (!this._command || typeof this._command !== 'string') {
+      this._command = ''
+      logger.err('No command! Run "cydir config-command <command>" to set one!').exit()
+    }
+    if (!this._root || typeof this._root !== 'string') {
+      this._root = ''
+      logger.err('No root path! Run "cydir config-root-path <path>" to set one!').exit()
+    }
+    return true;
   }
 }
 

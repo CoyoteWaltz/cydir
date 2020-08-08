@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 22:48:11
- * @LastEditTime: 2020-07-27 23:28:40
+ * @LastEditTime: 2020-08-08 18:34:06
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
@@ -19,8 +19,13 @@ function diffArrays(oldArr, newArr) {
 
 function noop() {}
 
+function joinSep(separate, sep = ' ') {
+  return separate.join(sep);
+}
+
 module.exports = {
   toJSON,
   diffArrays,
   noop,
+  joinSep,
 };
