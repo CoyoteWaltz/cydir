@@ -1,14 +1,14 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-31 21:35:39
- * @LastEditTime: 2020-08-03 23:18:15
+ * @LastEditTime: 2020-08-08 20:28:50
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
  */
 const path = require('path');
 const fs = require('fs');
-const { scan, traceProbe, extract } = require('../src/search.js');
+const { scan, traceProbe, extract } = require('../src/search');
 const store = require('../src/store');
 
 const { root, prefixes, endpoints, currentDepth } = store;

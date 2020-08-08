@@ -190,6 +190,11 @@
     },
     {
       "prefixId": 14,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/js"
+    },
+    {
+      "prefixId": 14,
       "matcher": "public",
       "fullPath": "/Users/koyote/programming/Projects/webox_admin/public"
     },
@@ -225,13 +230,13 @@
     },
     {
       "prefixId": 16,
-      "matcher": "fonts",
-      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
     },
     {
       "prefixId": 16,
-      "matcher": "img",
-      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/js"
     },
     {
       "prefixId": 7,
@@ -1019,6 +1024,11 @@
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/css"
     },
     {
+      "prefixId": 46,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/dist/js"
+    },
+    {
       "prefixId": 47,
       "matcher": "src/assets",
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/assets"
@@ -1032,6 +1042,11 @@
       "prefixId": 48,
       "matcher": "css",
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/css"
+    },
+    {
+      "prefixId": 48,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master/src/js"
     },
     {
       "prefixId": 1,
@@ -1400,6 +1415,11 @@
     },
     {
       "prefixId": 65,
+      "matcher": "search",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src/search"
+    },
+    {
+      "prefixId": 65,
       "matcher": "store",
       "fullPath": "/Users/koyote/programming/Projects/cpoper/src/store"
     },
@@ -1470,13 +1490,18 @@
     },
     {
       "prefixId": 67,
-      "matcher": "fonts",
-      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/fonts"
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/img"
     },
     {
       "prefixId": 67,
-      "matcher": "img",
-      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/img"
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/dist/js"
+    },
+    {
+      "prefixId": 14,
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_admin/js"
     },
     {
       "prefixId": 14,
@@ -1575,13 +1600,13 @@
     },
     {
       "prefixId": 16,
-      "matcher": "fonts",
-      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
+      "matcher": "img",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
     },
     {
       "prefixId": 16,
-      "matcher": "img",
-      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/img"
+      "matcher": "js",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/js"
     },
     {
       "prefixId": 17,
@@ -2975,6 +3000,11 @@
       "matcher": "FrontEnd",
       "middle": "programming",
       "fullPath": "/Users/koyote/programming/FrontEnd/fork_proj/HomePage-master"
+    },
+    {
+      "prefixId": 16,
+      "matcher": "fonts",
+      "fullPath": "/Users/koyote/programming/Projects/webox_front_end_dist/fonts"
     }
   ],
   "prefixes": [

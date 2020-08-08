@@ -1,14 +1,13 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-08 20:25:34
+ * @LastEditTime: 2020-08-08 20:29:39
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
  */
-const { scan } = require('../search');
+const { scan, traceProbe } = require('../search');
 const { parseFullPath } = require('../store/endpoint.js');
-const { traceProbe } = require('../search.js');
 
 const fs = require('fs');
 const { probe } = require('../probe.js');

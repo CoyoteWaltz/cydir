@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-08 20:25:42
+ * @LastEditTime: 2020-08-08 20:57:42
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -10,7 +10,7 @@
 const { fire } = require('./command.js');
 const match = require('./match.js');
 const store = require('../store');
-const { extract } = require('../search.js');
+const { extract,  } = require('../search');
 const { parseFullPath } = require('../store/endpoint.js');
 const logger = require('../util/log.js');
 

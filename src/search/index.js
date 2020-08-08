@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-08 18:50:52
+ * @LastEditTime: 2020-08-08 21:11:41
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -11,12 +11,12 @@ const path = require('path');
 const fs = require('fs');
 
 const Fuse = require('fuse.js');
-// const {  } = require('./util/constants.js')
-const { probe, distance, traceParent } = require('./probe.js');
-const logger = require('./util/log.js');
-const { createEndpoint } = require('./store/endpoint.js');
 
-const scoreThreshold = 0.15;
+const logger = require('../util/log.js');
+const { probe, distance, traceParent } = require('../probe.js');
+const { createEndpoint } = require('../store/endpoint.js');
+const { fuseOption } = require('./config.js')
+
 const diffThreshold = 0.08;
 
 /**
@@ -29,12 +29,8 @@ const diffThreshold = 0.08;
 function scan(target, endpoints) {
   console.log(target);
   console.log(target, endpoints.length);
-  const option = {
-    keys: ['matcher'],
-    includeScore: true,
-    threshold: scoreThreshold, // 这个越低越好 那个算法嘛
-  };
-  const fuse = new Fuse(endpoints, option);
+  console.log(fuseOption);
+  const fuse = new Fuse(endpoints, fuseOption);
   const matches = fuse.search(target);
   // console.log(matches);
   console.log(matches.length);
