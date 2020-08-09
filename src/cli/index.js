@@ -1,18 +1,19 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-08 21:48:44
+ * @LastEditTime: 2020-08-09 23:47:51
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
  */
 
-const { fire } = require('./command.js');
 const match = require('./match.js');
 const store = require('../store');
-const { extract,  } = require('../search');
-const { parseFullPath } = require('../store/endpoint.js');
 const logger = require('../util/log.js');
+const { extract } = require('../search');
+const { parseFullPath } = require('../store/endpoint.js');
+const { fire } = require('./command.js');
+const { checkAbsPath } = require('../probe.js');
 
 function storeCommand(cmd) {
   store.command = cmd;
@@ -25,6 +26,9 @@ function storeRootPath(root) {
 function searchHandler(target, confirm) {
   if (!store.check()) {
     return;
+  }
+  if (checkAbsPath(target)) {
+    return fire(target, confirm);
   }
   let targetEndpoint;
   const newState = match(target);
@@ -93,7 +97,6 @@ function searchHandler(target, confirm) {
     fire(targetPath, confirm);
   }
 }
-
 
 module.exports = {
   searchHandler,

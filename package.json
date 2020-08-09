@@ -1,8 +1,12 @@
 {
-  "name": "cpoper",
-  "version": "1.0.0",
-  "description": "cmd tool for openning ide",
+  "name": "cydir",
+  "version": "0.0.1",
+  "description": "A command line tool for executing command on your directory everywhere.",
   "author": "CoyoteWaltz <coyote_waltz@163.com>",
+  "keywords": [
+    "command",
+    "path"
+  ],
   "bin": {
     "cydir": "./src/index.js"
   },
@@ -23,5 +27,8 @@
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
     "fuse.js": "^6.4.0"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }

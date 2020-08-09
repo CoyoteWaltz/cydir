@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-07 23:19:36
+ * @LastEditTime: 2020-08-09 23:27:00
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -12,6 +12,16 @@ const { createEndpoint } = require('./store/endpoint.js');
 
 const { MAX_PROBE_DEPTH, BLACKLIST } = require('./util/constants.js');
 const logger = require('./util/log.js');
+
+function checkAbsPath(target) {
+  console.log(fs.existsSync(target));
+  if (!fs.existsSync(target)) {
+    return false;
+  }
+  const stat = fs.statSync(target);
+  return path.isAbsolute(target) && stat.isDirectory();
+}
+
 
 // TODO
 function getCfgPath() {
@@ -172,4 +182,5 @@ module.exports = {
   getCfgPath,
   probe,
   distance,
+  checkAbsPath,
 };

@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-08 21:49:31
+ * @LastEditTime: 2020-08-09 23:50:47
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
@@ -41,18 +41,18 @@ function fire(targetPath, confirm = true) {
 
 function execute(execution) {
   exec(execution, (err, stdout, stderr) => {
-    if (err) {
-      logger.err(err);
-    }
-    if (stderr) {
-      logger.err(stderr);
-    }
     if (stdout) {
       logger.info('stdout: ');
       console.log(stdout);
     }
-    logger.info('Success!');
-    // store.cfgPath = './fire.json';
+    // if (err) {
+    //   logger.err(err);
+    // }
+    if (stderr) {
+      return logger.err(stderr);
+    } else {
+      logger.info('Success!');
+    }
   });
 }
 

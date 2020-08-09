@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-08 21:35:00
+ * @LastEditTime: 2020-08-09 23:45:10
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -19,12 +19,12 @@ const logger = require('../util/log.js');
 const { getCommandTips } = require('../util/constants.js');
 
 class Store {
-  initDepth = 3;
-  cfgPath = getCfgPath();
   // cfgPath = './fire.json'; // TODO del
 
   constructor() {
     let cfg;
+    this.initDepth = 3;
+    this.cfgPath = getCfgPath();
     try {
       cfg = JSON.parse(fs.readFileSync(this.cfgPath));
     } catch (e) {
@@ -127,12 +127,16 @@ class Store {
   check() {
     // TODO
     if (!this._command || typeof this._command !== 'string') {
-      this._command = ''
-      logger.err('No command! Run "cydir config-command <command>" to set one!').exit()
+      this._command = '';
+      logger
+        .err('No command! Run "cydir config-command <command>" to set one!')
+        .exit();
     }
     if (!this._root || typeof this._root !== 'string') {
-      this._root = ''
-      logger.err('No root path! Run "cydir config-root-path <path>" to set one!').exit()
+      this._root = '';
+      logger
+        .err('No root path! Run "cydir config-root-path <path>" to set one!')
+        .exit();
     }
     return true;
   }

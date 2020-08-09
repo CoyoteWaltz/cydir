@@ -1,5 +1,5 @@
 {
-  "command": "code",
+  "command": "cy",
   "root": "/Users/koyote/programming",
   "currentDepth": 3,
   "endpoints": [
@@ -37,6 +37,11 @@
       "prefixId": 2,
       "matcher": "vendor",
       "fullPath": "/Users/koyote/programming/FrontEnd/learn_gulp/vendor"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "learn_react/helloworld",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_react/helloworld"
     },
     {
       "prefixId": 1,
@@ -769,6 +774,11 @@
       "fullPath": "/Users/koyote/programming/cplusplus_file/learn_STL/hash_map.dSYM"
     },
     {
+      "prefixId": 135,
+      "matcher": "vector_learn.dSYM",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/learn_STL/vector_learn.dSYM"
+    },
+    {
       "prefixId": 30,
       "matcher": "os_practice",
       "fullPath": "/Users/koyote/programming/cplusplus_file/os_practice"
@@ -1082,6 +1092,16 @@
       "prefixId": 2,
       "matcher": "vendor",
       "fullPath": "/Users/koyote/programming/FrontEnd/learn_gulp/vendor"
+    },
+    {
+      "prefixId": 151,
+      "matcher": "helloworld/public",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_react/helloworld/public"
+    },
+    {
+      "prefixId": 152,
+      "matcher": "src",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_react/helloworld/src"
     },
     {
       "prefixId": 3,
@@ -2634,6 +2654,11 @@
       "fullPath": "/Users/koyote/programming/cplusplus_file/learn_STL/hash_map.dSYM/Contents/Resources"
     },
     {
+      "prefixId": 135,
+      "matcher": "vector_learn.dSYM/Contents/Resources",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/learn_STL/vector_learn.dSYM/Contents/Resources"
+    },
+    {
       "prefixId": 30,
       "matcher": "os_practice",
       "fullPath": "/Users/koyote/programming/cplusplus_file/os_practice"
@@ -3025,6 +3050,51 @@
       "prefixId": 144,
       "matcher": "transform",
       "fullPath": "/Users/koyote/programming/nodejs/Fuse/src/transform"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "learn_webpack",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_webpack/dist"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "learn_react",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_react"
+    },
+    {
+      "prefixId": 151,
+      "matcher": "helloworld",
+      "fullPath": "/Users/koyote/programming/FrontEnd/learn_react/helloworld/public"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "webox_flask",
+      "fullPath": "/Users/koyote/programming/Projects/webox_flask/api_doc"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "WisdomCourse",
+      "fullPath": "/Users/koyote/programming/Projects/WisdomCourse/.quasar"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "leetcode",
+      "fullPath": "/Users/koyote/programming/leetcode"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "cplusplus_file",
+      "fullPath": "/Users/koyote/programming/cplusplus_file/ADA/3_3_7_bf_dis"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "color_quantization",
+      "fullPath": "/Users/koyote/programming/Projects/color_quantization/Data"
+    },
+    {
+      "prefixId": 7,
+      "matcher": "cpoper",
+      "fullPath": "/Users/koyote/programming/Projects/cpoper/src"
     }
   ],
   "prefixes": [
@@ -3178,6 +3248,8 @@
     "/Users/koyote/programming/tmptttt/tp1/tp11/",
     "/Users/koyote/programming/tmptttt/tp1/tp13/tp131/",
     "/Users/koyote/programming/tmptttt/tp1/tp13/",
-    "/Users/koyote/programming/tmptttt/tp2/"
+    "/Users/koyote/programming/tmptttt/tp2/",
+    "/Users/koyote/programming/FrontEnd/learn_react/",
+    "/Users/koyote/programming/FrontEnd/learn_react/helloworld/"
   ]
 }

@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 01:05:34
- * @LastEditTime: 2020-08-07 22:57:42
+ * @LastEditTime: 2020-08-09 18:53:19
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: log
  */
@@ -46,7 +46,7 @@ const logger = {
         output: process.stdout,
       });
       rl.question(`${tips? chalk.yellow(tips) + ' ': ''}${question} [y/n]`, (answer) => {
-        if (answer.toLowerCase() === 'y') {
+        if (answer === '' || answer.toLowerCase() === 'y') {
           resolve();
           rl.close();
         } else {
