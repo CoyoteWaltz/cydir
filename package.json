@@ -11,6 +11,9 @@
     "cydir": "./src/index.js"
   },
   "main": "index.js",
+  "files": [
+    "./src/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
