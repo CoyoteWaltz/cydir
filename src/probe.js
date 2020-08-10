@@ -26,7 +26,7 @@ function checkAbsPath(target) {
 // TODO
 function getCfgPath() {
   // for debug
-  const tmpPath = '/Users/koyote/programming/Projects/cpoper/nnnntmp.json';
+  const tmpPath = '/Users/coyote/programming/meituan/cpoper/nnnntmp.json';
 
   const glbPth = path.resolve(
     process.env.HOME || process.env.USERPROFILE || __dirname, //  直接拿的 环境变量 HOME

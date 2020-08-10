@@ -20,7 +20,7 @@ const logger = {
     console.log(chalk.bold.bgRed(' Error '), chalk.red(msg));
     return this;
   },
-  info(msg) {
+  info(msg = '') {
     msg = typeof msg === 'string' ? msg : toJSON(msg);
     console.log(chalk.bold.bgGreen.white(' Info '), msg);
     return this;
@@ -35,7 +35,10 @@ const logger = {
     return this;
   },
   notice(msg) {
-    console.log(chalk.bold.bgYellow.white(' Notice '), chalk.bold.yellow.italic(msg));
+    console.log(
+      chalk.bold.bgYellow.white(' Notice '),
+      chalk.bold.yellow.italic(msg || '')
+    );
     return this;
   },
   // TODO
@@ -45,15 +48,18 @@ const logger = {
         input: process.stdin,
         output: process.stdout,
       });
-      rl.question(`${tips? chalk.yellow(tips) + ' ': ''}${question} [y/n]`, (answer) => {
-        if (answer === '' || answer.toLowerCase() === 'y') {
-          resolve();
-          rl.close();
-        } else {
-          reject();
-          rl.close();
+      rl.question(
+        `${tips ? chalk.yellow(tips) + ' ' : ''}${question} [y/n]`,
+        (answer) => {
+          if (answer === '' || answer.toLowerCase() === 'y') {
+            resolve();
+            rl.close();
+          } else {
+            reject();
+            rl.close();
+          }
         }
-      });
+      );
     });
   },
 };

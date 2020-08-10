@@ -22,22 +22,27 @@ class Store {
   // cfgPath = './fire.json'; // TODO del
 
   constructor() {
-    let cfg;
+    let config;
     this.initDepth = 3;
     this.cfgPath = getCfgPath();
     try {
-      cfg = JSON.parse(fs.readFileSync(this.cfgPath));
+      config = JSON.parse(fs.readFileSync(this.cfgPath));
     } catch (e) {
       logger.err(e);
-      cfg = {};
+      config = {};
     }
-    this._root = cfg.root || '';
-    this._command = cfg.command || '';
-    this._endpoints = cfg.endpoints || [];
-    this._prefixes = cfg.prefixes || [];
-    this.usualList = cfg.usualList || [];
-    this.currentDepth = cfg.currentDepth || this.initDepth;
+    this.initConfig(config);
   }
+
+  initConfig(config = {}) {
+    this._root = config.root || '';
+    this._command = config.command || '';
+    this._endpoints = config.endpoints || [];
+    this._prefixes = config.prefixes || [];
+    this.usualList = config.usualList || [];
+    this.currentDepth = config.currentDepth || this.initDepth;
+  }
+
   save(cb) {
     cb = cb || noop;
     // TODO JSON.stringify
@@ -139,6 +144,19 @@ class Store {
         .exit();
     }
     return true;
+  }
+  reset() {
+    logger
+      .notice('Reset all config.')
+      .question('', 'sure?')
+      .then(() => {
+        logger.info('reset');
+        this.initConfig();
+        this.save(() => {
+          logger.info('Config reset!');
+        });
+      })
+      .catch(noop);
   }
 }
 

@@ -98,8 +98,13 @@ function searchHandler(target, confirm) {
   }
 }
 
+function resetHandler() {
+  store.reset();
+}
+
 module.exports = {
   searchHandler,
   storeCommand,
   storeRootPath,
+  resetHandler,
 };

@@ -10,7 +10,7 @@
 const { program } = require('commander');
 
 const { joinSep } = require('./util/chores.js');
-const { storeRootPath, storeCommand, searchHandler } = require('./cli');
+const { storeRootPath, storeCommand, searchHandler, resetHandler } = require('./cli');
 
 program.version('0.0.1');
 
@@ -47,6 +47,13 @@ program
   .description('Config a relative root path of your projects')
   .action((rootPath) => {
     storeRootPath(rootPath);
+  });
+
+program
+  .command('reset-config')
+  .description('Reset all config')
+  .action(() => {
+    resetHandler()
   });
 
 program.parse(process.argv);
