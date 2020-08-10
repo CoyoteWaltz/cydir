@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-08 21:11:41
+ * @LastEditTime: 2020-08-10 22:57:30
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -15,7 +15,7 @@ const Fuse = require('fuse.js');
 const logger = require('../util/log.js');
 const { probe, distance, traceParent } = require('../probe.js');
 const { createEndpoint } = require('../store/endpoint.js');
-const { fuseOption } = require('./config.js')
+const { fuseOption } = require('./config.js');
 
 const diffThreshold = 0.08;
 
@@ -29,12 +29,11 @@ const diffThreshold = 0.08;
 function scan(target, endpoints) {
   console.log(target);
   console.log(target, endpoints.length);
-  console.log(fuseOption);
   const fuse = new Fuse(endpoints, fuseOption);
   const matches = fuse.search(target);
   // console.log(matches);
   console.log(matches.length);
-  if (!matches.length) {
+  if (matches.length === 0) {
     return [];
   }
   const bestScore = matches[0].score;
@@ -151,31 +150,19 @@ function traceProbe(
  * @param {Array} endpoints
  */
 function extract(target, endpoint) {
-  console.log('before --- ', endpoint);
   const matcher = endpoint.matcher;
   const split = matcher.split(path.sep);
-  console.log(split);
-  const fuse = new Fuse(split);
+  const fuse = new Fuse(split); // TODO 这里需要 options 吗
   const res = fuse.search(target);
-  console.log(res);
   const precise = res[0].refIndex;
-  console.log('precise ', precise);
 
   const newEndpoint = createEndpoint(
     endpoint.prefixId,
     split.slice(precise, precise + 1).join(path.sep),
-    split.slice(0, precise).join(path.sep),
-    endpoint.fullPath
+    split.slice(0, precise).join(path.sep)
+    // endpoint.fullPath
   );
 
-  // {
-  //   ...endpoint,
-  //   middle: split.slice(0, precise).join(path.sep),
-  //   matcher: split.slice(precise, precise + 1).join(path.sep),
-  // };
-
-  console.log('new ---', newEndpoint);
-  // 删原始
   return newEndpoint;
 }
 

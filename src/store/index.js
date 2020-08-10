@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-09 23:45:10
+ * @LastEditTime: 2020-08-10 22:59:32
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -19,12 +19,10 @@ const logger = require('../util/log.js');
 const { getCommandTips } = require('../util/constants.js');
 
 class Store {
-  // cfgPath = './fire.json'; // TODO del
-
   constructor() {
-    let config;
     this.initDepth = 3;
     this.cfgPath = getCfgPath();
+    let config;
     try {
       config = JSON.parse(fs.readFileSync(this.cfgPath));
     } catch (e) {
@@ -143,6 +141,8 @@ class Store {
         .err('No root path! Run "cydir config-root-path <path>" to set one!')
         .exit();
     }
+    // TODO
+    // if (Array.isArray(this._endpoints) || Array)
     return true;
   }
   reset() {

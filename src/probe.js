@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-09 23:27:00
+ * @LastEditTime: 2020-08-10 23:15:43
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -22,11 +22,10 @@ function checkAbsPath(target) {
   return path.isAbsolute(target) && stat.isDirectory();
 }
 
-
 // TODO
 function getCfgPath() {
   // for debug
-  const tmpPath = '/Users/coyote/programming/meituan/cpoper/nnnntmp.json';
+  const tmpPath = path.resolve(__dirname, '../nnnntmp.json');
 
   const glbPth = path.resolve(
     process.env.HOME || process.env.USERPROFILE || __dirname, //  直接拿的 环境变量 HOME
@@ -55,7 +54,6 @@ function getCfgPath() {
  */
 function probe(absPath, maxDepth, prefixes, excludes = []) {
   console.log(absPath);
-  // return [endpoints[]]
   maxDepth = maxDepth || MAX_PROBE_DEPTH;
   // 递归遍历目录 到达一定深度结束 返回 tree 节点结果
   // 接受参数 绝对路径
@@ -83,25 +81,25 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
       endpoints.push(
         createEndpoint(
           genPrefixId(filePath, matcher),
-          matcher,
-          '', // TODO 删
-          path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
+          matcher
+          // '', // TODO 删
+          // path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
         )
       );
       return;
     }
-    // console.log('matcher: ', matcher);
     try {
       const subPaths = fs
         .readdirSync(filePath)
         .filter((value) => !BLACKLIST.includes(value))
         .map((value) => path.resolve(filePath, value)) // 转 abs path
-        .filter((value) => !excludes.includes(value)) // TODO 这一步可能要在想想
+        // .filter((value) => !excludes.includes(value)) // TODO 这一步可能要在想想
         .filter((value) => {
-          // console.log(fs.existsSync(value));
+          if (excludes.length && excludes.includes(value)) {
+            return false;
+          }
           if (fs.existsSync(value)) {
             const stat = fs.statSync(value);
-            // console.log(stat);
             if (stat.isSymbolicLink()) {
               console.log(value, stat.isDirectory(), stat.isSymbolicLink());
             }
@@ -109,19 +107,19 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
           }
         });
 
-      // console.log(subPaths);
       if (!subPaths.length) {
         probeDepth = curDepth > probeDepth ? curDepth : probeDepth;
         endpoints.push(
           createEndpoint(
             genPrefixId(filePath, matcher),
-            matcher,
-            '', // TODO 删
-            path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
+            matcher
+            // '', // TODO 删
+            // path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
           )
         );
         return;
       }
+      // 这里 walk 能异步做吗
       // 第一个给 chain
       walk(subPaths.shift(), curDepth + 1, matcher);
       if (subPaths.length) {
@@ -137,20 +135,14 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
       return;
     }
   }
+  
   walk(absPath, 0, '', excludes); // chain 传 ''
   console.log('probe depth: ', probeDepth);
   return {
     endpoints,
-    // prefixes,
     probeDepth,
   };
 }
-
-const serialize = (tree) => {
-  const res = [...(tree.children || []).flatMap(serialize), tree];
-  delete tree.children;
-  return res;
-};
 
 // path.isAbsolute()
 const traceParent = (absPath) => {
@@ -177,7 +169,6 @@ const distance = (current, target) => {
 };
 
 module.exports = {
-  serialize,
   traceParent,
   getCfgPath,
   probe,

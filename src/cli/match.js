@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-08 21:41:24
+ * @LastEditTime: 2020-08-10 22:51:36
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -102,19 +102,16 @@ function match(target) {
   // oops 此时是 trace 之后 或者 endpoints 中 scan 之后
   // 这两者都失败了 但是 trace 已经更新了全部
   // 此时 对于 所有的 增量 endpoints 都进行 深入 infinity
-  console.log('nooooo: ', state.endpoints.length);
   if (state.endpoints.length) {
     for (const endpoint of state.endpoints.slice()) {
       const fullPath = parseFullPath(endpoint, state.prefixes);
       
       const { endpoints: newEps, probeDepth } = probe(
         fullPath,
-        2,
+        3,
         state.prefixes
       );
-      // console.log(newEps.map((v) => v.fullPath));
       results = scan(target, newEps);
-      // console.log(results.length);
       state.endpoints.push(...newEps);
       if (results.length) {
         state.results = results;
