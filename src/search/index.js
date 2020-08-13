@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-10 22:57:30
+ * @LastEditTime: 2020-08-14 00:01:15
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -61,7 +61,8 @@ function scan(target, endpoints) {
  * @param {string} target
  * @param {string} start - search start path
  * @param {string} root - stop at root
- * @param {number} originDepth
+ * @param {number} currentDepth - originDepth
+ * @param {Array} prefixes modified inside probe
  */
 function traceProbe(
   target,
@@ -76,7 +77,10 @@ function traceProbe(
   console.log('first depth:   ', currentDepth);
   console.log('current root: ', current, root);
   // TODO
-  // if (currentDepth === -1) {
+  if (currentDepth === -1) {
+    // something wrong
+    logger.err('Something wrong...').exit();
+  }
   if (start === root) {
     // 直接跳过下面的循环
     logger.err('start === root');
@@ -103,13 +107,10 @@ function traceProbe(
       );
 
       addition.endpoints.push(...endpoints);
-      // addition.prefixes.push(...prefixes);
       const results = scan(target, endpoints);
-      console.log('ssssssssscan');
       if (results.length) {
         addition.probeDepth = probeDepth;
         addition.updatePath = current;
-        console.log('found!!!!!');
         return { results, addition };
       }
       exclude = current;
@@ -131,7 +132,6 @@ function traceProbe(
     );
     results = scan(target, endpoints);
     addition.endpoints = endpoints;
-    // addition.prefixes = prefixes;  // 无需更新
     addition.probeDepth = probeDepth;
     addition.updatePath = root;
   }
@@ -139,12 +139,8 @@ function traceProbe(
   return { results, addition };
 }
 
-// traceProbe 搜索成功之后 对 matcher 拆分再次匹配获得精确路径
-// 生成新的 endpoint 放入 usualList (可能有 middle)
-// 如果 拆分匹配的结果是 matcher 就删除 endpoints
-// TODO
 /**
- *
+ * 仅在 traceProbe 搜索成功之后 对 matcher 拆分再次匹配获得精确路径
  * @param {string} target
  * @param {object} result endpoint
  * @param {Array} endpoints
@@ -152,7 +148,7 @@ function traceProbe(
 function extract(target, endpoint) {
   const matcher = endpoint.matcher;
   const split = matcher.split(path.sep);
-  const fuse = new Fuse(split); // TODO 这里需要 options 吗
+  const fuse = new Fuse(split);
   const res = fuse.search(target);
   const precise = res[0].refIndex;
 

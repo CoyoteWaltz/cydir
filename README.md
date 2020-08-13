@@ -1,5 +1,7 @@
 # (Work In Progress) Cydir
 
+Command on Your Directory
+
 配置命令行指令`commandX` 以及 目标路径`/path/to/somewhere`
 
 ```bash
@@ -39,3 +41,9 @@ code /path/to/somewhere/.../projectA
 root > dirname **path-name**
 
 reset? 检查配置文件是否符合格式
+
+### TODO
+
+考虑加个 -p, --parent 指明父路径
+
+指令改为表驱动吧

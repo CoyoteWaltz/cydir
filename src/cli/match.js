@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-10 22:51:36
+ * @LastEditTime: 2020-08-13 23:58:38
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -23,10 +23,13 @@ function handleTrace(traceRes, state) {
   state.endpoints = traceRes.addition.endpoints;
   state.updatePath = traceRes.addition.updatePath;
   const results = traceRes.results;
-  if (results.length && preFire(results, state.prefixes)) {
-    logger.info('回溯成功!!');
-    state.results = results;
-    return true;
+  if (results.length) {
+    const res = preFire(results, state.prefixes);
+    if (res) {
+      logger.info('回溯成功!!');
+      state.results = res;
+      return true;
+    }
   }
   return false;
 }
@@ -48,10 +51,11 @@ function match(target) {
   let results = scan(target, store.usualList);
   if (results.length) {
     // ul 有匹配结果
-    if (preFire(results)) {
+    const res = preFire(results);
+    if (res) {
       // 不用更新
       state.inUsual = true;
-      state.results = results;
+      state.results = res;
       return state;
     } else {
       // 路径不存在
@@ -71,9 +75,10 @@ function match(target) {
     results = scan(target, store.endpoints);
     if (results.length) {
       // 匹配成功
-      if (preFire(results)) {
+      const res = preFire(results);
+      if (res) {
         // 路径存在 移入 ul
-        state.results = results;
+        state.results = res;
 
         return state;
       }
@@ -101,7 +106,7 @@ function match(target) {
 
   // oops 此时是 trace 之后 或者 endpoints 中 scan 之后
   // 这两者都失败了 但是 trace 已经更新了全部
-  // 此时 对于 所有的 增量 endpoints 都进行 深入 infinity
+  // 此时 对于 所有的 增量 endpoints 都进行 深入 3
   if (state.endpoints.length) {
     for (const endpoint of state.endpoints.slice()) {
       const fullPath = parseFullPath(endpoint, state.prefixes);
@@ -131,14 +136,13 @@ function match(target) {
  * @param {Array} results endpoints[]
  */
 function preFire(results, prefixes) {
-  console.log(results);
-  const fullPaths = results
-    .map((ep) => parseFullPath(ep, prefixes))
-    .filter((p) => fs.existsSync(p));
-  if (fullPaths.length >= 1) {
-    // TODO
-    console.log('yes! fire! ', fullPaths);
-    return true;
+  const filtered = results.filter((ep) => {
+    const fullPath = parseFullPath(ep, prefixes);
+    return fs.existsSync(fullPath);
+  })
+  if (filtered.length >= 1) {
+    console.log('yes! fire! ', filtered);
+    return filtered;
   }
   return false;
 }

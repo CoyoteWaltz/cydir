@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-10 22:59:32
+ * @LastEditTime: 2020-08-14 00:11:23
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -12,7 +12,6 @@
 const path = require('path');
 const fs = require('fs');
 
-// const { getMatchers } = require('./util/endpoint.js');
 const { toJSON, noop } = require('../util/chores.js');
 const { getCfgPath, probe } = require('../probe.js');
 const logger = require('../util/log.js');
@@ -43,7 +42,6 @@ class Store {
 
   save(cb) {
     cb = cb || noop;
-    // TODO JSON.stringify
     fs.writeFile(this.cfgPath, toJSON(this.toJSON()), (err) => {
       if (err) {
         logger.err(err);
@@ -58,7 +56,6 @@ class Store {
       root: this._root || '',
       currentDepth: this.currentDepth,
       endpoints: this._endpoints || [],
-      // TODO
       usualList: this.usualList || [],
       prefixes: this._prefixes || [],
     };
@@ -126,6 +123,7 @@ class Store {
     }
     this.currentDepth = value;
     this.initEndpoints(value);
+    // Notice no save here
   }
   check() {
     // TODO
@@ -141,9 +139,14 @@ class Store {
         .err('No root path! Run "cydir config-root-path <path>" to set one!')
         .exit();
     }
-    // TODO
-    // if (Array.isArray(this._endpoints) || Array)
+    this._endpoints = this.checkArray(this._prefixes);
+    this.usualList = this.checkArray(this.usualList);
+    this._prefixes = this.checkArray(this._prefixes);
     return true;
+  }
+  checkArray(arr) {
+    // TODO
+    return Array.isArray(arr) ? arr : [];
   }
   reset() {
     logger
