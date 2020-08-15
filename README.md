@@ -47,3 +47,9 @@ reset? 检查配置文件是否符合格式
 考虑加个 -p, --parent 指明父路径
 
 指令改为表驱动吧
+
+*缺陷:* prefixes 在 traceProbe 中更新不会去除原来的 prefix
+
+### 测试进度
+
+2020-08-14: check0, check1,check3

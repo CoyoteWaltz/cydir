@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-10 23:15:43
+ * @LastEditTime: 2020-08-15 15:03:04
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -119,7 +119,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
         );
         return;
       }
-      // 这里 walk 能异步做吗
       // 第一个给 chain
       walk(subPaths.shift(), curDepth + 1, matcher);
       if (subPaths.length) {

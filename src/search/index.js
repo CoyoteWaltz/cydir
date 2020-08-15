@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-14 00:01:15
+ * @LastEditTime: 2020-08-15 16:33:42
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -24,28 +24,41 @@ const diffThreshold = 0.08;
  * return results 连续 score 相差不过 threshold 的
  * @param {string} target
  * @param {Array} endpoints
- * @return { { index: <int>, endpoint: <endpoint> }[] }
+ * @return {endpoint[]}
  */
-function scan(target, endpoints) {
+function scan(target, endpoints, exact = false) {
+  console.log('in scan');
   console.log(target);
   console.log(target, endpoints.length);
-  const fuse = new Fuse(endpoints, fuseOption);
-  const matches = fuse.search(target);
-  // console.log(matches);
-  console.log(matches.length);
-  if (matches.length === 0) {
-    return [];
-  }
-  const bestScore = matches[0].score;
+  console.log(fuseOption);
+  console.log('eps: ', endpoints);
+
   const results = [];
-
-  for (const { score, refIndex } of matches) {
-    if (score - bestScore > diffThreshold) {
-      break;
+  if (exact) {
+    for (const ep of endpoints) {
+      const matcher = ep.matcher.split(path.sep);
+      if (matcher.includes(target)) {
+        results.push(ep);
+        break;
+      }
     }
-    results.push(endpoints[refIndex]);
-  }
+  } else {
+    const fuse = new Fuse(endpoints, fuseOption);
+    const matches = fuse.search(target);
+    console.log(matches);
+    console.log(matches.length);
+    if (matches.length === 0) {
+      return [];
+    }
+    const bestScore = matches[0].score;
 
+    for (const { score, refIndex } of matches) {
+      if (score - bestScore > diffThreshold) {
+        break;
+      }
+      results.push(endpoints[refIndex]);
+    }
+  }
   return results;
 }
 
@@ -67,7 +80,8 @@ function scan(target, endpoints) {
 function traceProbe(
   target,
   start,
-  { root, currentDepth: originDepth, prefixes: oldPrefixes }
+  { root, currentDepth: originDepth, prefixes: oldPrefixes },
+  exact = false
 ) {
   // prefixes copy 一份 做增量更新 之后替换原来的
   // endpoints 先做原始的过滤 然后在增量
@@ -77,14 +91,15 @@ function traceProbe(
   console.log('first depth:   ', currentDepth);
   console.log('current root: ', current, root);
   // TODO
-  if (currentDepth === -1) {
-    // something wrong
-    logger.err('Something wrong...').exit();
-  }
   if (start === root) {
     // 直接跳过下面的循环
     logger.err('start === root');
+    currentDepth = 0;
     current = root;
+  }
+  if (currentDepth === -1) {
+    // something wrong
+    logger.err('Something wrong...').exit();
   }
   let exclude; // 同时也是 需要更新 endpoints 和 prefixes 的数组
   const addition = {
@@ -105,9 +120,9 @@ function traceProbe(
         addition.prefixes,
         [exclude] // 只需要去除上一个即可
       );
-
+      // endpoints.shift()
       addition.endpoints.push(...endpoints);
-      const results = scan(target, endpoints);
+      const results = scan(target, endpoints, exact);
       if (results.length) {
         addition.probeDepth = probeDepth;
         addition.updatePath = current;
@@ -128,9 +143,11 @@ function traceProbe(
       current,
       originDepth, // probe 到原始深度
       addition.prefixes,
-      [exclude]
+      // [exclude]    // 不需要 exclude 还是重来
     );
-    results = scan(target, endpoints);
+    results = scan(target, endpoints, exact);
+    // addition.endpoints.push(...endpoints);
+    // addition.probeDepth = probeDepth > originDepth ? probeDepth : originDepth;
     addition.endpoints = endpoints;
     addition.probeDepth = probeDepth;
     addition.updatePath = root;
@@ -145,17 +162,28 @@ function traceProbe(
  * @param {object} result endpoint
  * @param {Array} endpoints
  */
-function extract(target, endpoint) {
+function extract(target, endpoint, exact = false) {
   const matcher = endpoint.matcher;
   const split = matcher.split(path.sep);
-  const fuse = new Fuse(split);
-  const res = fuse.search(target);
-  const precise = res[0].refIndex;
+  // 这里 split 完 只有1个元素的时候应该可以直接提速 不用 fuse
+  if (split.length === 1) {
+    return endpoint;
+  }
+  let preciseId;
+  if (exact) {
+    logger.notice('exact');
+    // exact match
+    preciseId = split.indexOf(target);
+  } else {
+    const fuse = new Fuse(split);
+    const res = fuse.search(target);
+    preciseId = res[0].refIndex;
+  }
 
   const newEndpoint = createEndpoint(
     endpoint.prefixId,
-    split.slice(precise, precise + 1).join(path.sep),
-    split.slice(0, precise).join(path.sep)
+    split.slice(preciseId, preciseId + 1).join(path.sep),
+    split.slice(0, preciseId).join(path.sep)
     // endpoint.fullPath
   );
 
