@@ -1,13 +1,13 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-15 12:53:44
+ * @LastEditTime: 2020-08-17 00:21:15
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
  */
 
-const { exec } = require('child_process');
+const { exec, spawn } = require('child_process');
 
 const logger = require('../util/log.js');
 const store = require('../store');
@@ -21,7 +21,7 @@ function fire(targetPath, confirm = true) {
   const execution = `"${store.command}" "${targetPath}"`;
   logger.notice(`confirm: ${confirm}`); // TODO del
 
-  logger.info(execution);
+  logger.info(targetPath);
   logger.emphasisPath(targetPath);
   if (!confirm) {
     execute(execution);
@@ -29,32 +29,37 @@ function fire(targetPath, confirm = true) {
     logger
       .question('', 'sure?')
       .then(() => {
-        execute(execution);
+        execute(store.command + 'sss', targetPath);
         store.save();
       })
-      .catch(() => {
-        logger.info('Do nothing...');
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          logger.info('Do nothing...');
+        }
         store.save();
       });
   }
 }
 
-function execute(execution) {
+function execute(command, targetPath) {
   console.log('exec....');
-  const options = { windowsHide: true };
-  exec(execution, (err, stdout, stderr) => {
-    if (stdout) {
-      logger.info('stdout: ');
-      console.log(stdout);
-    }
-    // if (err) {
-    //   logger.err(err);
-    // }
-    if (stderr) {
-      return logger.err(stderr);
-    } else {
-      logger.info('Success!');
-    }
+
+  const options = { windowsHide: true, shell: true };
+  const quote = (str) => `"${str}"`;
+  const cmd = spawn(quote(command), [quote(targetPath)], options);
+  console.log(cmd.spawnargs);
+  // stdout
+  cmd.stdout.on('data', (err) => {
+    logger.info(`stdout: ${String(err)}`);
+  });
+  // error catch
+  cmd.stderr.on('data', (err) => {
+    logger.err(`[stderr] ${String(err)}`);
+  });
+  cmd.on('error', (err) => {
+    logger.err(err);
   });
 }
 

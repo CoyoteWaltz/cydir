@@ -1,0 +1,75 @@
+{
+  "command": "code",
+  "root": "/Users/koyote/programming/testroot",
+  "currentDepth": 3,
+  "endpoints": [
+    {
+      "prefixId": 0,
+      "matcher": "testroot/tp0"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "tp1/tp11/tp111"
+    },
+    {
+      "prefixId": 2,
+      "matcher": "tp112"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "tp12/tp122"
+    },
+    {
+      "prefixId": 3,
+      "matcher": "tp13/tp132"
+    },
+    {
+      "prefixId": 4,
+      "matcher": "tp133"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "tp2/tp21/tp211"
+    },
+    {
+      "prefixId": 1,
+      "matcher": "tp3/tp31"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "tp32"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "tp33"
+    },
+    {
+      "prefixId": 5,
+      "matcher": "tp34/tp    kk"
+    },
+    {
+      "prefixId": 6,
+      "matcher": "tp341"
+    },
+    {
+      "prefixId": 6,
+      "matcher": "tp342"
+    }
+  ],
+  "usualList": [
+    {
+      "prefixId": 3,
+      "matcher": "tp132",
+      "middle": "tp13"
+    }
+  ],
+  "prefixes": [
+    "/Users/koyote/programming/",
+    "/Users/koyote/programming/testroot/",
+    "/Users/koyote/programming/testroot/tp1/tp11/",
+    "/Users/koyote/programming/testroot/tp1/",
+    "/Users/koyote/programming/testroot/tp1/tp13/",
+    "/Users/koyote/programming/testroot/tp3/",
+    "/Users/koyote/programming/testroot/tp3/tp34/"
+  ]
+}
