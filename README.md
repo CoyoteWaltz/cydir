@@ -48,7 +48,7 @@ reset? 检查配置文件是否符合格式
 
 指令改为表驱动吧
 
-*缺陷:* prefixes 在 traceProbe 中更新不会去除原来的 prefix
+*缺陷:* prefixes 在 traceProbe 中更新不会去除原来的 prefix，保存之前加一步整理 prefixes 和 ep ep 的 prefixId 都要改
 
 ### 测试进度
 
