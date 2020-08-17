@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-09 23:45:10
+ * @LastEditTime: 2020-08-15 12:59:30
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -12,19 +12,16 @@
 const path = require('path');
 const fs = require('fs');
 
-// const { getMatchers } = require('./util/endpoint.js');
 const { toJSON, noop } = require('../util/chores.js');
 const { getCfgPath, probe } = require('../probe.js');
 const logger = require('../util/log.js');
 const { getCommandTips } = require('../util/constants.js');
 
 class Store {
-  // cfgPath = './fire.json'; // TODO del
-
   constructor() {
-    let config;
     this.initDepth = 3;
     this.cfgPath = getCfgPath();
+    let config;
     try {
       config = JSON.parse(fs.readFileSync(this.cfgPath));
     } catch (e) {
@@ -45,7 +42,6 @@ class Store {
 
   save(cb) {
     cb = cb || noop;
-    // TODO JSON.stringify
     fs.writeFile(this.cfgPath, toJSON(this.toJSON()), (err) => {
       if (err) {
         logger.err(err);
@@ -60,7 +56,6 @@ class Store {
       root: this._root || '',
       currentDepth: this.currentDepth,
       endpoints: this._endpoints || [],
-      // TODO
       usualList: this.usualList || [],
       prefixes: this._prefixes || [],
     };
@@ -89,6 +84,9 @@ class Store {
     return this._command;
   }
   set command(value) {
+    if (value === 'cydir') {
+      logger.err("Don't circularly use cydir!").exit();
+    }
     this._command = value;
     this.save(() => {
       logger.info(`Store command: ${this._command}`);
@@ -128,10 +126,15 @@ class Store {
     }
     this.currentDepth = value;
     this.initEndpoints(value);
+    // Notice no save here
   }
-  check() {
+  checkTypes() {
     // TODO
-    if (!this._command || typeof this._command !== 'string') {
+    if (
+      !this._command ||
+      typeof this._command !== 'string' ||
+      this._command === 'cydir'
+    ) {
       this._command = '';
       logger
         .err('No command! Run "cydir config-command <command>" to set one!')
@@ -143,7 +146,17 @@ class Store {
         .err('No root path! Run "cydir config-root-path <path>" to set one!')
         .exit();
     }
+    this._endpoints = this._checkArray(this._endpoints);
+    this.usualList = this._checkArray(this.usualList);
+    this._prefixes = this._checkArray(this._prefixes);
+    this.currentDepth = isNaN(this.currentDepth)
+      ? this.initDepth
+      : parseInt(this.currentDepth);
     return true;
+  }
+  _checkArray(arr) {
+    // TODO
+    return Array.isArray(arr) ? arr : [];
   }
   reset() {
     logger

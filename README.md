@@ -1,5 +1,7 @@
 # (Work In Progress) Cydir
 
+Command on Your Directory
+
 配置命令行指令`commandX` 以及 目标路径`/path/to/somewhere`
 
 ```bash
@@ -39,3 +41,15 @@ code /path/to/somewhere/.../projectA
 root > dirname **path-name**
 
 reset? 检查配置文件是否符合格式
+
+### TODO
+
+考虑加个 -p, --parent 指明父路径
+
+指令改为表驱动吧
+
+*缺陷:* prefixes 在 traceProbe 中更新不会去除原来的 prefix，保存之前加一步整理 prefixes 和 ep ep 的 prefixId 都要改
+
+### 测试进度
+
+2020-08-14: check0, check1,check3

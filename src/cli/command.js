@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-09 23:50:47
+ * @LastEditTime: 2020-08-15 12:53:44
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
@@ -21,6 +21,7 @@ function fire(targetPath, confirm = true) {
   const execution = `"${store.command}" "${targetPath}"`;
   logger.notice(`confirm: ${confirm}`); // TODO del
 
+  logger.info(execution);
   logger.emphasisPath(targetPath);
   if (!confirm) {
     execute(execution);
@@ -29,17 +30,18 @@ function fire(targetPath, confirm = true) {
       .question('', 'sure?')
       .then(() => {
         execute(execution);
+        store.save();
       })
       .catch(() => {
         logger.info('Do nothing...');
-      })
-      .finally(() => {
         store.save();
       });
   }
 }
 
 function execute(execution) {
+  console.log('exec....');
+  const options = { windowsHide: true };
   exec(execution, (err, stdout, stderr) => {
     if (stdout) {
       logger.info('stdout: ');

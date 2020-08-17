@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-08 20:30:20
- * @LastEditTime: 2020-08-08 21:50:33
+ * @LastEditTime: 2020-08-15 14:29:13
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -17,7 +17,8 @@ const fuseOption = {
 };
 
 function setOption({ exact = false, caseSensitive = false }) {
-  fuseOption.threshold = exact ? 0 : fuseOption.threshold;
+  // fuseOption.threshold = exact ? 0 : fuseOption.threshold;
+  // fuseOption.exact = exact;
   fuseOption.isCaseSensitive = caseSensitive;
 }
 

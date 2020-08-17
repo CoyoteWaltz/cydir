@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-09 23:47:51
+ * @LastEditTime: 2020-08-15 16:11:31
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -23,68 +23,59 @@ function storeRootPath(root) {
   store.root = root;
 }
 
-function searchHandler(target, confirm) {
-  if (!store.check()) {
+function searchHandler(target, confirm, { exact }) {
+  if (!store.checkTypes()) {
     return;
   }
   if (checkAbsPath(target)) {
     return fire(target, confirm);
   }
   let targetEndpoint;
-  const newState = match(target);
+  const newState = match(target, { exact });
   const results = newState.results;
+  console.log('--------', newState);
+  store.currentDepth = newState.newDepth;
   if (newState.inUsual) {
     // 从 ul 匹配的 直接 fire
-    console.log('rrr>>>> ', results);
     targetEndpoint = results[0];
   } else if (results.length) {
     // 有匹配结果
     // 多结果的提示
     // 移入 ul
     const first = results[0];
-    targetEndpoint = extract(target, first);
-    // store.usualList.push(toUsual);
+    targetEndpoint = extract(target, first, exact);
     if (targetEndpoint.matcher === first.matcher) {
       // 如果能替换 则替换
-      console.log('>>>> first', first, targetEndpoint);
       newState.endpoints = newState.endpoints.filter(
         (v) => v.matcher !== first.matcher
       );
     }
-    // targetEndpoint = toUsual;
   }
   if (newState.updatePath) {
+    logger.err('updatePath!');
     // 如果 trace 了 替换 或者 是在 endpoints 中有结果
     if (newState.updatePath !== store.root) {
+      logger.err('not root');
+
       // 必须判断是否为 root 不然会多留一个
-      console.log('update path! ', newState);
-      const removePrefixIds = store.prefixes
-        .map((v, i) => {
-          if (v.startsWith(newState.updatePath)) {
-            return i;
-          }
-          return -1;
-        })
-        .filter((v) => v >= 0);
-      console.log('removed prefix! ', removePrefixIds);
-      console.log('---------');
-      // 保留之前的
-      store.endpoints = store.endpoints.filter(
-        (ep) => !removePrefixIds.includes(ep.prefixId)
-      );
-      store.usualList = store.usualList.filter(
-        (ep) => !removePrefixIds.includes(ep.prefixId)
-      );
+      console.log('-------+++++++++---------');
+      const filterFn = (ep) =>
+      !parseFullPath(ep, store.prefixes).startsWith(newState.updatePath);
+      
+      // 过滤在更新的路径下的目录 endpoints
+      store.endpoints = store.endpoints.filter(filterFn);
+      store.usualList = store.usualList.filter(filterFn);
       store.endpoints.push(...newState.endpoints);
     } else {
       store.endpoints = newState.endpoints;
+      store.usualList = []; // reset
     }
     store.prefixes = newState.prefixes;
   }
   if (!targetEndpoint) {
     // 没有结果 必然是 trace 之后了也无结果
     logger.err('Failed to find!').info('Please give me a more precise name.');
-    store.save(() => logger.exit);
+    store.save(logger.exit);
   } else {
     if (!newState.inUsual) {
       // 从 endpoints 中找的 尝试 替换出旧节点
@@ -104,7 +95,7 @@ function resetHandler() {
 
 module.exports = {
   searchHandler,
+  resetHandler,
   storeCommand,
   storeRootPath,
-  resetHandler,
 };

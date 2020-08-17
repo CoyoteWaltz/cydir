@@ -2,7 +2,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 22:29:06
- * @LastEditTime: 2020-08-09 22:15:09
+ * @LastEditTime: 2020-08-15 14:31:24
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
@@ -10,10 +10,15 @@
 const { program } = require('commander');
 
 const { joinSep } = require('./util/chores.js');
-const { storeRootPath, storeCommand, searchHandler, resetHandler } = require('./cli');
+const {
+  storeRootPath,
+  storeCommand,
+  searchHandler,
+  resetHandler,
+} = require('./cli');
 
 program.version('0.0.1');
-
+console.log(process.version);
 // 顶层参数
 program
   .arguments('[paths...]')
@@ -31,7 +36,7 @@ program
       const fullPath = joinSep(paths);
       require('./search/config.js').setOption(searchOption);
       const confirm = !cmdObj.skipConfirm;
-      searchHandler(fullPath, confirm);
+      searchHandler(fullPath, confirm, { exact });
     }
   });
 
@@ -53,7 +58,7 @@ program
   .command('reset-config')
   .description('Reset all config')
   .action(() => {
-    resetHandler()
+    resetHandler();
   });
 
 program.parse(process.argv);

@@ -29,7 +29,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
-    "fuse.js": "^6.4.0"
+    "fuse.js": "^6.3.0"
   },
   "engines": {
     "node": ">=10"

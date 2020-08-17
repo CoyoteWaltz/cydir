@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-24 01:36:41
- * @LastEditTime: 2020-08-04 22:34:11
+ * @LastEditTime: 2020-08-15 00:24:37
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  * @TODO:
@@ -11,7 +11,6 @@ const path = require('path');
 
 // 工厂函数吧 可能之后会单独抽出一个模块来处理 node 相关
 function createEndpoint(prefixId, matcher, middle = '', fullPath = '') {
-  // TODO delete full path
   const endpoint = { prefixId, matcher };
   if (middle) {
     endpoint.middle = middle;
@@ -33,7 +32,7 @@ function getMatchers(points) {
  */
 function parseFullPath({ prefixId, middle, matcher }, prefixes) {
   prefixes = prefixes || require('./index.js').prefixes;
-  console.log('parse full: ', prefixId, prefixes[prefixId], middle, matcher);
+  // console.log('parse full: ', prefixId, prefixes[prefixId], middle, matcher);
   return path.join(prefixes[prefixId], middle || '', matcher);
 }
 

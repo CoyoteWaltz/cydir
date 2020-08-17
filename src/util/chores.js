@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-16 22:48:11
- * @LastEditTime: 2020-08-08 18:34:06
+ * @LastEditTime: 2020-08-14 00:10:07
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
@@ -12,11 +12,6 @@ function toJSON(obj) {
   // return JSON.stringify(obj);
 }
 
-// return different parts of 2 arrays which is new in arr2
-function diffArrays(oldArr, newArr) {
-  return newArr.filter((v) => !oldArr.includes(v));
-}
-
 function noop() {}
 
 function joinSep(separate, sep = ' ') {
@@ -25,7 +20,6 @@ function joinSep(separate, sep = ' ') {
 
 module.exports = {
   toJSON,
-  diffArrays,
   noop,
   joinSep,
 };
