@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-17 00:21:15
+ * @LastEditTime: 2020-08-17 22:09:23
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
@@ -18,18 +18,18 @@ const store = require('../store');
  */
 function fire(targetPath, confirm = true) {
   // 这里需要给 "" 不然会被空格分割
-  const execution = `"${store.command}" "${targetPath}"`;
+  // const execution = `"${store.command}" "${targetPath}"`;
   logger.notice(`confirm: ${confirm}`); // TODO del
 
-  logger.info(targetPath);
+  // logger.info(targetPath);
   logger.emphasisPath(targetPath);
   if (!confirm) {
-    execute(execution);
+    execute(store.command, targetPath);
   } else {
     logger
       .question('', 'sure?')
       .then(() => {
-        execute(store.command + 'sss', targetPath);
+        execute(store.command, targetPath);
         store.save();
       })
       .catch((err) => {
@@ -48,11 +48,12 @@ function execute(command, targetPath) {
 
   const options = { windowsHide: true, shell: true };
   const quote = (str) => `"${str}"`;
+  console.log(quote(targetPath));
   const cmd = spawn(quote(command), [quote(targetPath)], options);
   console.log(cmd.spawnargs);
   // stdout
   cmd.stdout.on('data', (err) => {
-    logger.info(`stdout: ${String(err)}`);
+    logger.info(`[stdout] ${String(err)}`);
   });
   // error catch
   cmd.stderr.on('data', (err) => {
