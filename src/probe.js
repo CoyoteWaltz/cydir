@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-15 15:03:04
+ * @LastEditTime: 2020-08-19 22:05:36
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -22,24 +22,14 @@ function checkAbsPath(target) {
   return path.isAbsolute(target) && stat.isDirectory();
 }
 
-// TODO
 function getCfgPath() {
-  // for debug
-  const tmpPath = path.resolve(__dirname, '../nnnntmp.json');
-
-  const glbPth = path.resolve(
+  const globalPath = path.resolve(
     process.env.HOME || process.env.USERPROFILE || __dirname, //  直接拿的 环境变量 HOME
-    '.__cydir.config.json'
+    '.cydir.config.json'
   );
+  console.log('------ global path: ', globalPath);
 
-  console.log('------ global path: ', tmpPath);
-  console.log(
-    '------ global path: ',
-    process.env.HOME || process.env.USERPROFILE || __dirname
-  );
-  console.log('------ global path: ', glbPth);
-
-  return tmpPath;
+  return globalPath;
 }
 
 // 以 absPath 为 root maxDepth 为最大深度的 所有 endpoints
@@ -63,8 +53,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
     return { endpoints, prefixes, probeDepth };
   }
   function genPrefixId(filePath, matcher) {
-    // const prefix = filePath.slice(0, filePath.lastIndexOf(matcher));
-    // console.log(filePath, matcher, filePath.lastIndexOf(matcher));
     const prefix = filePath.slice(0, filePath.lastIndexOf(matcher));
     let prefixId = prefixes.lastIndexOf(prefix);
     if (prefixId < 0) {
@@ -82,8 +70,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
         createEndpoint(
           genPrefixId(filePath, matcher),
           matcher
-          // '', // TODO 删
-          // path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
         )
       );
       return;
@@ -93,7 +79,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
         .readdirSync(filePath)
         .filter((value) => !BLACKLIST.includes(value))
         .map((value) => path.resolve(filePath, value)) // 转 abs path
-        // .filter((value) => !excludes.includes(value)) // TODO 这一步可能要在想想
         .filter((value) => {
           if (excludes.length && excludes.includes(value)) {
             return false;
@@ -113,8 +98,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
           createEndpoint(
             genPrefixId(filePath, matcher),
             matcher
-            // '', // TODO 删
-            // path.join(prefixes[genPrefixId(filePath, matcher)], matcher)
           )
         );
         return;
@@ -127,14 +110,12 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
         });
       }
     } catch (e) {
-      console.log(e);
-      logger.err(e);
-      // TODO
       // ignore this error walk
+      // console.log(e);
       return;
     }
   }
-  
+
   walk(absPath, 0, '', excludes); // chain 传 ''
   console.log('probe depth: ', probeDepth);
   return {
@@ -145,7 +126,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
 
 // path.isAbsolute()
 const traceParent = (absPath) => {
-  // return absPath.slice(0, absPath.lastIndexOf(path.sep));
   return path.dirname(absPath);
 };
 

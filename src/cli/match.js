@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-02 14:20:53
- * @LastEditTime: 2020-08-15 16:19:11
+ * @LastEditTime: 2020-08-19 21:44:02
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: realization of matching strategy
  * @TODO: 异步的去做这个逻辑 还是 配置化？
@@ -146,10 +146,10 @@ function match(target, { exact }) {
         maxDepth = probeDepth;
       }
       results = scan(target, newEps, exact);
-      console.log('<<<<<<<<<<>>>>>>>>');
-      console.log(newEps);
-      console.log('<<<<<<<<<<>>>>>>>>');
-      console.log(state.endpoints);
+      // console.log('<<<<<<<<<<>>>>>>>>');
+      // console.log(newEps);
+      // console.log('<<<<<<<<<<>>>>>>>>');
+      // console.log(state.endpoints);
       newEps.shift()
       // state.endpoints.splice(i, 1);
       state.endpoints.push(...newEps);

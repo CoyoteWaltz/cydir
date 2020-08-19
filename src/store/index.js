@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-15 12:59:30
+ * @LastEditTime: 2020-08-19 21:46:49
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
@@ -109,7 +109,11 @@ class Store {
   }
   // TODO
   set prefixes(value) {
+    const oldLen = this._prefixes.length;
     this._prefixes = value;
+    if (value.length > oldLen) {
+      this.shrinkPrefixes();
+    }
   }
   // 更新根目录 每次更新都 probe 更新
   // 不考虑异步吧
@@ -170,6 +174,30 @@ class Store {
         });
       })
       .catch(noop);
+  }
+  /**
+   * fix the problem of unremoved useless prefixes
+   */
+  shrinkPrefixes() {
+    console.log('<<<<>>>>>>>>>>> shrink prefixes');
+    const oldPrefixes = this._prefixes.slice();
+    const flag = Array(oldPrefixes.length).fill(0);
+    this._endpoints.forEach((v) => {
+      flag[v.prefixId]++;
+    });
+    const m = new Map();
+    let id = 0;
+    this._prefixes = this._prefixes.filter((v, idx) => {
+      if (flag[idx] === 0) {
+        return false;
+      }
+      m.set(v, id++);
+      return true;
+    });
+    for (let i = 0; i < this._endpoints.length; ++i) {
+      const ep = this._endpoints[i];
+      ep.prefixId = m.get(oldPrefixes[ep.prefixId]);
+    }
   }
 }
 
