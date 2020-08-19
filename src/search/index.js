@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-18 21:54:49
+ * @LastEditTime: 2020-08-19 22:30:47
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -17,7 +17,7 @@ const { probe, distance, traceParent } = require('../probe.js');
 const { createEndpoint } = require('../store/endpoint.js');
 const { fuseOption } = require('./config.js');
 
-const diffThreshold = 0.08;
+const diffThreshold = 0.04;
 
 /**
  * fuzzy match endpoints
@@ -27,12 +27,6 @@ const diffThreshold = 0.08;
  * @return {endpoint[]}
  */
 function scan(target, endpoints, exact = false) {
-  // console.log('in scan');
-  // console.log(target);
-  // console.log(target, endpoints.length);
-  // console.log(fuseOption);
-  // console.log('eps: ', endpoints);
-
   const results = [];
   if (exact) {
     for (const ep of endpoints) {
@@ -45,8 +39,6 @@ function scan(target, endpoints, exact = false) {
   } else {
     const fuse = new Fuse(endpoints, fuseOption);
     const matches = fuse.search(target);
-    console.log(matches);
-    console.log(matches.length);
     if (matches.length === 0) {
       return [];
     }
@@ -85,15 +77,10 @@ function traceProbe(
 ) {
   // prefixes copy 一份 做增量更新 之后替换原来的
   // endpoints 先做原始的过滤 然后在增量
-  console.log('ori dep:  ', originDepth);
   let current = traceParent(start); // 从父开始
   let currentDepth = distance(current, root);
-  console.log('first depth:   ', currentDepth);
-  console.log('current root: ', current, root);
-  // TODO
   if (start === root) {
     // 直接跳过下面的循环
-    logger.err('start === root');
     currentDepth = 0;
     current = root;
   }
@@ -110,7 +97,6 @@ function traceProbe(
   };
 
   while (current !== root) {
-    console.log('loop:  ', current);
     if (fs.existsSync(current)) {
       // 回溯不存在 继续
       // 需要触达的深度 = 原始深度 - 当前到 root 的深度
@@ -120,7 +106,6 @@ function traceProbe(
         addition.prefixes,
         [exclude] // 只需要去除上一个即可
       );
-      // endpoints.shift()
       addition.endpoints.push(...endpoints);
       const results = scan(target, endpoints, exact);
       if (results.length) {
@@ -132,22 +117,18 @@ function traceProbe(
     }
     current = traceParent(current);
     --currentDepth;
-    console.log('next while deppppth  ', currentDepth);
   }
   let results = [];
   if (current === root) {
     // 到头了还没
     // 重新 probe 到 originDepth !!
-    console.log('reach root!!');
     const { endpoints, probeDepth } = probe(
       current,
       originDepth, // probe 到原始深度
       addition.prefixes,
-      // [exclude]    // 不需要 exclude 还是重来
+      // 不需要 exclude 重来
     );
     results = scan(target, endpoints, exact);
-    // addition.endpoints.push(...endpoints);
-    // addition.probeDepth = probeDepth > originDepth ? probeDepth : originDepth;
     addition.endpoints = endpoints;
     addition.probeDepth = probeDepth;
     addition.updatePath = root;
@@ -171,7 +152,6 @@ function extract(target, endpoint, exact = false) {
   }
   let preciseId;
   if (exact) {
-    logger.notice('exact');
     // exact match
     preciseId = split.indexOf(target);
   } else {
@@ -184,7 +164,6 @@ function extract(target, endpoint, exact = false) {
     endpoint.prefixId,
     split.slice(preciseId, preciseId + 1).join(path.sep),
     split.slice(0, preciseId).join(path.sep)
-    // endpoint.fullPath
   );
 
   return newEndpoint;

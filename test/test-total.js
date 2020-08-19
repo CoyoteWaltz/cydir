@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-14 22:03:04
- * @LastEditTime: 2020-08-15 15:31:28
+ * @LastEditTime: 2020-08-20 00:59:58
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -10,8 +10,8 @@
 const path = require('path');
 const fs = require('fs');
 const { parseFullPath } = require('../src/store/endpoint.js');
-const { probe, distance } = require('../src/probe.js');
-const { prefixes, endpoints, usualList, root, currentDepth } = require('../nnnntmp.json');
+const { probe, distance, getCfgPath } = require('../src/probe.js');
+const { prefixes, endpoints, usualList, root, currentDepth } = require(getCfgPath());
 const logger = require('../src/util/log');
 // const { checkTypes, usualList } = require('../src/store/index.js');
 
@@ -21,7 +21,7 @@ function ensureEndpoints(endpoints, prefixes, root) {
   endpoints.forEach((ep) => {
     // const fullPath = path.join(prefixes[prefixId], matcher);
     const fullPath = parseFullPath(ep, prefixes);
-    console.log(fullPath);
+    // console.log(fullPath);
     // console.log(distance(fullPath, root));
 
     if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isDirectory()) {
@@ -65,7 +65,7 @@ function ensureUnique(endpoints, prefixes) {
 function allPrefixes(endpoints, prefixes) {
   const flag = Array(prefixes.length).fill(0);
   endpoints.forEach((v) => {
-    console.log(v);
+    // console.log(v);
     flag[v.prefixId]++;
   })
   // console.log(flag);

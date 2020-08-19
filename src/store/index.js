@@ -1,12 +1,10 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-19 21:46:49
+ * @LastEditTime: 2020-08-20 01:10:29
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
- * @TODO: 1. 更新 endpoints 和 prefixes 的方法 删除之前的 prefix 以及 对应的 endpoints以及插入新的
- *        2. 用下标做真的好吗？
- *        3. 构造时读取文件检查文件格式 不符合就 reset
+ * @TODO: 
  */
 
 const path = require('path');
@@ -15,17 +13,16 @@ const fs = require('fs');
 const { toJSON, noop } = require('../util/chores.js');
 const { getCfgPath, probe } = require('../probe.js');
 const logger = require('../util/log.js');
-const { getCommandTips } = require('../util/constants.js');
+const { getCommandTips, MAX_PROBE_DEPTH } = require('../util/constants.js');
 
 class Store {
   constructor() {
-    this.initDepth = 3;
+    this.initDepth = MAX_PROBE_DEPTH;
     this.cfgPath = getCfgPath();
     let config;
     try {
       config = JSON.parse(fs.readFileSync(this.cfgPath));
     } catch (e) {
-      logger.err(e);
       config = {};
     }
     this.initConfig(config);
@@ -42,6 +39,7 @@ class Store {
 
   save(cb) {
     cb = cb || noop;
+    this.shrinkPrefixes();
     fs.writeFile(this.cfgPath, toJSON(this.toJSON()), (err) => {
       if (err) {
         logger.err(err);
@@ -96,7 +94,6 @@ class Store {
   get endpoints() {
     return this._endpoints;
   }
-  // TODO
   set endpoints(value) {
     if (Array.isArray(value)) {
       this._endpoints = value;
@@ -107,18 +104,12 @@ class Store {
   get prefixes() {
     return this._prefixes;
   }
-  // TODO
   set prefixes(value) {
-    const oldLen = this._prefixes.length;
     this._prefixes = value;
-    if (value.length > oldLen) {
-      this.shrinkPrefixes();
-    }
   }
   // 更新根目录 每次更新都 probe 更新
   // 不考虑异步吧
   initEndpoints(depth = this.initDepth) {
-    console.log('----root: ', this._root === '');
     this._prefixes = [];
     const { endpoints, probeDepth } = probe(this._root, depth, this._prefixes);
     this._endpoints = endpoints;
@@ -130,7 +121,7 @@ class Store {
     }
     this.currentDepth = value;
     this.initEndpoints(value);
-    // Notice no save here
+    // no save here
   }
   checkTypes() {
     // TODO
@@ -179,10 +170,9 @@ class Store {
    * fix the problem of unremoved useless prefixes
    */
   shrinkPrefixes() {
-    console.log('<<<<>>>>>>>>>>> shrink prefixes');
     const oldPrefixes = this._prefixes.slice();
     const flag = Array(oldPrefixes.length).fill(0);
-    this._endpoints.forEach((v) => {
+    this._endpoints.concat(this.usualList).forEach((v) => {
       flag[v.prefixId]++;
     });
     const m = new Map();
@@ -194,10 +184,14 @@ class Store {
       m.set(v, id++);
       return true;
     });
-    for (let i = 0; i < this._endpoints.length; ++i) {
-      const ep = this._endpoints[i];
-      ep.prefixId = m.get(oldPrefixes[ep.prefixId]);
-    }
+    const mapNewPrefix = (endpoints) => {
+      for (let i = 0; i < endpoints.length; ++i) {
+        const ep = endpoints[i];
+        ep.prefixId = m.get(oldPrefixes[ep.prefixId]);
+      }
+    };
+    mapNewPrefix(this._endpoints);
+    mapNewPrefix(this.usualList);
   }
 }
 

@@ -1,20 +1,19 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-19 22:05:36
+ * @LastEditTime: 2020-08-20 01:05:30
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
 
 const path = require('path');
 const fs = require('fs');
-const { createEndpoint } = require('./store/endpoint.js');
 
+const { createEndpoint } = require('./store/endpoint.js');
 const { MAX_PROBE_DEPTH, BLACKLIST } = require('./util/constants.js');
 const logger = require('./util/log.js');
 
 function checkAbsPath(target) {
-  console.log(fs.existsSync(target));
   if (!fs.existsSync(target)) {
     return false;
   }
@@ -27,7 +26,6 @@ function getCfgPath() {
     process.env.HOME || process.env.USERPROFILE || __dirname, //  直接拿的 环境变量 HOME
     '.cydir.config.json'
   );
-  console.log('------ global path: ', globalPath);
 
   return globalPath;
 }
@@ -43,7 +41,6 @@ function getCfgPath() {
  * @returns {object}
  */
 function probe(absPath, maxDepth, prefixes, excludes = []) {
-  console.log(absPath);
   maxDepth = maxDepth || MAX_PROBE_DEPTH;
   // 递归遍历目录 到达一定深度结束 返回 tree 节点结果
   // 接受参数 绝对路径
@@ -66,12 +63,7 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
     const matcher = path.join(chain, path.basename(filePath));
     if (curDepth === maxDepth) {
       probeDepth = maxDepth;
-      endpoints.push(
-        createEndpoint(
-          genPrefixId(filePath, matcher),
-          matcher
-        )
-      );
+      endpoints.push(createEndpoint(genPrefixId(filePath, matcher), matcher));
       return;
     }
     try {
@@ -85,21 +77,13 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
           }
           if (fs.existsSync(value)) {
             const stat = fs.statSync(value);
-            if (stat.isSymbolicLink()) {
-              console.log(value, stat.isDirectory(), stat.isSymbolicLink());
-            }
             return stat.isDirectory();
           }
         });
 
       if (!subPaths.length) {
         probeDepth = curDepth > probeDepth ? curDepth : probeDepth;
-        endpoints.push(
-          createEndpoint(
-            genPrefixId(filePath, matcher),
-            matcher
-          )
-        );
+        endpoints.push(createEndpoint(genPrefixId(filePath, matcher), matcher));
         return;
       }
       // 第一个给 chain
@@ -117,7 +101,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
   }
 
   walk(absPath, 0, '', excludes); // chain 传 ''
-  console.log('probe depth: ', probeDepth);
   return {
     endpoints,
     probeDepth,

@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-17 23:10:37
- * @LastEditTime: 2020-08-19 01:13:30
+ * @LastEditTime: 2020-08-20 01:09:19
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: 处理命令相关
  * @TODO:
@@ -20,8 +20,6 @@ const isWin = process.platform == 'win32';
  */
 function fire(targetPath, confirm = true) {
   // 这里需要给 "" 不然会被空格分割
-  logger.notice(`confirm: ${confirm}`); // TODO del
-
   logger.emphasisPath(targetPath);
   if (!confirm) {
     execute(store.command, targetPath);
@@ -34,7 +32,7 @@ function fire(targetPath, confirm = true) {
       })
       .catch((err) => {
         if (err) {
-          console.log(err);
+          logger.err(err);
         } else {
           logger.info('Do nothing...');
         }
@@ -44,10 +42,6 @@ function fire(targetPath, confirm = true) {
 }
 
 function execute(command, targetPath) {
-  console.log('exec....');
-  // const quoted = (str) => `"${str}"`;
-  // const quoted = (str) => `"${escapeCommand(str)}"`;
-  // const quoted = (str) => str;
   const args = [targetPath];
   if (!isWin) {
     // 非 windows 情况下处理
@@ -55,9 +49,7 @@ function execute(command, targetPath) {
     command = splitCommand.shift();
     args.unshift(...splitCommand);
   }
-  console.log('args:', args);
   const cmd = spawn(command, args);
-  console.log(cmd.spawnargs);
   // stdout
   cmd.stdout.on('data', (data) => {
     logger.info(`stdout:\n${data.toString()}`);
