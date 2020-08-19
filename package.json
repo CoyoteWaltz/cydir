@@ -29,6 +29,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
+    "cross-spawn": "^7.0.3",
     "fuse.js": "^6.3.0"
   },
   "engines": {

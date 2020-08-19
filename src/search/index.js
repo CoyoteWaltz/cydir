@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 23:22:06
- * @LastEditTime: 2020-08-15 16:33:42
+ * @LastEditTime: 2020-08-18 21:54:49
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: match the best path
  * @TODO: 用户可配置的 fuse 参数！ 尤其是 score
@@ -27,11 +27,11 @@ const diffThreshold = 0.08;
  * @return {endpoint[]}
  */
 function scan(target, endpoints, exact = false) {
-  console.log('in scan');
-  console.log(target);
-  console.log(target, endpoints.length);
-  console.log(fuseOption);
-  console.log('eps: ', endpoints);
+  // console.log('in scan');
+  // console.log(target);
+  // console.log(target, endpoints.length);
+  // console.log(fuseOption);
+  // console.log('eps: ', endpoints);
 
   const results = [];
   if (exact) {

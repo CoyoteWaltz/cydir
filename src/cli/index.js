@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-15 16:11:31
+ * @LastEditTime: 2020-08-17 22:14:11
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -55,10 +55,8 @@ function searchHandler(target, confirm, { exact }) {
     logger.err('updatePath!');
     // 如果 trace 了 替换 或者 是在 endpoints 中有结果
     if (newState.updatePath !== store.root) {
-      logger.err('not root');
-
       // 必须判断是否为 root 不然会多留一个
-      console.log('-------+++++++++---------');
+      logger.err('not root');
       const filterFn = (ep) =>
       !parseFullPath(ep, store.prefixes).startsWith(newState.updatePath);
       
