@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-22 21:34:11
- * @LastEditTime: 2020-08-20 01:05:30
+ * @LastEditTime: 2020-08-20 01:23:14
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  */
@@ -11,7 +11,6 @@ const fs = require('fs');
 
 const { createEndpoint } = require('./store/endpoint.js');
 const { MAX_PROBE_DEPTH, BLACKLIST } = require('./util/constants.js');
-const logger = require('./util/log.js');
 
 function checkAbsPath(target) {
   if (!fs.existsSync(target)) {

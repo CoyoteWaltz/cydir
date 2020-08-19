@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-13 23:28:43
- * @LastEditTime: 2020-08-20 01:10:29
+ * @LastEditTime: 2020-08-20 01:25:58
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
  * @TODO: 
@@ -98,7 +98,7 @@ class Store {
     if (Array.isArray(value)) {
       this._endpoints = value;
     } else {
-      logger.err('endpoints store not Array!').info(value);
+      logger.err('Endpoints store not Array!').info(value);
     }
   }
   get prefixes() {
@@ -158,7 +158,6 @@ class Store {
       .notice('Reset all config.')
       .question('', 'sure?')
       .then(() => {
-        logger.info('reset');
         this.initConfig();
         this.save(() => {
           logger.info('Config reset!');
