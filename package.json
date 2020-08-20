@@ -10,7 +10,6 @@
   "bin": {
     "cydir": "./src/index.js"
   },
-  "main": "index.js",
   "files": [
     "./src/*"
   ],
