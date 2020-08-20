@@ -94,7 +94,6 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
       }
     } catch (e) {
       // ignore this error walk
-      // console.log(e);
       return;
     }
   }

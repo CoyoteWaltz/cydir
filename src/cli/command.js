@@ -7,7 +7,6 @@
  * @TODO:
  */
 
-// const { exec, spawn } = require('child_process');
 const spawn = require('cross-spawn');
 const logger = require('../util/log.js');
 const store = require('../store');
@@ -19,7 +18,6 @@ const isWin = process.platform == 'win32';
  * @param {string} targetPath ensured an existed path
  */
 function fire(targetPath, confirm = true) {
-  // 这里需要给 "" 不然会被空格分割
   logger.emphasisPath(targetPath);
   if (!confirm) {
     execute(store.command, targetPath);

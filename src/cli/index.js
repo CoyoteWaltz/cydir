@@ -35,6 +35,7 @@ function searchHandler(target, { confirm, exact }) {
   if (checkAbsPath(target)) {
     return fire(target, confirm);
   }
+  console.log('Waiting...');
   let targetEndpoint;
   const newState = match(target, { exact });
   const results = newState.results;
@@ -73,7 +74,7 @@ function searchHandler(target, { confirm, exact }) {
   }
   if (!targetEndpoint) {
     // 没有结果 必然是 trace 之后了也无结果
-    logger.err('Failed to find!').info('Please give me a more precise name.');
+    logger.err('Failed to find.').info('Please give me a more precise name.');
     store.save(logger.exit);
   } else {
     if (!newState.inUsual) {

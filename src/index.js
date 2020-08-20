@@ -48,7 +48,7 @@ program
 
 program
   .command('config-root-path <root-path>')
-  .description('Config a relative root path of your projects')
+  .description('Config a relative root path of your directories')
   .action((rootPath) => {
     storeRootPath(rootPath);
   });

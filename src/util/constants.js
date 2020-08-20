@@ -34,7 +34,6 @@ function rmWarn(cmd) {
 }
 
 function getCommandTips(cmd) {
-  console.log(cmd);
   if (commandTips[cmd]) {
     return commandTips[cmd];
   }

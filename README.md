@@ -1,16 +1,16 @@
-# (Work In Progress) Cydir
+# Cydir
 
 Command on Your Directory
 
 A Node.js based command line tool for executing the command to a directory.
 
-## ⚙️安装
+## ⚙️Install
 
 Node.js version 8 and above:
 
 `npm install -g cydir`
 
-## 🕹使用
+## 🕹Usage
 
 ### 配置
 
@@ -24,7 +24,7 @@ cydir config-command your-command
 
 #### 根目录
 
-相对的一个根目录，目标文件夹深度在 3 最佳，Cydir 会在此根目录下进行扫描。
+相对的一个根目录（**绝对路径**），目标文件夹深度在 3 最佳，Cydir 会在此根目录下进行扫描。
 
 ```bash
 cydir config-root-path /path/to/somewhere
@@ -47,112 +47,68 @@ cydir a-fuzzy-path-name
 - 路径或指令中含有空格必须要用`""`来包裹哦
 - 稍微记一下文件夹的名称哦
 
-
-
 ## 🧩Commands
 
 **config-command**
 
+配置指令，确保在你的`PATH`环境变量中
 
+```bash
+cydir config-command <command>
+```
 
 **config-root-path**
 
+配置根目录，必须是绝对路径
 
+```bash
+cydir config-root-path "/path/to/some where"
+```
 
 **reset-config**
 
+清空所有配置信息
 
+```bash
+cydir reset-config
+```
 
+## 📘Help & Options
 
+```bash
+Usage: index [options] [command] [path...]
 
+Options:
+  -V, --version                 output the version number
+  -s, --skip-confirm            Skip confirm before exec command
+  -e, --exact                   Exact match
+  -c, --case-sensitive          Match with case sensitive
+  -h, --help                    display help for command
 
+Commands:
+  config-command <command>      Config command on your file path
+  config-root-path <root-path>  Config a relative root path of your directories
+  reset-config                  Reset all config
+```
 
-## 🎯Options
+精确匹配：`-e, --exact`
 
-`-e,--exact`
+大小写敏感：`-c, --case-sensitive`
 
-
-
-
-
-
-
-
-
-## 📘Help
-
-
-
-
-
-
+跳过执行前的确认：`-s, --skip-confirm`
 
 ## 🔬Why
 
-每次`cd`到对应的文件夹再用`code`打开项目的操作太繁琐了！为了能快速打开项目，同时也能支持模糊匹配（引入了 Fuse.js），所以开始了 Cydir 的开发。
+每次`cd`到对应的文件夹再用`code`打开项目的操作太繁琐了！为了能快速打开项目，同时也能支持模糊匹配（引入了 Fuse.js），并且受到`autojump`便捷操作的启发，所以开始了 Cydir 的开发。
 
 实际上 Cydir 可以配置任何指令（注意空格），指令 + 目录的其他功能等待大家一起来发掘！
 
+## Features
 
+快速定位（并不每次扫描所有文件夹）
 
+支持模糊匹配（感谢 [Fuse.js](https://github.com/krisk/fuse)）
 
+漂亮的命令行提示（感谢 [Command.js](https://github.com/tj/commander.js)）
 
-
-
-
-
-
-
-
-
-配置命令行指令`commandX` 以及 目标路径`/path/to/somewhere`
-
-```bash
-cydir config-path /path/to/somewhere
-cydir config-command code
-```
-
-对其路径下文件进行模糊匹配
-
-```bash
-cydir proj
-```
-
-如果在配置的子路径下存在类似`projectA`名字的目录
-
-等同于执行
-
-```bash
-code /path/to/somewhere/.../projectA
-```
-
-目标/功能：不用再去到对应目录了 在任何地方 `cydir <fuzzy_path>` 即可用编辑器打开项目
-
-### 路径扫描 and 存储
-
-每次匹配成功将 endpoint 加入 usualList 同时删除
-
-### 模糊匹配
-
-考虑加上 上级目录的情况:
-
-- 匹配的字符串`../../match`会对前第二级的目录生效
-- 直接先找出`../../`这样的前缀，之后直接`path.resolve`即可
-
-### 路径结果的展示
-
-root > dirname **path-name**
-
-reset? 检查配置文件是否符合格式
-
-### TODO
-
-考虑加个 -p, --parent 指明父路径
-
-指令改为表驱动吧
-
-*缺陷:* prefixes 在 traceProbe 中更新不会去除原来的 prefix，保存之前加一步整理 prefixes 和 ep ep 的 prefixId 都要改
-
-### 测试进度
-
-2020-08-14: check0, check1,check3
+windows 平台兼容（感谢 [cross-spawn](https://github.com/moxystudio/node-cross-spawn)）

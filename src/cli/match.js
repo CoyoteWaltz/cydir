@@ -12,10 +12,6 @@ const store = require('../store');
 const fs = require('fs');
 const { probe } = require('../probe.js');
 
-// 开始 scan usualList
-//   找到结果是 endpoint -> 送去 parse -> 送去 fire
-//   为空 -> 去 endpoints 去 scan
-
 function handleTrace(traceRes, state) {
   state.prefixes = traceRes.addition.prefixes;
   state.endpoints = traceRes.addition.endpoints;
@@ -142,8 +138,8 @@ function match(target, { exact }) {
   }
   return state;
 }
-// 放到外面去做
-// 更新 store 的 currentDepth prefixes endpoints usualList
+
+// 外部更新 store 的 currentDepth prefixes endpoints usualList
 
 // 如果结果有多个路径 过滤一遍存在的路径 如果数量仍 > 1 提示用户选择 TODO
 /**
