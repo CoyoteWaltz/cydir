@@ -1,6 +1,6 @@
 {
   "name": "cydir",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A command line tool for executing command on your directory everywhere.",
   "author": "CoyoteWaltz <coyote_waltz@163.com>",
   "keywords": [
