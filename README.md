@@ -6,9 +6,35 @@ A Node.js based command line tool for executing the command to a directory.
 
 ## ⚙️Install
 
-Node.js version 8 and above:
+[Node.js](https://nodejs.org/en/download/) version 8 and above:
 
 `npm install -g cydir`
+
+## Example
+
+以前你可能需要
+
+```bash
+cd /xxx/xxx/xxx
+code project1
+...
+cd ../../yyy/yyy
+code project2
+```
+
+现在仅需**一次配置，随处使用**
+
+```bash
+cydir config-command code
+cydir config-root-path /xxx/my-projects
+```
+
+在任意位置
+
+```bash
+code project2
+code roject1
+```
 
 ## 🕹Usage
 
@@ -24,7 +50,7 @@ cydir config-command your-command
 
 #### 根目录
 
-相对的一个根目录（**绝对路径**），目标文件夹深度在 3 最佳，Cydir 会在此根目录下进行扫描。
+相对的一个根目录（**绝对路径**），推荐目标文件夹深度在 3，Cydir 会在此根目录下进行扫描。
 
 ```bash
 cydir config-root-path /path/to/somewhere
