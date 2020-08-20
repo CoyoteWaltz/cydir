@@ -15,26 +15,27 @@ const {
   storeCommand,
   searchHandler,
   resetHandler,
+  helpHandler,
 } = require('./cli');
 
-program.version('0.0.1');
-// 顶层参数
+program.version(require('../package.json').version);
+
 program
-  .arguments('[paths...]')
+  .arguments('[path...]')
   // .description('<command> on your <directory>')
   .option('-s, --skip-confirm', 'Skip confirm before exec command')
   .option('-e, --exact', 'Exact match')
   .option('-c, --case-sensitive', 'Match with case sensitive')
   .action((paths, cmdObj) => {
     if (!paths.length) {
-      program.help();
+      helpHandler(program);
     } else {
       const { exact, caseSensitive } = cmdObj;
-      const searchOption = { exact, caseSensitive };
-      const fullPath = joinSep(paths);
-      require('./search/config.js').setOption(searchOption);
       const confirm = !cmdObj.skipConfirm;
-      searchHandler(fullPath, confirm, { exact });
+      const searchOption = { exact, caseSensitive, confirm };
+      const fullPath = joinSep(paths);
+      require('./search/config.js').setOption({ caseSensitive });
+      searchHandler(fullPath, searchOption);
     }
   });
 

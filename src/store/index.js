@@ -4,7 +4,7 @@
  * @LastEditTime: 2020-08-20 01:25:58
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: store root path, command, history and endpoints
- * @TODO: 
+ * @TODO: Singleton
  */
 
 const path = require('path');
@@ -12,8 +12,8 @@ const fs = require('fs');
 
 const { toJSON, noop } = require('../util/chores.js');
 const { getCfgPath, probe } = require('../probe.js');
-const logger = require('../util/log.js');
 const { getCommandTips, MAX_PROBE_DEPTH } = require('../util/constants.js');
+const logger = require('../util/log.js');
 
 class Store {
   constructor() {
@@ -48,6 +48,7 @@ class Store {
       cb();
     });
   }
+
   toJSON() {
     return {
       command: this._command || '',
@@ -58,9 +59,11 @@ class Store {
       prefixes: this._prefixes || [],
     };
   }
+
   get root() {
     return this._root;
   }
+
   set root(value) {
     if (!path.isAbsolute(value)) {
       logger.err('Path must be absolute!').exit();
@@ -78,29 +81,34 @@ class Store {
       logger.info(`Config root path: ${this._root}`);
     });
   }
+
   get command() {
     return this._command;
   }
+
   set command(value) {
     if (value === 'cydir') {
       logger.err("Don't circularly use cydir!").exit();
     }
     this._command = value;
     this.save(() => {
-      logger.info(`Store command: ${this._command}`);
+      logger.info(`Config command: ${this._command}`);
       logger.notice(getCommandTips(this._command));
     });
   }
+
   get endpoints() {
     return this._endpoints;
   }
+
   set endpoints(value) {
     if (Array.isArray(value)) {
       this._endpoints = value;
     } else {
-      logger.err('Endpoints store not Array!').info(value);
+      logger.err('Endpoints stored not Array!').info(value);
     }
   }
+
   get prefixes() {
     return this._prefixes;
   }
@@ -149,6 +157,7 @@ class Store {
       : parseInt(this.currentDepth);
     return true;
   }
+
   _checkArray(arr) {
     // TODO
     return Array.isArray(arr) ? arr : [];
@@ -191,6 +200,10 @@ class Store {
     };
     mapNewPrefix(this._endpoints);
     mapNewPrefix(this.usualList);
+  }
+  logConfig() {
+    logger.info(`Command: ${this._command || 'No command in config!'}`);
+    logger.info(`Current root path: ${this._root || 'No path in config'}`);
   }
 }
 

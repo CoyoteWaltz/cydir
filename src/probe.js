@@ -69,7 +69,7 @@ function probe(absPath, maxDepth, prefixes, excludes = []) {
       const subPaths = fs
         .readdirSync(filePath)
         .filter((value) => !BLACKLIST.includes(value))
-        .map((value) => path.resolve(filePath, value)) // 转 abs path
+        .map((value) => path.resolve(filePath, value))
         .filter((value) => {
           if (excludes.length && excludes.includes(value)) {
             return false;

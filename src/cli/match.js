@@ -38,6 +38,7 @@ function handleTrace(traceRes, state) {
 /**
  *
  * @param {string} target
+ * @param {object} matchOption { exact }
  * @returns {object} state
  */
 function match(target, { exact }) {

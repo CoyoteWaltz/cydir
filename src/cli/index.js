@@ -23,7 +23,12 @@ function storeRootPath(root) {
   store.root = root;
 }
 
-function searchHandler(target, confirm, { exact }) {
+function helpHandler(program) {
+  program.outputHelp();
+  store.logConfig();
+}
+
+function searchHandler(target, { confirm, exact }) {
   if (!store.checkTypes()) {
     return;
   }
@@ -92,4 +97,5 @@ module.exports = {
   resetHandler,
   storeCommand,
   storeRootPath,
+  helpHandler,
 };

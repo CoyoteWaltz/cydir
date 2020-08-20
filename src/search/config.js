@@ -16,9 +16,7 @@ const fuseOption = {
   isCaseSensitive: false,
 };
 
-function setOption({ exact = false, caseSensitive = false }) {
-  // fuseOption.threshold = exact ? 0 : fuseOption.threshold;
-  // fuseOption.exact = exact;
+function setOption({ caseSensitive = false }) {
   fuseOption.isCaseSensitive = caseSensitive;
 }
 
