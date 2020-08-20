@@ -2,7 +2,7 @@
 /*
  * @Author: CoyoteWaltz
  * @Date: 2020-07-13 22:29:06
- * @LastEditTime: 2020-08-15 14:31:24
+ * @LastEditTime: 2020-08-20 01:07:07
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  */
@@ -18,7 +18,6 @@ const {
 } = require('./cli');
 
 program.version('0.0.1');
-console.log(process.version);
 // 顶层参数
 program
   .arguments('[paths...]')
@@ -30,7 +29,6 @@ program
     if (!paths.length) {
       program.help();
     } else {
-      console.log(paths);
       const { exact, caseSensitive } = cmdObj;
       const searchOption = { exact, caseSensitive };
       const fullPath = joinSep(paths);

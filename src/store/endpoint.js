@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-07-24 01:36:41
- * @LastEditTime: 2020-08-15 00:24:37
+ * @LastEditTime: 2020-08-19 22:55:10
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description: utils for path node
  * @TODO:
@@ -32,7 +32,6 @@ function getMatchers(points) {
  */
 function parseFullPath({ prefixId, middle, matcher }, prefixes) {
   prefixes = prefixes || require('./index.js').prefixes;
-  // console.log('parse full: ', prefixId, prefixes[prefixId], middle, matcher);
   return path.join(prefixes[prefixId], middle || '', matcher);
 }
 

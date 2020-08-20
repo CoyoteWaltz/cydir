@@ -1,7 +1,7 @@
 /*
  * @Author: CoyoteWaltz <coyote_waltz@163.com>
  * @Date: 2020-08-04 23:10:29
- * @LastEditTime: 2020-08-17 22:14:11
+ * @LastEditTime: 2020-08-20 01:23:44
  * @LastEditors: CoyoteWaltz <coyote_waltz@163.com>
  * @Description:
  * @TODO:
@@ -33,15 +33,13 @@ function searchHandler(target, confirm, { exact }) {
   let targetEndpoint;
   const newState = match(target, { exact });
   const results = newState.results;
-  console.log('--------', newState);
   store.currentDepth = newState.newDepth;
+  // get targetEndpoint
   if (newState.inUsual) {
     // 从 ul 匹配的 直接 fire
     targetEndpoint = results[0];
   } else if (results.length) {
     // 有匹配结果
-    // 多结果的提示
-    // 移入 ul
     const first = results[0];
     targetEndpoint = extract(target, first, exact);
     if (targetEndpoint.matcher === first.matcher) {
@@ -49,18 +47,16 @@ function searchHandler(target, confirm, { exact }) {
       newState.endpoints = newState.endpoints.filter(
         (v) => v.matcher !== first.matcher
       );
+      // 下面会加入到 ul
     }
   }
   if (newState.updatePath) {
-    logger.err('updatePath!');
     // 如果 trace 了 替换 或者 是在 endpoints 中有结果
     if (newState.updatePath !== store.root) {
       // 必须判断是否为 root 不然会多留一个
-      logger.err('not root');
       const filterFn = (ep) =>
-      !parseFullPath(ep, store.prefixes).startsWith(newState.updatePath);
-      
-      // 过滤在更新的路径下的目录 endpoints
+        !parseFullPath(ep, store.prefixes).startsWith(newState.updatePath);
+      // 过滤在更新的路径下的目录 endpoints TODO 可以封装到 store
       store.endpoints = store.endpoints.filter(filterFn);
       store.usualList = store.usualList.filter(filterFn);
       store.endpoints.push(...newState.endpoints);
@@ -82,7 +78,7 @@ function searchHandler(target, confirm, { exact }) {
       );
       store.usualList.push(targetEndpoint);
     }
-    const targetPath = parseFullPath(targetEndpoint);
+    const targetPath = parseFullPath(targetEndpoint, store.prefixes);
     fire(targetPath, confirm);
   }
 }
