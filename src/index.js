@@ -26,6 +26,7 @@ program
   .option('-s, --skip-confirm', 'Skip confirm before exec command')
   .option('-e, --exact', 'Exact match')
   .option('-c, --case-sensitive', 'Match with case sensitive')
+  // .option('-p, --parent', 'Match with case sensitive')
   .action((paths, cmdObj) => {
     if (!paths.length) {
       helpHandler(program);
@@ -40,15 +41,15 @@ program
   });
 
 program
-  .command('config-command <command>')
-  .description('Config command on your file path')
+  .command('set-command <command>')
+  .description('Set the command to execute on your directories')
   .action((command) => {
     storeCommand(command);
   });
 
 program
-  .command('config-root-path <root-path>')
-  .description('Config a relative root path of your directories')
+  .command('set-root-path <root-path>')
+  .description('Set a relative root path of your directories')
   .action((rootPath) => {
     storeRootPath(rootPath);
   });
