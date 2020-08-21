@@ -16,10 +16,10 @@ A Node.js based command line tool for executing the command to a directory.
 
 ```bash
 cd /xxx/xxx/xxx
-code project1
+cydir project1
 ...
 cd ../../yyy/yyy
-code project2
+cydir project2
 ```
 
 现在仅需**一次配置，随处使用**
