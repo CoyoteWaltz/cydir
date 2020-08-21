@@ -80,7 +80,7 @@ cydir a-fuzzy-path-name
 
 ## 🧩Commands
 
-**config-command**
+**set-command**
 
 配置指令，确保在你的`PATH`环境变量中
 
@@ -88,7 +88,7 @@ cydir a-fuzzy-path-name
 cydir set-command <command>
 ```
 
-**config-root-path**
+**set-root-path**
 
 配置根目录，必须是绝对路径
 
@@ -140,7 +140,7 @@ Commands:
 
 支持模糊匹配（感谢 [Fuse.js](https://github.com/krisk/fuse)）
 
-漂亮的命令行提示（感谢 [Command.js](https://github.com/tj/commander.js)）
+命令行交互和漂亮的提示（感谢 [Command.js](https://github.com/tj/commander.js)、[chalk](https://github.com/chalk/chalk)）
 
 windows 平台兼容（感谢 [cross-spawn](https://github.com/moxystudio/node-cross-spawn)）
 

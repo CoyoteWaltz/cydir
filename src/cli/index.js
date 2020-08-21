@@ -24,6 +24,7 @@ function storeRootPath(root) {
 }
 
 function helpHandler(program) {
+  program.version
   program.outputHelp();
   store.logConfig();
 }
