@@ -16,10 +16,10 @@ A Node.js based command line tool for executing the command to a directory.
 
 ```bash
 cd /xxx/xxx/xxx
-cydir project1
+code project1
 ...
 cd ../../yyy/yyy
-cydir project2
+code project2
 ```
 
 现在仅需**一次配置，随处使用**
@@ -32,8 +32,8 @@ cydir config-root-path /xxx/my-projects
 在任意位置
 
 ```bash
-code project2
-code roject1
+cydir project2
+cydir roject1
 ```
 
 ## 🕹Usage
